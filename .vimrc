@@ -1,11 +1,3 @@
-" Plugs for vim-plug "
-call plug#begin()
-	Plug 'preservim/nerdtree'
-	Plug 'NLKNguyen/papercolor-theme'
-call plug#end()
-
-colorscheme PaperColor
-set background=dark
 
 " Fixes vim background disappearing after scrolling using kitty "
 let &t_ut=''
