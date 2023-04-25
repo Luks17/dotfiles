@@ -1,7 +1,11 @@
 # dotfiles
 
-Personal dotfiles for arch linux
+Personal dotfiles for Arch Linux.
 
-## Installation
+Includes Hyprland configs, AstroNvim configs and a basic .zshrc for OMZ. 
 
-Install git, clone this repository and run install.sh
+## Credits
+
+[flick0](https://github.com/flick0/dotfiles) for the Hyprland configs that I used as base
+
+[linuxmobile](https://github.com/linuxmobile/hyprland-dots) for the Wlogout and Swaylock configs that I used as base

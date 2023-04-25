@@ -1,0 +1,2 @@
+timeout 310 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
+timeout 300 'source ~/.config/hypr/scripts/lock'
