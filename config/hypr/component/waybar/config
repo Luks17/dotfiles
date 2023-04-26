@@ -10,7 +10,7 @@
     "margin-bottom":-11,
     //"margin-top":5,
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["tray","temperature","network","battery","idle_inhibitor","pulseaudio","custom/cycle_wall","custom/expand","cpu","memory","clock"],
+    "modules-right": ["tray","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","custom/cycle_wall","custom/expand","temperature","memory","battery","clock"],
     "modules-center": ["custom/dynamic_pill"],
     // Modules configuration
 
@@ -25,13 +25,15 @@
     "custom/cycle_wall":{
         "format":"{}",
         "exec": "~/.config/hypr/scripts/tools/expand wall",
-        // "interval": 1,
-        "on-click": "~/.config/hypr/scripts/tools/expand cycle"
+        // "interval": 600,
+        "on-click": "~/.config/hypr/scripts/tools/expand cycle",
+        "tooltip": false
     },
     "custom/expand":{
         "on-click":"~/.config/hypr/scripts/expand_toolbar",
         "format":"{}",
-        "exec":"~/.config/hypr/scripts/tools/expand arrow-icon"
+        "exec":"~/.config/hypr/scripts/tools/expand arrow-icon",
+        "tooltip": false
     },
     // "custom/waybar-mpris": {
     //     "return-type": "json",
@@ -114,18 +116,19 @@
     },
     "cpu": {
         "interval":1,
-        "format": "󰻠 {}%",
+        "format": " {}%",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
     "memory": {
-        "format": "󰍛 {}%"
+        "format": " {}%"
     },
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
         "critical-threshold": 80,
         "format-critical": "{temperatureC}°C",
-        "format": ""
+        "format": "{temperatureC}°C",
+        "tooltip-format": "CPU Temperature"
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -149,29 +152,43 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "",
-        "format-ethernet": "",
-        "tooltip-format": "via {gwaddr} {ifname}",
-        "format-linked": "",
-        "format-disconnected": "wifi",
-        "format-alt": "   "
+        "format-wifi": "󰤨 Connected",
+        "format-ethernet": "󱘖 Wired",
+        "tooltip-format": "{essid}  󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-linked": "󱘖 {ifname} (No IP)",
+        "format-disconnected": " Disconnected",
+        "format-alt": "󰤨 {signalStrength}%",
+        "interval": 5
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format": "{icon} {volume}%",
+        "format-muted": "婢",
+        "on-click": "pavucontrol -t 3",
+        "on-click-middle": "pamixer -t",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "tooltip-format": "{icon} {desc} {volume}%",
+        "scroll-step": 5,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "pavucontrol -t 4",
+        "on-click-middle": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
     },
     "custom/media": {
         "format": "{icon} {}",

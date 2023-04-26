@@ -216,7 +216,7 @@ window#waybar {
 }
 
 #network{
-    color:#000;
+    color: #669999;
 }
 
 #network.disabled{
@@ -244,10 +244,6 @@ window#waybar {
     background-color:  	#fab387;
     color: #bf7d54;
     font-weight: bolder;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
 }
 
 #custom-media {

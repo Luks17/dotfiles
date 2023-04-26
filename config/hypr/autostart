@@ -15,7 +15,7 @@ $scripts/launch_waybar &
 $scripts/tools/dynamic &
 
 # wallpaper
-$scripts/wall $config/wallpapers/evening-sky.png &
+$scripts/wall $config/wallpapers/train.jpg &
 
 # effects
 $scripts/rgb &
