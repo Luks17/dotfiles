@@ -10,7 +10,7 @@
     "margin-bottom":-11,
     //"margin-top":5,
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["tray","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","custom/cycle_wall","custom/expand","temperature","memory","battery","clock"],
+    "modules-right": ["tray","custom/clipboard","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","custom/cycle_wall","custom/expand","temperature","memory","battery","clock"],
     "modules-center": ["custom/dynamic_pill"],
     // Modules configuration
 
@@ -115,11 +115,12 @@
         "max-length": 25
     },
     "cpu": {
-        "interval":1,
+        "interval": 2,
         "format": " {}%",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
     "memory": {
+        "interval": 2,
         "format": " {}%"
     },
     "temperature": {
@@ -183,7 +184,7 @@
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
-        "format-source-muted": "",
+        "format-source-muted": "",
         "on-click": "pavucontrol -t 4",
         "on-click-middle": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
@@ -201,5 +202,16 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/clipboard": {
+        "format": "",
+        "interval": "once",
+        "return-type": "json",
+        "on-click": "hyprctl dispatch exec ~/.config/hypr/scripts/clipboard-copy; pkill -RTMIN+9 waybar",
+        "on-click-right": "hyprctl dispatch exec ~/.config/hypr/scripts/clipboard-del; pkill -RTMIN+9 waybar",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar",
+        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)\r(Left click to copy an entry)\r(Right click to delete an entry)'",
+        "exec-if": "[ -x \"$(command -v cliphist)\" ]",
+        "signal": 9
     }
 }

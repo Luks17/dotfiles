@@ -1,0 +1,1 @@
+cliphist list | rofi -dmenu -m -1 -font "Monospace" -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy 

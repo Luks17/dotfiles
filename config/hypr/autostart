@@ -17,6 +17,10 @@ $scripts/tools/dynamic &
 # wallpaper
 $scripts/wall $config/wallpapers/train.jpg &
 
+# clipboard
+[ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch cliphist store
+[ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch pkill -RTMIN+9 waybar
+
 # effects
 $scripts/rgb &
 
