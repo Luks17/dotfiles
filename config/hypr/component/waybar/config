@@ -10,7 +10,7 @@
     "margin-bottom":-11,
     //"margin-top":5,
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["tray","custom/clipboard","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","custom/cycle_wall","custom/expand","temperature","memory","battery","clock"],
+    "modules-right": ["tray","custom/clipboard","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","temperature","memory","custom/cycle_wall","battery","clock"],
     "modules-center": ["custom/dynamic_pill"],
     // Modules configuration
 
@@ -23,16 +23,9 @@
         "escape":true
     },
     "custom/cycle_wall":{
-        "format":"{}",
-        "exec": "~/.config/hypr/scripts/tools/expand wall",
+        "format":"     ",
         // "interval": 600,
-        "on-click": "~/.config/hypr/scripts/tools/expand cycle",
-        "tooltip": false
-    },
-    "custom/expand":{
-        "on-click":"~/.config/hypr/scripts/expand_toolbar",
-        "format":"{}",
-        "exec":"~/.config/hypr/scripts/tools/expand arrow-icon",
+        "on-click": "~/.config/hypr/scripts/tools/cycle_wall",
         "tooltip": false
     },
     // "custom/waybar-mpris": {
