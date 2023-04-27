@@ -1,0 +1,23 @@
+
+#!/bin/bash
+
+STORE=~/.config/hypr/store
+CURRENT_LAYOUT=$(cat $STORE/current_xkblayout.txt)
+
+lang_0=English
+lang_1=Portugues
+lang_2=Espanol
+
+if [ "$CURRENT_LAYOUT" == $lang_0 ]; then
+  CURRENT_LAYOUT=$lang_1
+elif [ "$CURRENT_LAYOUT" == $lang_1 ]; then
+  CURRENT_LAYOUT=$lang_2
+elif [ "$CURRENT_LAYOUT" == $lang_2 ]; then
+  CURRENT_LAYOUT=$lang_0
+fi
+
+echo "$CURRENT_LAYOUT" > $STORE/current_xkblayout.txt
+
+hyprctl switchxkblayout at-translated-set-2-keyboard next
+
+dunstify --appname="Keyboard Layout" $CURRENT_LAYOUT

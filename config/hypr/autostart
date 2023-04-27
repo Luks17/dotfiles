@@ -14,6 +14,10 @@ swayidle -C $scripts/swayidle &
 $scripts/launch_waybar &
 $scripts/tools/dynamic &
 
+# starting layout for dunstify
+echo "English" > ~/.config/hypr/store/current_xkblayout.txt
+dunstify --appname="Keyboard Layout" English
+
 # wallpaper
 $scripts/wall $config/wallpapers/train.jpg &
 
