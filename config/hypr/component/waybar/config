@@ -200,9 +200,9 @@
         "format": "",
         "interval": "once",
         "return-type": "json",
-        "on-click": "hyprctl dispatch exec ~/.config/hypr/scripts/clipboard_copy; pkill -RTMIN+9 waybar",
-        "on-click-right": "hyprctl dispatch exec ~/.config/hypr/scripts/clipboard_del; pkill -RTMIN+9 waybar",
-        "on-click-middle": "rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar",
+        "on-click": "sleep 0.2s; ~/.config/hypr/scripts/clipboard copy",
+        "on-click-right": "sleep 0.2s; ~/.config/hypr/scripts/clipboard del",
+        "on-click-middle": "sleep 0.2s; ~/.config/hypr/scripts/clipboard clear",
         "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)\r(Left click to copy an entry)\r(Right click to delete an entry)'",
         "exec-if": "[ -x \"$(command -v cliphist)\" ]",
         "signal": 9

@@ -1,0 +1,17 @@
+
+case "$1" in
+  "copy")
+    cliphist list | rofi -dmenu -m -1 -font "Monospace" -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy 
+    ;;
+
+  "del")
+    cliphist list | rofi -dmenu -m -1 primary -font "Monospace" -p "Select item to delete" -lines 10 -width 35 | cliphist delete
+    ;;
+
+  "clear")
+    cliphist wipe
+    ;;
+esac  
+
+pkill -RTMIN+9 waybar
+

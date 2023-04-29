@@ -14,16 +14,16 @@ swayidle -C $scripts/swayidle &
 $scripts/launch_waybar &
 $scripts/tools/dynamic &
 
-# starting layout for dunstify
-echo "English" > ~/.config/hypr/store/current_xkblayout.txt
-dunstify --appname="Keyboard Layout" English
+# initial keyboard layout for dunst to display
+echo "English" > ~/.config/hypr/store/current_xkblayout.txt &
+dunstify --appname="Keyboard Layout" English &
 
 # wallpaper
 $scripts/wall $config/wallpapers/train.jpg &
 
 # clipboard
-[ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch cliphist store
-[ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch pkill -RTMIN+9 waybar
+[ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch cliphist store &
+[ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch pkill -RTMIN+9 waybar &
 
 # effects
 $scripts/rgb &
