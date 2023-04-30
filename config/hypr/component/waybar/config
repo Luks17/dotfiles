@@ -146,11 +146,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "󰤨 Connected",
-        "format-ethernet": "󱘖 Wired",
+        "format-wifi": "󱚻",
+        "format-ethernet": "󱘖",
         "tooltip-format": "{essid}  󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-linked": "󱘖 {ifname} (No IP)",
-        "format-disconnected": " Disconnected",
+        "format-disconnected": "󰪎",
         "format-alt": "󰤨 {signalStrength}%",
         "interval": 5
     },
