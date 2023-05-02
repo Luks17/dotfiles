@@ -12,7 +12,6 @@ swayidle -C $scripts/swayidle &
 
 # waybar
 $scripts/launch_waybar &
-$scripts/tools/dynamic &
 
 # initial keyboard layout for dunst to display
 echo "English" > ~/.config/hypr/store/current_xkblayout.txt &

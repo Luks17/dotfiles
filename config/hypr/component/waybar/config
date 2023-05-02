@@ -11,38 +11,41 @@
     //"margin-top":5,
     "modules-left": ["wlr/workspaces"],
     "modules-right": ["tray","custom/clipboard","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","temperature","memory","custom/cycle_wall","battery","clock"],
-    "modules-center": ["custom/dynamic_pill"],
+    "modules-center": ["mpris"],
     // Modules configuration
 
 
     // custom modules ////////////////
-    "custom/dynamic_pill": {
-        "return-type": "json",
-        // "format":"{}",
-        "exec": "~/.config/hypr/scripts/tools/start_dyn",
-        "escape":true
-    },
     "custom/cycle_wall":{
         "format":"     ",
         // "interval": 600,
         "on-click": "~/.config/hypr/scripts/tools/cycle_wall",
         "tooltip": false
     },
-    // "custom/waybar-mpris": {
-    //     "return-type": "json",
-    //     "exec": "echo '   '",
-    //     "on-click": "waybar-mpris --send toggle",
-    //     // This option will switch between players on right click.
-    //         "on-click-right": "waybar-mpris --send player-next",
-    //     // The options below will switch the selected player on scroll
-    //         // "on-scroll-up": "waybar-mpris --send player-next",
-    //         // "on-scroll-down": "waybar-mpris --send player-prev",
-    //     // The options below will go to next/previous track on scroll
-    //         // "on-scroll-up": "waybar-mpris --send next",
-    //         // "on-scroll-down": "waybar-mpris --send prev",
-    //     "escape": true
-    // },
-    //////////////////////////////////
+    "custom/clipboard": {
+        "format": "",
+        "interval": "once",
+        "return-type": "json",
+        "on-click": "sleep 0.2s; ~/.config/hypr/scripts/clipboard copy",
+        "on-click-right": "sleep 0.2s; ~/.config/hypr/scripts/clipboard del",
+        "on-click-middle": "sleep 0.2s; ~/.config/hypr/scripts/clipboard clear",
+        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)\r(Left click to copy an entry)\r(Right click to delete an entry)'",
+        "exec-if": "[ -x \"$(command -v cliphist)\" ]",
+        "signal": 9
+    },
+
+
+    "mpris": {
+	    "format": "{player_icon} {dynamic}",
+	    "format-paused": "{status_icon} <i>{dynamic}</i>",
+	    "player-icons": {
+	    	"default": "▶",
+	    	"mpv": "🎵"
+	    },
+	    "status-icons": {
+	    	"paused": "⏸"
+	    },
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -173,7 +176,6 @@
             "default": ["", "", ""]
         }
     },
-
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
@@ -183,28 +185,5 @@
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/clipboard": {
-        "format": "",
-        "interval": "once",
-        "return-type": "json",
-        "on-click": "sleep 0.2s; ~/.config/hypr/scripts/clipboard copy",
-        "on-click-right": "sleep 0.2s; ~/.config/hypr/scripts/clipboard del",
-        "on-click-middle": "sleep 0.2s; ~/.config/hypr/scripts/clipboard clear",
-        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)\r(Left click to copy an entry)\r(Right click to delete an entry)'",
-        "exec-if": "[ -x \"$(command -v cliphist)\" ]",
-        "signal": 9
     }
 }
