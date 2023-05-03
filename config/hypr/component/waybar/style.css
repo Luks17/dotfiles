@@ -127,7 +127,7 @@ window#waybar {
     padding-top: 1px;
     padding-right: 15px;
     font-weight: bolder;
-    padding-left: 15px;
+    padding-left: 14px;
 }
 
 #battery.charging, #battery.plugged {

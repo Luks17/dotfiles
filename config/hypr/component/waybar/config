@@ -104,10 +104,23 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "interval": 60,
-        "format": "{:  %R    %d/%m}",
-        "max-length": 25
+        "format": "{:  %H:%M}",
+        "calendar": {
+            "on-scroll": 1,
+            "format": {
+                  "months":     "<span color='#CBE2A6'><b>{}</b></span>",
+                  "days":       "<span color='#90C4F1'><b>{}</b></span>",
+                  "weekdays":   "<span color='#C19AB9'><b>{}</b></span>",
+                  "today":      "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up"
+        }
+        // "max-length": 25
     },
     "cpu": {
         "interval": 2,
