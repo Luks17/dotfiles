@@ -16,26 +16,25 @@ window#waybar {
 }
 #workspaces button{
     box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
-    background-color: #fff ;
+    background-color: #11111b;
     border-radius: 15px;
     margin-right: 10px;
     padding-top: 4px;
     padding-bottom: 2px;
     padding-right: 10px;
     font-weight: bolder;
-    color: 	#cba6f7 ;
+    color: #89b4fa;
 }
 
 #workspaces button.active{
     padding-right: 20px;
     box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
     padding-left: 20px;
     padding-bottom: 3px;
-    background: rgb(202,158,230);
-    background: linear-gradient(45deg, rgba(202,158,230,1) 0%, rgba(245,194,231,1) 43%, rgba(180,190,254,1) 80%, rgba(137,180,250,1) 100%); 
+    background: rgb(174,170,240);
+    background: radial-gradient(circle, rgba(174,170,240,1) 35%, rgba(0,212,255,1) 100%);
     background-size: 300% 300%;
-    animation: gradient 10s ease infinite;
+    animation: radial-gradient 10s ease-in-out infinite;
     color: #fff;
 }
 
@@ -69,8 +68,8 @@ window#waybar {
 #custom-clipboard {
     padding: 0 10px;
     border-radius: 15px;
-    background-color: #cdd6f4;
-    color: #516079;
+    background-color: #11111b;
+    color: #b4befe;
     box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -94,7 +93,6 @@ window#waybar {
 }
 
 #custom-clipboard{
-    background: #fff;
     color: rgba(203,166,247,1);
     font-weight:  bolder;
     padding: 5px;
@@ -110,19 +108,16 @@ window#waybar {
     background-size: 500% 500%;
     animation: gradient 7s linear infinite;
     font-weight:  bolder;
-    padding: 5px;
     border-radius: 15px;
 }
 
 
 #clock {
-    background: rgb(245,194,231);
-    background: linear-gradient(45deg, rgba(245,194,231,1) 0%, rgba(203,166,247,1) 64%, rgba(202,158,230,1) 100%); 
+    background: #EE88A4; 
     margin-right: 25px;
     color: #fff ;
     background-size: 300% 300%;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-    animation: gradient 20s ease infinite;
     font-size: 15px;
     padding-top: 1px;
     padding-right: 15px;
@@ -135,7 +130,7 @@ window#waybar {
 }
 
 #battery {
-    background-color: #fff;
+    background-color: #11111b;
     color:#a6e3a1;
     font-weight: bolder;
     font-size: 20px;
@@ -171,7 +166,6 @@ window#waybar {
 }
 
 #memory {
-    background-color: #cba6f7;
     color: 	#9a75c7;
     font-weight: bolder;
 }
@@ -201,22 +195,16 @@ window#waybar {
     color: #fff;
 }
 
-#network.linked, #network.wifi{
-    background-color: #a6e3a1 ;
-}
-
 #network.ethernet{
     background-color:#f9e2af ;
 }
 
 #pulseaudio {
-    background-color:  	#fab387;
     color: #bf7d54;
     font-weight: bolder;
 }
 
 #temperature {
-    background-color: #f9e2af;
     color:#96804e;
 }
 
@@ -236,10 +224,6 @@ window#waybar {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
 }
 
 #idle_inhibitor.activated {

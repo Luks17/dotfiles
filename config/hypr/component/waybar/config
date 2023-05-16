@@ -10,7 +10,7 @@
     "margin-bottom":-11,
     //"margin-top":5,
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["tray","custom/clipboard","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","temperature","memory","custom/cycle_wall","battery","clock"],
+    "modules-right": ["tray","custom/clipboard","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","temperature","memory","battery","custom/cycle_wall","clock"],
     "modules-center": ["mpris"],
     // Modules configuration
 
