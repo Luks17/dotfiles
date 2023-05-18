@@ -1,6 +1,9 @@
 
 ### I/O pre-instant prompt
 pfetch
+if [[ "$(tty)" == "/dev/tty1" ]]; then
+  Hyprland
+fi
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
@@ -12,7 +15,8 @@ fi
 
 
 ### OPTIONS
-setopt HIST_IGNORE_DUPS 
+setopt HIST_IGNORE_DUPS   # ignores immediate duplicate commands
+setopt CORRECT            # spelling correction
 
 
 ### ALIASES
@@ -29,8 +33,9 @@ fpath=(path/to/zsh-completions/src $fpath)
 ### COMPLETION
 autoload -U compinit; compinit
 zstyle ':completion:*' menu select
-zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
-
+# SHIFT+TAB for going back on the menu list
+bindkey "^[[Z" reverse-menu-complete
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
