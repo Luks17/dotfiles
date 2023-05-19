@@ -162,12 +162,12 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "on-click": "networkmanager_dmenu",
         "format-wifi": "󱚻",
         "format-ethernet": "󱘖",
         "tooltip-format": "{essid}  󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-linked": "󱘖 {ifname} (No IP)",
         "format-disconnected": "󰪎",
-        "format-alt": "󰤨 {signalStrength}%",
         "interval": 5
     },
     "pulseaudio": {

@@ -27,6 +27,8 @@ $scripts/wall $config/wallpapers/train.jpg &
 # effects
 $scripts/rgb &
 
-# other
+# polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# screensharing
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &

@@ -11,7 +11,7 @@ Some packages are only available in the AUR.
 If you don't use Arch Linux, search for these packages in your distro repos or compile from source.
 
 ```bash
-hyprland xdg-desktop-portal-hyprland waybar-hyprland-git cava python rustup kitty rofi-lbonn-wayland-git swaylockd btop pfetch-rs jq dunst cliphist swaylock-effects-git swww swayidle neovim pamixer grimblast-git zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k
+hyprland xdg-desktop-portal-hyprland waybar-hyprland-git cava python rustup kitty rofi-lbonn-wayland-git swaylockd btop pfetch-rs jq dunst cliphist networkmanager-dmenu-git swaylock-effects-git swww swayidle neovim pamixer grimblast-git zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k
 ```
 
 ## Credits
