@@ -28,11 +28,10 @@ configuration {
     textbox-font:                "Iosevka Nerd Font 14";
     element-text-font:           "feather 64";
 
-    background-window:           black/60%;
-    background-normal:           white/25%;
-    background-selected:         white/40%;
+    background-window:           black/70%;
+    background-normal:           #282A36FF;
+    background-selected:         #BD93F9FF;
     foreground-normal:           white;
-    foreground-selected:         #7AA2F7FF;
 }
 
 /*****----- Main Window -----*****/
@@ -69,7 +68,7 @@ prompt {
     enabled:                     true;
     font:                        var(prompt-font);
     background-color:            transparent;
-    text-color:                  var(foreground-selected);
+    text-color:                  var(background-selected);
 }
 
 /*****----- Message -----*****/
@@ -127,5 +126,5 @@ element-text {
 }
 element selected.normal {
     background-color:            var(background-selected);
-    text-color:                  var(foreground-selected);
+    text-color:                  var(background-normal);
 }
