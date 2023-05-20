@@ -69,7 +69,7 @@ prompt {
     enabled:                     true;
     font:                        var(prompt-font);
     background-color:            transparent;
-    text-color:                  var(foreground-normal);
+    text-color:                  var(foreground-selected);
 }
 
 /*****----- Message -----*****/

@@ -1,11 +1,11 @@
 
 case "$1" in
   "copy")
-    cliphist list | rofi -dmenu -m -1 -font "Monospace" -p "Select item to copy" -lines 10 -width 35 | cliphist decode | wl-copy 
+    cliphist list | rofi -dmenu -p "Select item to copy" -theme ~/.config/rofi/dmenu/style.rasi | cliphist decode | wl-copy 
     ;;
 
   "del")
-    cliphist list | rofi -dmenu -m -1 primary -font "Monospace" -p "Select item to delete" -lines 10 -width 35 | cliphist delete
+    cliphist list | rofi -dmenu -p "Select item to delete" -theme ~/.config/rofi/dmenu/style.rasi | cliphist delete
     ;;
 
   "clear")
