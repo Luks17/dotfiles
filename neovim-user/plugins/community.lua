@@ -2,7 +2,22 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.colorscheme.kanagawa" },
+  { import = "astrocommunity.colorscheme.monokai-pro" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
+
+  {
+    "monokai-pro.nvim",
+    opts = {
+      terminal_colors = true,
+      devicons = true, 
+      filter = "octagon",
+      plugins = {
+        indent_blankline = {
+          context_highlight = "pro", 
+          context_start_underline = false,
+        },
+      },
+    },
+  },
 }

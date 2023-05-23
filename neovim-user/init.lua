@@ -1,3 +1,4 @@
 return {
-    colorscheme = "catppuccin",
+    colorscheme = "monokai-pro",
 }
+
