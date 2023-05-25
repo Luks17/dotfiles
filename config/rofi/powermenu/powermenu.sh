@@ -55,17 +55,25 @@ run_rofi() {
 
 # Execute Command
 run_cmd() {
-	selected="$(confirm_exit)"
+	selected=$yes
+	if [[ $2 != '--noconfirm' ]]; then
+		selected="$(confirm_exit)"
+	fi
+
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
 		elif [[ $1 == '--suspend' ]]; then
+			hyprctl dispatch exec ${scripts}/lock
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			hyprctl dispatch exit
+		elif [[ $1 == '--lock' ]]; then
+			hyprctl dispatch exec ${scripts}/lock
 		fi
+
 	else
 		exit 0
 	fi
@@ -81,10 +89,10 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-    hyprctl dispatch exec ${scripts}/lock
+   	run_cmd --lock --noconfirm
         ;;
     $suspend)
-		run_cmd --suspend
+		run_cmd --suspend --noconfirm
         ;;
     $logout)
 		run_cmd --logout
