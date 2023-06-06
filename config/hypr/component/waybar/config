@@ -45,6 +45,7 @@
 	    "status-icons": {
 	    	"paused": "⏸"
 	    },
+	    "max-length": 700,
     },
     "keyboard-state": {
         "numlock": true,
