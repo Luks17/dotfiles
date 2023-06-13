@@ -5,8 +5,9 @@ return {
   { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
-  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.json" },
 
   {
     "monokai-pro.nvim",
