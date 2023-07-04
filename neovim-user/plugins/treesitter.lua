@@ -7,6 +7,7 @@ return {
       "typescript",
       "javascript",
       "markdown",
+      "python",
     },
   },
 }

@@ -8,6 +8,7 @@ return {
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.prisma" },
 
   {
     "monokai-pro.nvim",
