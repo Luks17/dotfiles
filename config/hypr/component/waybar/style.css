@@ -15,8 +15,9 @@ window#waybar {
   margin-right: 10px;
   margin-left: 25px;
 }
+
 #workspaces button {
-  box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
+  box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
   background-color: #11111b;
   border-radius: 15px;
   margin-right: 10px;
@@ -28,9 +29,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-  padding-right: 20px;
-  box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
   padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 3px;
   background: rgb(174, 170, 240);
   background: radial-gradient(
@@ -39,7 +39,6 @@ window#waybar {
     rgba(0, 212, 255, 1) 100%
   );
   background-size: 300% 300%;
-  /* animation: radial-gradient 10s ease-in-out infinite; */
   color: #fff;
 }
 

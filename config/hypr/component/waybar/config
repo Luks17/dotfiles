@@ -9,7 +9,7 @@
     // "margin-right":25,
     "margin-bottom":-11,
     //"margin-top":5,
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-right": ["tray","custom/clipboard","pulseaudio","pulseaudio#microphone","network","idle_inhibitor","temperature","memory","battery","custom/cycle_wall","clock"],
     "modules-center": ["mpris"],
     // Modules configuration
@@ -56,13 +56,8 @@
             "unlocked": ""
         }
     },
-    "wlr/workspaces": {
-        "format": "{icon}",
-        "format-active": " {icon} ",
-        "on-click": "activate"
-        // "format-icons":{
-        //     "10":"10"
-        // }
+    "hyprland/workspaces": {
+        "format": "{}",
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
