@@ -5,7 +5,8 @@ return {
     ensure_installed = {
       "tsserver",
       "pyright",
-      "ruff_lsp"
+      "ruff_lsp",
+      "volar"
     },
   },
 }
