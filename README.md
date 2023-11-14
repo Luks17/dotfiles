@@ -12,8 +12,34 @@ Some packages are only available in the AUR.
 
 If you don't use Arch Linux, search for these packages in your distro repos or compile from source.
 
+#### Common dependencies
+
 ```bash
-hyprland xdg-desktop-portal-hyprland waybar-hyprland-git cava python rustup kitty rofi-lbonn-wayland-git gtklock btop pfetch-rs dunst cliphist networkmanager-dmenu-git swww swayidle neovim pamixer grimblast-git zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k
+python rustup
+```
+
+#### Desktop
+
+```bash
+hyprland xdg-desktop-portal-hyprland waybar rofi-lbonn-wayland-git gtklock dunst swww swayidle firefox
+```
+
+#### Terminal
+
+```bash
+zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k kitty
+```
+
+#### Utilities
+
+```bash
+cliphist neovim pamixer grimblast-git btop pfetch-rs networkmanager-dmenu-git cava
+```
+
+#### Optional (but nice to have)
+
+```bash
+flatpak flatseal nwg-look firewalld rnote kdenlive qbittorrent gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus Catppuccin-purple
 ```
 
 ## Credits
