@@ -21,7 +21,7 @@ python rustup
 #### Desktop
 
 ```bash
-hyprland xdg-desktop-portal-hyprland waybar rofi-lbonn-wayland-git gtklock dunst swww swayidle firefox
+hyprland xdg-desktop-portal-hyprland waybar rofi-lbonn-wayland-git gtklock libnotify dunst swww swayidle firefox
 ```
 
 #### Terminal
@@ -33,7 +33,7 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k kitty
 #### Utilities
 
 ```bash
-cliphist neovim pamixer grimblast-git btop pfetch-rs networkmanager-dmenu-git cava
+cliphist neovim pamixer grimblast-git btop pfetch-rs networkmanager-dmenu-git cava polkit-gnome pavucontrol
 ```
 
 #### Optional (but nice to have)
