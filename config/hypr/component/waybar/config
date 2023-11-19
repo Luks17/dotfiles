@@ -39,11 +39,11 @@
 	    "format": "{player_icon} {dynamic}",
 	    "format-paused": "{status_icon} <i>{dynamic}</i>",
 	    "player-icons": {
-	    	"default": "▶",
-	    	"mpv": "🎵"
+	    	"default": "",
+	    	"mpv": "󰎈"
 	    },
 	    "status-icons": {
-	    	"paused": "⏸"
+	    	"paused": "󰏤"
 	    },
 	    "max-length": 700,
     },
@@ -91,8 +91,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "󰛐 ",
+            "deactivated": "󰛑 "
         }
     },
     "tray": {
@@ -120,7 +120,7 @@
     },
     "cpu": {
         "interval": 2,
-        "format": " {}%",
+        "format": " {}%",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
     "memory": {
@@ -151,7 +151,7 @@
         "format-plugged": "",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -159,7 +159,7 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "on-click": "networkmanager_dmenu",
-        "format-wifi": "󱚻",
+        "format-wifi": "󱚻 ",
         "format-ethernet": "󱘖",
         "tooltip-format": "{essid}  󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-linked": "󱘖 {ifname} (No IP)",
@@ -187,7 +187,7 @@
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "on-click": "pavucontrol -t 4",
         "on-click-middle": "pamixer --default-source -t",

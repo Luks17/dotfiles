@@ -19,13 +19,13 @@ scripts="$HOME/.config/hypr/scripts"
 uptime="`uptime -p | sed -e 's/up //g'`"
 
 # Options
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+shutdown='󰤆'
+reboot=''
+lock='󰌾'
+suspend=''
+logout='󰗼'
+yes='󰗠'
+no=''
 
 # Rofi CMD
 rofi_cmd() {

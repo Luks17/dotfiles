@@ -139,7 +139,6 @@ window#waybar {
   background-size: 300% 300%;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
   font-size: 15px;
-  padding-top: 1px;
   padding-right: 15px;
   font-weight: bolder;
   padding-left: 14px;
@@ -207,7 +206,7 @@ window#waybar {
 
 #network {
   color: #669999;
-  font-size: 25px;
+  font-size: 14px;
   padding-left: 14px;
   padding-right: 14px;
 }
