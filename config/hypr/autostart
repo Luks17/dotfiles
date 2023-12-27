@@ -18,7 +18,7 @@ echo "English" > ~/.config/hypr/store/current_xkblayout.txt &
 dunstify --appname="Keyboard Layout" English &
 
 # wallpaper
-$scripts/wall $config/wallpapers/train.jpg &
+$scripts/wall $config/wallpapers/space.jpg &
 
 # clipboard
 [ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch cliphist store &
