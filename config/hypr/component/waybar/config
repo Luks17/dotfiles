@@ -147,8 +147,9 @@
             "critical": 20
         },
         "format": "{icon}",
-        "format-charging": "",
-        "format-plugged": "",
+        "format-charging": "{icon} ",
+        "format-plugged": "{icon} 󱐥",
+        "tooltip-format": "{capacity}% - Time to empty: {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
@@ -163,7 +164,7 @@
         "format-ethernet": "󱘖",
         "tooltip-format": "{essid}  󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-linked": "󱘖 {ifname} (No IP)",
-        "format-disconnected": "󰪎",
+        "format-disconnected": "󰪎 ",
         "interval": 5
     },
     "pulseaudio": {

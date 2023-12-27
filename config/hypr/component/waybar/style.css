@@ -144,11 +144,6 @@ window#waybar {
   padding-left: 14px;
 }
 
-#battery.charging,
-#battery.plugged {
-  background-color: #94e2d5;
-}
-
 #battery {
   background-color: #11111b;
   color: #a6e3a1;
