@@ -20,4 +20,4 @@ echo "$CURRENT_LAYOUT" > $STORE/current_xkblayout.txt
 
 hyprctl switchxkblayout at-translated-set-2-keyboard next
 
-dunstify --appname="Keyboard Layout" $CURRENT_LAYOUT
+notify-send "Keyboard Layout" $CURRENT_LAYOUT

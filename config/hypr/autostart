@@ -1,21 +1,18 @@
 #!/usr/bin/bash
 
+# ags
+ags &
+
 # variables
 config=$HOME/.config/hypr
 scripts=$config/scripts
 
-# notification daemon
-dunst &
-
 # idle manager
 swayidle -C $scripts/swayidle &
 
-# waybar
-$scripts/launch_waybar &
-
 # initial keyboard layout for dunst to display
 echo "English" > ~/.config/hypr/store/current_xkblayout.txt &
-dunstify --appname="Keyboard Layout" English &
+notify-send "Keyboard Layout" English &
 
 # wallpaper
 $scripts/wall $config/wallpapers/space.jpg &
@@ -24,11 +21,5 @@ $scripts/wall $config/wallpapers/space.jpg &
 [ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch cliphist store &
 [ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch pkill -RTMIN+9 waybar &
 
-# effects
-$scripts/rgb &
-
 # polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-# screensharing
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &

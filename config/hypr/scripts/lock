@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-
-gtklock -s $HOME/.config/gtklock/style.css

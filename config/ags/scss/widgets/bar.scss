@@ -1,0 +1,105 @@
+@mixin tray-menu-item {
+  @include generic-button();
+  padding: .5rem;
+
+  label {
+    font-size: 1.1rem;
+  }
+}
+
+.tray-menu {
+  @include floating-widget();
+
+  & menu {
+    @include floating-widget();
+    menuitem {
+      @include tray-menu-item();
+    }
+  }
+
+  & > menuitem:not(:first-child) {
+    @include tray-menu-item();
+  }
+
+  & > menuitem:first-child {
+    padding: 1rem .5rem;
+    font-weight: 700;
+    border-bottom: .1rem solid $overlay2;
+    label {
+      font-size: 1.1rem;
+    }
+  }
+
+  & > * {
+    margin: .5rem;
+  }
+}
+
+.panel {
+  padding: .3rem 1rem;
+
+  .separator {
+    margin: 0px 6px;
+  }
+
+  .launcher, .clock {
+    padding: .6rem;
+    @include bar-container(true)
+  }
+
+  .workspaces, 
+  .focused-app, 
+  .submenu,
+  .system-indicators,
+  .battery-bar {
+    padding: .6rem;
+    @include bar-container();
+  }
+
+  .launcher {
+    padding-right: 1rem;
+  }
+
+  .clock {
+    font-weight: 700;
+    color: $surface0;
+  }
+
+  .powermenu {
+	  transition: background-color 0.2s ease-in-out;
+	  border-radius: .7rem;
+	  background-color: $mantle;
+    padding: .6rem;
+    padding-right: 1rem;
+    color: $red;
+    border: .1rem solid $red;
+
+    &:hover {
+      background-color: $base;
+    }
+  }
+
+  .workspaces {
+    .indicator {
+	    transition: 
+	      background-color .3s ease-in-out, 
+	      color .3s ease-in-out;
+      color: $surface0;
+      background: $surface0;
+      border-radius: 10rem;
+      padding: 0px .4rem;
+      margin: 0px .25rem;
+
+      &.occupied {
+        background: $overlay0;
+        color: $overlay0;
+      }
+
+      &.active {
+        background: $mauve;
+        color: $mauve;
+        padding: 0 .8rem;
+      }
+    }
+  }
+}
