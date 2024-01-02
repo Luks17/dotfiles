@@ -3,11 +3,11 @@ import Notifications from "./Notifications.js";
 import Bar from "./bar/Bar.js";
 import Dashboard from "./dashboard/Dashboard.js";
 import Menu from "./menu/Menu.js";
-import { forMonitors, loadSassc, scssWatcher, warnOnLowBattery } from "./util.js";
+import { forMonitors, loadSassc, warnOnLowBattery } from "./util.js";
 
 warnOnLowBattery();
 loadSassc();
-scssWatcher();
+// scssWatcher();
 
 const windows = () => [
   forMonitors(Bar),

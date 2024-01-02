@@ -66,6 +66,10 @@ window#main-menu .window-content {
       padding: .5rem;
     }
 
+    .device-item {
+      margin: 0 .5rem;
+    }
+
     switch {
       @include generic-button();
       border: .1rem solid $crust;
