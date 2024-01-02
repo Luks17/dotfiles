@@ -1,6 +1,6 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import PopupWindow from '../misc/PopupWindow.js';
-import { AppMixer, Microhone, SinkSelector, Volume } from './widgets/Volume.js';
+import { AppMixer, Microphone, SinkSelector, Volume } from './widgets/Volume.js';
 import Brightness from './widgets/Brightness.js';
 import Media from './widgets/Media.js';
 import { NetworkToggle, WifiSelection } from './widgets/Network.js';
@@ -38,8 +38,8 @@ export default () => PopupWindow({
             [Volume()],
             [SinkSelector(), AppMixer()],
           ),
-          Microhone(),
-          Brightness(),
+          Row([Microphone()]),
+          Row([Brightness()]),
         ],
       }),
       Row(

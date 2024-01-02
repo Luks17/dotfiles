@@ -20,10 +20,10 @@ const MicrophoneIndicator = () => Widget.Icon().hook(Audio, icon => {
 
   /** @type {Array<[number, string]>} */
   const cons = [[67, high], [34, medium], [1, low], [0, muted]];
-  icon.icon = cons.find(([n]) => n <= Audio.microphone.volume * 100)?.[1] || '';
+  icon.icon = cons.find(([n, _]) => n <= Audio.microphone.volume * 100)?.[1] || '';
 
   icon.visible = Audio.recorders.length > 0 || Audio.microphone.is_muted;
-}, 'speaker-changed');
+}, 'microphone-changed');
 
 const DNDIndicator = () => Widget.Icon({
   visible: Notifications.bind('dnd'),

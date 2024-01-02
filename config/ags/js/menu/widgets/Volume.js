@@ -53,9 +53,8 @@ export const Volume = () => Widget.Box({
   ],
 });
 
-export const Microhone = () => Widget.Box({
+export const Microphone = () => Widget.Box({
   class_name: 'slider horizontal',
-  binds: [['visible', Audio, 'recorders', r => r.length > 0]],
   children: [
     VolumeIndicator('microphone'),
     VolumeSlider('microphone'),
