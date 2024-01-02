@@ -17,7 +17,7 @@ const VolumeIndicator = (type = 'speaker') => Widget.Button({
 
       icon.icon = type === 'speaker'
         ? getAudioTypeIcon(Audio[type].icon_name || '')
-        : icons.audio.mic.high;
+        : icons.audio.mic.active;
 
       icon.tooltip_text = `Volume ${Math.floor(Audio[type].volume * 100)}%`;
     }, `${type}-changed`]],

@@ -23,9 +23,7 @@ export default {
   audio: {
     mic: {
       muted: 'microphone-disabled-symbolic',
-      low: 'microphone-sensitivity-low-symbolic',
-      medium: 'microphone-sensitivity-medium-symbolic',
-      high: 'microphone-sensitivity-high-symbolic',
+      active: 'microphone-sensitivity-medium-symbolic',
     },
     volume: {
       muted: 'audio-volume-muted-symbolic',

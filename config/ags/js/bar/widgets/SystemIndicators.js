@@ -14,14 +14,12 @@ const MicrophoneIndicator = () => Widget.Icon().hook(Audio, icon => {
   if (!Audio.microphone)
     return;
 
-  const { muted, low, medium, high } = icons.audio.mic;
+  const { muted, active } = icons.audio.mic;
   if (Audio.microphone.is_muted)
     return icon.icon = muted;
 
-  /** @type {Array<[number, string]>} */
-  const cons = [[67, high], [34, medium], [1, low], [0, muted]];
-  icon.icon = cons.find(([n, _]) => n <= Audio.microphone.volume * 100)?.[1] || '';
-
+  icon.icon = active;
+  icon.css = "color: #ed8796;";
   icon.visible = Audio.recorders.length > 0 || Audio.microphone.is_muted;
 }, 'microphone-changed');
 
