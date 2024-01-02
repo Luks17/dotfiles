@@ -15,7 +15,7 @@ echo "English" > ~/.config/hypr/store/current_xkblayout.txt &
 notify-send "Keyboard Layout" English &
 
 # wallpaper
-$scripts/wall $config/wallpapers/space.jpg &
+$scripts/init_wall $config/wallpapers/space.jpg &
 
 # clipboard
 wl-paste --watch cliphist store &
