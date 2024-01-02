@@ -10,6 +10,7 @@ import SystemTray from 'resource:///com/github/Aylur/ags/service/systemtray.js';
 import SystemIndicators from "./widgets/SystemIndicators.js";
 import BatteryBar from "./widgets/BatteryBar.js";
 import Powermenu from "./widgets/Powermenu.js";
+import Utils from "./widgets/Utils.js";
 
 const submenuItems = Variable(1);
 SystemTray.connect('changed', () => {
@@ -53,6 +54,8 @@ const End = () => Widget.Box({
     }),
     Separator(),
     SystemIndicators(),
+    Separator(),
+    Utils(),
     Separator(),
     BatteryBar(),
     Separator(),

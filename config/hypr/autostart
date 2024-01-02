@@ -18,8 +18,7 @@ notify-send "Keyboard Layout" English &
 $scripts/wall $config/wallpapers/space.jpg &
 
 # clipboard
-[ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch cliphist store &
-[ -x "$(command -v wl-paste)" ] && [ -x "$(command -v cliphist)" ] && wl-paste --watch pkill -RTMIN+9 waybar &
+wl-paste --watch cliphist store &
 
 # polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

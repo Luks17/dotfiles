@@ -41,6 +41,10 @@ export default {
     },
     mixer: '',
   },
+  clipboard: {
+    tray: "",
+    off: "󱘛"
+  },
   bluetooth: {
     enabled: 'bluetooth-active-symbolic',
     disabled: 'bluetooth-disabled-symbolic',

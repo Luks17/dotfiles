@@ -1,0 +1,78 @@
+window#clipboard .window-content {
+  @include floating-widget();
+  padding: 1rem; 
+
+  .header {
+    margin-bottom: 1rem;
+    border-bottom: .1rem solid $overlay0;
+    padding: 1rem .5rem;
+
+    > label {
+      margin-left: 1rem;
+      font-size: 1.8rem;
+      color: $mauve;
+      font-weight: 700;
+    }
+
+    button {
+      padding: .5rem;
+      background-color: $red;
+      color: $base;
+      font-weight: 500;
+      border-radius: 1rem;
+      transition: background-color .3s ease-in-out;
+      &:hover, &:focus {
+        background-color: darken($red, 10%);
+        font-weight: 700;
+      }
+    }
+  }
+
+  .clipboard-box {
+    min-width: 30rem;
+    min-height: 40rem;
+    background-color: $surface0;
+    padding: 1rem;
+    border-radius: .5rem;
+
+    .clipboard-scrollable {
+      scrollbar, scrollbar * {
+        all: unset;
+      }
+
+      scrollbar.vertical {
+        transition: 200ms;
+        background-color: transparentize($crust, 0.7);
+
+        &:hover {
+          background-color: transparentize($crust, 0.3);
+
+          slider {
+            background-color: transparentize($surface2, 0.3);
+            min-width: .6em;
+          }
+        }
+      }
+
+      scrollbar.vertical slider {
+        background-color: transparentize($surface2, 0.5);
+        border-radius: .5rem;
+        min-width: .4em;
+        min-height: 2em;
+        transition: 200ms;
+      }
+    }
+
+    .clipboard-items {
+      padding-right: 1rem;
+
+      .clipboard-item {
+        @include generic-button();
+
+        label {
+          padding: .5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import Clipboard from "./Clipboard.js";
 import Notifications from "./Notifications.js";
 import Bar from "./bar/Bar.js";
 import Dashboard from "./dashboard/Dashboard.js";
@@ -12,6 +13,7 @@ const windows = () => [
   forMonitors(Bar),
   forMonitors(Notifications),
   Dashboard(),
+  Clipboard(),
   Menu()
 ]
 
@@ -22,5 +24,6 @@ export default {
   closeWindowDelay: {
     'main-menu': 300,
     'dashboard': 300,
+    'clipboard': 300,
   },
 };

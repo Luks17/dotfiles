@@ -51,6 +51,7 @@
   .focused-app, 
   .submenu,
   .system-indicators,
+  .utils-panel,
   .battery-bar {
     padding: .6rem;
     @include bar-container();
