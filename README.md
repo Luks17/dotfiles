@@ -21,7 +21,7 @@ python rustup
 #### Desktop
 
 ```bash
-hyprland xdg-desktop-portal-hyprland waybar rofi-lbonn-wayland-git gtklock libnotify dunst swww swayidle firefox
+hyprland xdg-desktop-portal-hyprland aylurs-gtk-shell rofi-lbonn-wayland-git swaylock-effects libnotify swww swayidle firefox ttf-ubuntu-mono-nerd
 ```
 
 #### Terminal
@@ -33,13 +33,13 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k kitty
 #### Utilities
 
 ```bash
-cliphist neovim pamixer grimblast-git btop pfetch-rs networkmanager-dmenu-git cava polkit-gnome pavucontrol
+cliphist neovim pamixer grimblast-git btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
 ```
 
 #### Optional (but nice to have)
 
 ```bash
-flatpak flatseal nwg-look firewalld rnote kdenlive qbittorrent gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus Catppuccin-purple
+flatpak flatseal nwg-look firewalld rnote kdenlive qbittorrent gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus Catppuccin-purple sassc inotify-tools
 ```
 
 ## Credits
