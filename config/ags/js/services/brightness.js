@@ -18,8 +18,8 @@ class Brightness extends Service {
     if (!checkDependencies(['brightnessctl']))
       return;
 
-    if (percent < 0)
-      percent = 0;
+    if (percent <= 0.01)
+      percent = 0.01;
 
     if (percent > 1)
       percent = 1;
