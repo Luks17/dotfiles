@@ -17,7 +17,7 @@ notify-send "Keyboard Layout" English &
 # wallpaper
 $scripts/init_wall $config/wallpapers/space.jpg &
 
-# clipboard
+# clipboard history
 wl-paste --watch cliphist store &
 
 # polkit
