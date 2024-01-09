@@ -5,8 +5,8 @@ STORE=~/.config/hypr/store
 CURRENT_LAYOUT=$(cat $STORE/current_xkblayout.txt)
 
 lang_0=English
-lang_1=Portugues
-lang_2=Espanol
+lang_1=Português
+lang_2=Español
 
 if [ "$CURRENT_LAYOUT" == $lang_0 ]; then
   CURRENT_LAYOUT=$lang_1

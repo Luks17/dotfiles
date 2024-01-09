@@ -66,12 +66,12 @@ run_cmd() {
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
 		elif [[ $1 == '--suspend' ]]; then
-			${scripts}/lock
-			systemctl suspend
+			${scripts}/lock &
+			sleep 1s && systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			hyprctl dispatch exit
 		elif [[ $1 == '--lock' ]]; then
-			{scripts}/lock
+			${scripts}/lock
 		fi
 
 	else

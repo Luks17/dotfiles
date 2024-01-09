@@ -10,7 +10,7 @@ scripts=$config/scripts
 # idle manager
 swayidle -C $scripts/swayidle &
 
-# initial keyboard layout for dunst to display
+# initial keyboard layout
 echo "English" > ~/.config/hypr/store/current_xkblayout.txt &
 notify-send "Keyboard Layout" English &
 

@@ -3,6 +3,7 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import icons from '../../icons.js';
 import { Menu, ArrowToggleButton } from '../ToggleButton.js';
 import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
+import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 
 export const BluetoothToggle = () => ArrowToggleButton({
   name: 'bluetooth',
@@ -29,8 +30,11 @@ export const BluetoothToggle = () => ArrowToggleButton({
     }]],
   }),
   connection: [Bluetooth, () => Bluetooth.enabled],
-  deactivate: () => Bluetooth.enabled = false,
-  activate: () => Bluetooth.enabled = true,
+  deactivate: () => execAsync("systemctl stop bluetooth.service").catch(e => print(e)),
+  activate: () => {
+    if (!Bluetooth.enabled)
+      execAsync("systemctl start bluetooth.service").catch(e => print(e));
+  },
 });
 
 const DeviceItem = device => Widget.Box({
