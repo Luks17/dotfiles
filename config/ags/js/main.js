@@ -9,6 +9,8 @@ warnOnLowBattery();
 loadSassc();
 // scssWatcher();
 
+globalThis.keyboardLayout = (await import("./services/keyboardLayout.js")).default;
+
 const windows = () => [
   forMonitors(Bar),
   forMonitors(Notifications),

@@ -74,4 +74,5 @@ export default {
     prev: '󰒮',
     next: '󰒭',
   },
+  keyboard: "󰥻 ",
 };

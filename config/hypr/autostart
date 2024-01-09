@@ -11,7 +11,6 @@ scripts=$config/scripts
 swayidle -C $scripts/swayidle &
 
 # initial keyboard layout
-echo "English" > ~/.config/hypr/store/current_xkblayout.txt &
 notify-send "Keyboard Layout" English &
 
 # wallpaper
