@@ -14,11 +14,11 @@
 }
 
 @mixin bar-container($special: false) {
-	transition: background-color 0.2s ease-in-out;
 	border-radius: .7rem;
 
 	@if $special {
 		color: #fff;
+	  transition: background-color 0.2s ease-in-out;
 	  background-color: darken($mauve, 3%);
 
 	  &:hover {
@@ -28,10 +28,6 @@
 	@if not($special) {
 	  color: $text;
 	  background-color: $mantle;
-
-	  &:hover {
-	  	background-color: $base;
-	  }
 	}
 }
 

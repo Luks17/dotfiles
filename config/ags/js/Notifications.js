@@ -1,7 +1,7 @@
 import Notifications from 'resource:///com/github/Aylur/ags/service/notifications.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import Notification from './misc/Notification.js';
+import { timeout } from 'resource:///com/github/Aylur/ags/utils.js';
 
 /** @param {import('types/widgets/revealer').default} parent */
 const Popups = parent => {
@@ -17,7 +17,7 @@ const Popups = parent => {
     if (map.size - 1 === 0)
       parent.reveal_child = false;
 
-    Utils.timeout(200, () => {
+    timeout(200, () => {
       map.get(id)?.destroy();
       map.delete(id);
     });
@@ -35,19 +35,15 @@ const Popups = parent => {
     map.delete(id);
     map.set(id, Notification(n));
     box.children = Array.from(map.values()).reverse();
-    Utils.timeout(10, () => {
+    timeout(10, () => {
       parent.reveal_child = true;
     });
   };
 
-  return Widget.Box({
-    vertical: true,
-    connections: [
-      [Notifications, onNotified, 'notified'],
-      [Notifications, onDismissed, 'dismissed'],
-      [Notifications, (box, id) => onDismissed(box, id, true), 'closed'],
-    ],
-  });
+  return Widget.Box({ vertical: true })
+    .hook(Notifications, onNotified, 'notified')
+    .hook(Notifications, onDismissed, 'dismissed')
+    .hook(Notifications, (box, id) => onDismissed(box, id, true), 'closed');
 };
 
 /** @param {import('types/widgets/revealer').RevealerProps['transition']} transition */

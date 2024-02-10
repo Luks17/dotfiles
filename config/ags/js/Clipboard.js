@@ -19,8 +19,7 @@ const ClearButton = () => Widget.Button({
     children: [
       Widget.Label('Clear '),
       Widget.Icon({
-        binds: [['icon', Cliphist, "list", n =>
-          n.length > 0 ? icons.trash.full : icons.trash.empty]]
+        icon: Cliphist.bind("list").transform(n => n.length > 0 ? icons.trash.full : icons.trash.empty)
       }),
     ],
   }),
@@ -30,10 +29,8 @@ const ClipboardItems = () => Widget.Box({
   vertical: true,
   vexpand: true,
   class_name: 'clipboard-items',
-  connections: [[Cliphist, box => {
-    box.children = Cliphist.list.map(ClipItem);
-    box.visible = Cliphist.list.length > 0;
-  }]],
+  children: Cliphist.bind("list").transform(l => l.map(ClipItem)),
+  visible: Cliphist.bind("list").transform(l => l.length > 0)
 });
 
 const Placeholder = () => Widget.Box({
@@ -47,7 +44,7 @@ const Placeholder = () => Widget.Box({
     FontIcon({ icon: icons.clipboard.off }),
     Widget.Label('Your clipboard history is empty'),
   ],
-  binds: [['visible', Cliphist, 'list', n => n.length === 0]],
+  visible: Cliphist.bind("list").transform(n => n.length === 0)
 });
 
 const ClipboardBox = () => Widget.Box({

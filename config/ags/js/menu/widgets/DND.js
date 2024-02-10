@@ -6,11 +6,7 @@ import { SimpleToggleButton } from '../ToggleButton.js';
 export default () => SimpleToggleButton({
   icon: Widget.Icon({
     size: 24,
-    connections: [[Notifications, icon => {
-      icon.icon = Notifications.dnd
-        ? icons.notifications.silent
-        : icons.notifications.noisy;
-    }, 'notify::dnd']],
+    icon: Notifications.bind("dnd").transform(dnd => icons.notifications[dnd ? "silent" : "noisy"])
   }),
   toggle: () => Notifications.dnd = !Notifications.dnd,
   connection: [Notifications, () => Notifications.dnd],

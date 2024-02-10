@@ -98,11 +98,10 @@ export default notification => {
     child: Widget.EventBox({
       child: Widget.Box({
         class_name: 'actions horizontal',
-        hpack: "center",
         children: notification.actions.map(action => Widget.Button({
           class_name: 'action-button',
-          cursor: 'pointer',
           on_clicked: () => notification.invoke(action.id),
+          hexpand: true,
           child: Widget.Label(action.label),
         })),
       }),
