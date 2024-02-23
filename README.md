@@ -2,11 +2,11 @@
 
 Personal dotfiles for Arch Linux.
 
-Includes Hyprland, AstroNvim and zsh configs. 
+Includes Hyprland, AstroNvim and zsh configs.
 
 https://github.com/Luks17/dotfiles/assets/48810778/743e4d25-319c-4afe-931d-67814e9f8110
 
-### Requirements 
+### Requirements
 
 Some packages are only available in the AUR.
 
@@ -33,7 +33,7 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k kitty
 #### Utilities
 
 ```bash
-cliphist neovim pamixer grimblast-git btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
+cliphist neovim pamixer grimblast-git gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
 ```
 
 #### Optional (but nice to have)

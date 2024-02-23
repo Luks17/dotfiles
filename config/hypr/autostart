@@ -10,6 +10,9 @@ scripts=$config/scripts
 # idle manager
 swayidle -C $scripts/swayidle &
 
+# gammastep
+gammastep -O 5500 &
+
 # initial keyboard layout
 notify-send "Keyboard Layout" English &
 
