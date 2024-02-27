@@ -2,3 +2,4 @@ alias ssh-start-github="eval '$(ssh-agent -s)'; ssh-add ~/.ssh/github"
 
 alias vim="nvim"
 alias startw="Hyprland"
+alias floorp="one.ablaze.floorp"
