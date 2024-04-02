@@ -1,4 +1,0 @@
-return {
-    colorscheme = "monokai-pro",
-}
-
