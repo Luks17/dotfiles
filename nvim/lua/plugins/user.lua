@@ -33,5 +33,74 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
     opts = {},
     event = "BufRead package.json",
+  },
+  {
+    "folke/drop.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("drop").setup
+      {
+        max = 7,
+        theme = "snow",
+      }
+    end
+  },
+  {
+    "FabijanZulj/blame.nvim",
+  },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "VeryLazy",
+    main = "rainbow-delimiters.setup",
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    ---@type CatppuccinOptions
+    opts = {
+      integrations = {
+        aerial = true,
+        alpha = true,
+        cmp = true,
+        dap = true,
+        dap_ui = true,
+        gitsigns = true,
+        illuminate = true,
+        indent_blankline = true,
+        markdown = true,
+        mason = true,
+        native_lsp = true,
+        neotree = true,
+        notify = true,
+        semantic_tokens = true,
+        symbols_outline = true,
+        telescope = true,
+        treesitter = true,
+        ts_rainbow = false,
+        ufo = true,
+        which_key = true,
+        window_picker = true,
+        rainbow_delimiters = true
+      }
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    optional = true,
+    opts = {
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+    },
+  },
+  {
+    "sustech-data/wildfire.nvim",
+    event = "BufEnter",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("wildfire").setup()
+    end,
   }
 }
