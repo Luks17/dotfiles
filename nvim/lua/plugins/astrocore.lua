@@ -3,6 +3,9 @@ return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
+    diagnostics = {
+      virtual_text = false
+    },
     mappings = {
       -- first key is the mode
       n = {
