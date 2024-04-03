@@ -7,6 +7,11 @@ return {
       disabled = {
         "volar"
       }
+    },
+    config = {
+      tailwindcss = {
+        filetypes = { "typescriptreact", "javascriptreact", "vue", "astro" }
+      }
     }
   }
 }
