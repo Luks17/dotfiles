@@ -9,21 +9,23 @@ warnOnLowBattery();
 loadSassc();
 // scssWatcher();
 
-globalThis.keyboardLayout = (await import("./services/keyboardLayout.js")).default;
+globalThis.keyboardLayout = (
+  await import("./services/keyboardLayout.js")
+).default;
 
 const windows = () => [
   forMonitors(Bar),
   forMonitors(Notifications),
   Dashboard(),
   Clipboard(),
-  Menu()
-]
+  Menu(),
+];
 
-export default {
+App.config({
   windows: windows().flat(1),
   closeWindowDelay: {
-    'main-menu': 300,
-    'dashboard': 300,
-    'clipboard': 300,
+    "main-menu": 300,
+    dashboard: 300,
+    clipboard: 300,
   },
-};
+});

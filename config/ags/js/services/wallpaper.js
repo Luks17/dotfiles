@@ -1,5 +1,10 @@
-import Service from 'resource:///com/github/Aylur/ags/service.js';
-import { USER, exec, execAsync, monitorFile } from 'resource:///com/github/Aylur/ags/utils.js';
+import Service from "resource:///com/github/Aylur/ags/service.js";
+import {
+  USER,
+  exec,
+  execAsync,
+  monitorFile,
+} from "resource:///com/github/Aylur/ags/utils.js";
 
 class Wallpaper extends Service {
   static {
@@ -13,8 +18,9 @@ class Wallpaper extends Service {
 
   cycle() {
     this.#current = (this.#current + 1) % this.#list.length;
-    execAsync(`swww img ${this.#list[this.#current]} --transition-type grow --transition-pos "top-right" --transition-duration 3`)
-      .catch(e => print(e));
+    execAsync(
+      `swww img ${this.#list[this.#current]} --transition-type grow --transition-pos "top-right" --transition-duration 3`,
+    ).catch((e) => print(e));
   }
 
   #onDirChange() {
@@ -25,7 +31,7 @@ class Wallpaper extends Service {
   constructor() {
     super();
 
-    monitorFile(this.#wallpaperDir, () => this.#onDirChange(), "directory")
+    monitorFile(this.#wallpaperDir, () => this.#onDirChange());
   }
 }
 

@@ -66,6 +66,7 @@ return {
         dap = true,
         dap_ui = true,
         gitsigns = true,
+        hop = true,
         illuminate = true,
         indent_blankline = true,
         markdown = true,
