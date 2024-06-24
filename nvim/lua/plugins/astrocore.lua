@@ -8,14 +8,14 @@ return {
         {
           event = "User",
           pattern = "AstroBufsUpdated",
-          desc = "Define tab width as 4 when a php or rust file is opened, otherwise set it as 2",
+          desc = "Define tab width as 4 when a php, python or rust file is opened, otherwise set it as 2",
           group = "autodefinetabwidth",
 
           callback = function()
             local filetype = vim.bo.filetype
             local tabwidth = 2
 
-            if filetype == "php" or filetype == "rust" then
+            if filetype == "php" or filetype == "rust" or filetype == "python" then
               tabwidth = 4
             end
 
