@@ -8,6 +8,7 @@ return {
         "volar"
       }
     },
+    ---@diagnostic disable: missing-fields
     config = {
       tailwindcss = {
         filetypes = { "typescriptreact", "javascriptreact", "vue", "astro" }
