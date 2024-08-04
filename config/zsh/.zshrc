@@ -12,9 +12,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# historic search with prefix
+bindkey '^k' history-search-backward
+bindkey '^j' history-search-forward
 
 ### OPTIONS
+setopt SHARE_HISTORY      # history is shared between zsh sessions
+setopt HIST_SAVE_NO_DUPS  # saves no duplicate commands to history
 setopt HIST_IGNORE_DUPS   # ignores immediate duplicate commands
+setopt HIST_IGNORE_SPACE  # ignores commands with spaces before, useful for sensitive commands
 setopt CORRECT            # spelling correction
 
 
