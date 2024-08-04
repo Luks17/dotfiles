@@ -12,9 +12,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # historic search with prefix
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
+
 
 ### OPTIONS
 setopt SHARE_HISTORY      # history is shared between zsh sessions
@@ -39,8 +41,14 @@ zstyle ':completion:*' menu select
 # SHIFT+TAB for going back on the menu list
 bindkey "^[[Z" reverse-menu-complete
 
+
+## zoxide init and cd alias
+eval "$(zoxide init --cmd cd zsh)"
+
+
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
 
 ### SYNTHAX HIGHTLIGHTING PLUGIN - Has to be in the last line
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
