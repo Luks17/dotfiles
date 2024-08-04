@@ -1,6 +1,5 @@
 
 ### I/O pre-instant prompt
-pfetch
 if [[ "$(tty)" == "/dev/tty1" ]]; then
   Hyprland
 fi
@@ -29,7 +28,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 
 ### COMPLETION
-autoload -U compinit; compinit
+autoload -Uz compinit; compinit
 zstyle ':completion:*' menu select
 # SHIFT+TAB for going back on the menu list
 bindkey "^[[Z" reverse-menu-complete

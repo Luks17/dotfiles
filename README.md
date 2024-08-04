@@ -27,7 +27,7 @@ hyprland xdg-desktop-portal-hyprland aylurs-gtk-shell rofi-lbonn-wayland-git swa
 #### Terminal
 
 ```bash
-zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k kitty
+zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerlevel10k kitty
 ```
 
 #### Utilities
