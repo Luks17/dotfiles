@@ -14,6 +14,7 @@ import Verification from "widget/powermenu/Verification"
 import { forMonitors } from "lib/utils"
 import { setupQuickSettings } from "widget/quicksettings/QuickSettings"
 import { setupDateMenu } from "widget/datemenu/DateMenu"
+import "service/keyboardlayout"
 
 App.config({
     onConfigParsed: () => {
