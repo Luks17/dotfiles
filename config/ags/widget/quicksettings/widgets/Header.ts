@@ -1,7 +1,6 @@
 import icons from "lib/icons"
 import { uptime } from "lib/variables"
 import options from "options"
-import powermenu, { Action } from "service/powermenu"
 
 const battery = await Service.import("battery")
 const { image, size } = options.quicksettings.avatar
@@ -20,12 +19,6 @@ const Avatar = () => Widget.Box({
         background-image: url('${img}');
         background-size: cover;
     `),
-})
-
-const SysButton = (action: Action) => Widget.Button({
-    vpack: "center",
-    child: Widget.Icon(icons.powermenu[action]),
-    on_clicked: () => powermenu.action(action),
 })
 
 export const Header = () => Widget.Box(
@@ -58,6 +51,4 @@ export const Header = () => Widget.Box(
             App.openWindow("settings-dialog")
         },
     }),
-    SysButton("logout"),
-    SysButton("shutdown"),
 )
