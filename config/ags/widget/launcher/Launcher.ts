@@ -2,21 +2,16 @@ import { type Binding } from "lib/utils"
 import PopupWindow, { Padding } from "widget/PopupWindow"
 import icons from "lib/icons"
 import options from "options"
-import nix from "service/nix"
 import * as AppLauncher from "./AppLauncher"
-import * as NixRun from "./NixRun"
 import * as ShRun from "./ShRun"
 
 const { width, margin } = options.launcher
-const isnix = nix.available
 
 function Launcher() {
     const favs = AppLauncher.Favorites()
     const applauncher = AppLauncher.Launcher()
     const sh = ShRun.ShRun()
     const shicon = ShRun.Icon()
-    const nix = NixRun.NixRun()
-    const nixload = NixRun.Spinner()
 
     function HelpButton(cmd: string, desc: string | Binding<string>) {
         return Widget.Box(
@@ -51,9 +46,6 @@ function Launcher() {
         child: Widget.Box(
             { vertical: true },
             HelpButton("sh", "run a binary"),
-            isnix ? HelpButton("nx", options.launcher.nix.pkgs.bind().as(pkg =>
-                `run a nix package from ${pkg}`,
-            )) : Widget.Box(),
         ),
     })
 
@@ -61,9 +53,7 @@ function Launcher() {
         hexpand: true,
         primary_icon_name: icons.ui.search,
         on_accept: ({ text }) => {
-            if (text?.startsWith(":nx"))
-                nix.run(text.substring(3))
-            else if (text?.startsWith(":sh"))
+            if (text?.startsWith(":sh"))
                 sh.run(text.substring(3))
             else
                 applauncher.launchFirst()
@@ -75,11 +65,6 @@ function Launcher() {
             text ||= ""
             favs.reveal_child = text === ""
             help.reveal_child = text.split(" ").length === 1 && text?.startsWith(":")
-
-            if (text?.startsWith(":nx"))
-                nix.filter(text.substring(3))
-            else
-                nix.filter("")
 
             if (text?.startsWith(":sh"))
                 sh.filter(text.substring(3))
@@ -113,11 +98,10 @@ function Launcher() {
                 focus()
         }),
         children: [
-            Widget.Box([entry, nixload, shicon]),
+            Widget.Box([entry, shicon]),
             favs,
             help,
             applauncher,
-            nix,
             sh,
         ],
     })
