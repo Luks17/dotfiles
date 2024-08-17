@@ -14,6 +14,7 @@ export const NetworkToggle = () => ArrowToggleButton({
         wifi.enabled = true
         wifi.scan()
     },
+    maxWidthChars: 25
 })
 
 export const WifiSelection = () => Menu({

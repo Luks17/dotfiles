@@ -44,6 +44,7 @@ type ArrowToggleButtonProps = {
     deactivate: () => void
     activateOnArrow?: boolean
     connection: [GObject.Object, () => boolean]
+    maxWidthChars?: number
 }
 export const ArrowToggleButton = ({
     name,
@@ -53,6 +54,7 @@ export const ArrowToggleButton = ({
     deactivate,
     activateOnArrow = true,
     connection: [service, condition],
+    maxWidthChars = 10
 }: ArrowToggleButtonProps) => Widget.Box({
     class_name: "toggle-button",
     setup: self => self.hook(service, () => {
@@ -69,7 +71,7 @@ export const ArrowToggleButton = ({
                     }),
                     Widget.Label({
                         class_name: "label",
-                        max_width_chars: 10,
+                        max_width_chars: maxWidthChars,
                         truncate: "end",
                         label,
                     }),
