@@ -31,7 +31,7 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerl
 #### Utilities
 
 ```bash
-neovim clipse matugen esbuild dart-sass pamixer grimblast-git gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
+neovim clipse matugen esbuild dart-sass pamixer wayshot slurp grim gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
 ```
 
 #### Optional (but nice to have)
