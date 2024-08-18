@@ -1,8 +1,0 @@
-swaylock \
-  -i /home/${USER}/.config/hypr/wallpapers/pixel.jpg \
-  --clock \
-  --fade-in 0.5 \
-  --ring-color c6a0f6 \
-  --key-hl-color b7bdf8 \
-  --inside-color 24273a \
-  --text-color cad3f5

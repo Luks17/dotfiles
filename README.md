@@ -21,29 +21,27 @@ python rustup
 #### Desktop
 
 ```bash
-hyprland xdg-desktop-portal-hyprland aylurs-gtk-shell rofi-lbonn-wayland-git swaylock-effects libnotify swww swayidle firefox ttf-ubuntu-mono-nerd
+hyprland xdg-desktop-portal-hyprland aylurs-gtk-shell swaylock-effects libnotify swww swayidle floorp ttf-ubuntu-mono-nerd
 ```
 
 #### Terminal
 
 ```bash
-zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerlevel10k fzf zoxide bat kitty
+zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerlevel10k fzf zoxide bat kitty fd
 ```
 
 #### Utilities
 
 ```bash
-cliphist neovim pamixer grimblast-git gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
+neovim clipse matugen esbuild dart-sass pamixer grimblast-git gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
 ```
 
 #### Optional (but nice to have)
 
 ```bash
-flatpak flatseal nwg-look firewalld rnote kdenlive qbittorrent gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus Catppuccin-purple sassc inotify-tools
+flatpak flatseal nwg-look firewalld rnote kdenlive qbittorrent accountsservice gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus inotify-tools
 ```
 
 ## Credits
 
-[flick0](https://github.com/flick0/dotfiles) for the Hyprland configs that I used as base
-
-[adi1090x](https://github.com/adi1090x/rofi) for the Rofi configs
+[Aylur](https://github.com/Aylur/dotfiles) for it's amazing dotfiles and for making ags
