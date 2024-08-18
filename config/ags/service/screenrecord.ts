@@ -13,7 +13,7 @@ class Recorder extends Service {
     }
 
     #recordings = Utils.HOME + "/Videos/Screencasting"
-    #screenshots = Utils.HOME + "/Pictures"
+    #screenshots = Utils.HOME + "/Pictures/Screenshots"
     #file = ""
     #interval = 0
 
@@ -62,24 +62,19 @@ class Recorder extends Service {
     }
 
     async screenshot(full = false) {
-        if (!dependencies("slurp", "wayshot"))
+        if (!dependencies("slurp", "grimblast"))
             return
 
         const file = `${this.#screenshots}/${now()}.png`
         Utils.ensureDirectory(this.#screenshots)
 
         if (full) {
-            await sh(`wayshot -f ${file}`)
+            await sh(`grimblast copysave ${file}`)
         }
         else {
-            const size = await sh("slurp")
-            if (!size)
-                return
-
-            await sh(`wayshot -f ${file} -s "${size}"`)
+            const output = await sh(`grimblast copysave area ${file}`)
+            if(output == "") return
         }
-
-        bash(`wl-copy < ${file}`)
 
         Utils.notify({
             image: file,
