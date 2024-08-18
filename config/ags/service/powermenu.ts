@@ -1,8 +1,9 @@
+import { bash } from "lib/utils"
 import options from "options"
 
-const { sleep, reboot, logout, shutdown } = options.powermenu
+const { sleep, reboot, logout, shutdown, lock } = options.powermenu
 
-export type Action = "sleep" | "reboot" | "logout" | "shutdown"
+export type Action = "sleep" | "reboot" | "logout" | "shutdown" | "lock"
 
 class PowerMenu extends Service {
     static {
@@ -23,6 +24,7 @@ class PowerMenu extends Service {
             reboot: [reboot.value, "Reboot"],
             logout: [logout.value, "Log Out"],
             shutdown: [shutdown.value, "Shutdown"],
+            lock: [lock.value, "Lock"]
         }[action]
 
         this.notify("cmd")
@@ -38,7 +40,7 @@ class PowerMenu extends Service {
 
     readonly exec = () => {
         App.closeWindow("verification")
-        Utils.exec(this.#cmd)
+        bash(this.#cmd)
     }
 }
 

@@ -3,6 +3,15 @@ import { distro } from "lib/variables"
 import { icon } from "lib/utils"
 import icons from "lib/icons"
 
+const swaylock = `swaylock \
+    -i /home/${Utils.USER}/.config/hypr/wallpapers/pixel.jpg \
+    --clock \
+    --fade-in 0.5 \
+    --ring-color c6a0f6 \
+    --key-hl-color b7bdf8 \
+    --inside-color 24273a \
+    --text-color cad3f5`;
+
 const options = mkOptions(OPTIONS, {
     autotheme: opt(false),
 
@@ -173,17 +182,18 @@ const options = mkOptions(OPTIONS, {
     },
 
     powermenu: {
-        sleep: opt("systemctl suspend"),
+        sleep: opt(`${swaylock} & sleep 1s && systemctl suspend`),
         reboot: opt("systemctl reboot"),
         logout: opt("pkill Hyprland"),
         shutdown: opt("shutdown now"),
+        lock: opt(swaylock),
         layout: opt<"line" | "box">("line"),
         labels: opt(true),
     },
 
     quicksettings: {
         avatar: {
-            image: opt(`/var/lib/AccountsService/icons/${Utils.USER}`),
+            image: opt(`/var/lib/AccountsService/icons/${Utils.USER}.png`),
             size: opt(70),
         },
         width: opt(380),
