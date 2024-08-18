@@ -14,7 +14,7 @@ const options = mkOptions(OPTIONS, {
     theme: {
         dark: {
             primary: {
-                bg: opt("#51a4e7"),
+                bg: opt("#c6a0f6"),
                 fg: opt("#141414"),
             },
             error: {
@@ -82,6 +82,7 @@ const options = mkOptions(OPTIONS, {
                 "media",
                 "expander",
                 "systray",
+                "clipboard",
                 "colorpicker",
                 "screenrecord",
                 "system",
@@ -232,7 +233,7 @@ const options = mkOptions(OPTIONS, {
 
     hyprland: {
         gaps: opt(2.4),
-        inactiveBorder: opt("#282828"),
+        inactiveBorder: opt("#45475a"),
         gapsWhenOnly: opt(true),
     },
 })

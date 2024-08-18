@@ -1,8 +1,5 @@
 #!/usr/bin/bash
 
-# ags
-ags &
-
 # variables
 config=$HOME/.config/hypr
 scripts=$config/scripts
@@ -16,11 +13,14 @@ gammastep -O 5500 &
 # initial keyboard layout
 notify-send "Keyboard Layout" English &
 
-# wallpaper
-$scripts/init_wall $config/wallpapers/space.jpg &
+# init wallpaper
+swww init
 
 # clipboard history
-wl-paste --watch cliphist store &
+clipse -listen
 
 # polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# ags
+ags &

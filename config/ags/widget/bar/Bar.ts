@@ -11,6 +11,7 @@ import Workspaces from "./buttons/Workspaces"
 import ScreenRecord from "./buttons/ScreenRecord"
 import Messages from "./buttons/Messages"
 import options from "options"
+import Clipboard from "./buttons/Clipboard"
 
 const { start, center, end } = options.bar.layout
 const { transparent, position } = options.bar
@@ -30,6 +31,7 @@ const widget = {
     workspaces: Workspaces,
     screenrecord: ScreenRecord,
     messages: Messages,
+    clipboard: Clipboard,
     expander: () => Widget.Box({ expand: true }),
 }
 
