@@ -45,14 +45,14 @@ const options = mkOptions(OPTIONS, {
         scheme: opt<"dark" | "light">("dark"),
         widget: { opacity: opt(94) },
         border: {
-            width: opt(1),
+            width: opt(4),
             opacity: opt(96),
         },
 
         shadows: opt(true),
         padding: opt(7),
         spacing: opt(12),
-        radius: opt(11),
+        radius: opt(7),
     },
 
     transition: opt(200),
@@ -157,11 +157,9 @@ const options = mkOptions(OPTIONS, {
             max: opt(6),
             favorites: opt([
                 [
-                    "firefox",
-                    "wezterm",
+                    "one.ablaze.floorp",
+                    "kitty",
                     "org.gnome.Nautilus",
-                    "org.gnome.Calendar",
-                    "spotify",
                 ],
             ]),
         },
@@ -235,7 +233,7 @@ const options = mkOptions(OPTIONS, {
     hyprland: {
         gaps: opt(2.4),
         inactiveBorder: opt("#282828"),
-        gapsWhenOnly: opt(false),
+        gapsWhenOnly: opt(true),
     },
 })
 
