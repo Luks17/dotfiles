@@ -8,21 +8,23 @@ return {
         {
           event = "User",
           pattern = "AstroBufsUpdated",
-          desc = "Define tab width as 4 when a php, python or rust file is opened, otherwise set it as 2",
+          desc = "Define tab width as 4 when a php, python, make or rust file is opened, otherwise set it as 2",
           group = "autodefinetabwidth",
 
           callback = function()
             local filetype = vim.bo.filetype
-            local tabwidth = 2
+            local tabwidth = 4
+            local expandtab = false;
 
-            if filetype == "php" or filetype == "rust" or filetype == "python" then
-              tabwidth = 4
+            if filetype == "lua" then
+				      tabwidth = 2;
+				      expandtab = true;
             end
 
             vim.bo.tabstop = tabwidth
             vim.bo.shiftwidth = tabwidth
             vim.bo.softtabstop = tabwidth
-            vim.bo.expandtab = true
+            vim.bo.expandtab = expandtab
           end
         }
       }

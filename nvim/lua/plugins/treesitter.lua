@@ -13,7 +13,8 @@ return {
       "php",
       "markdown",
       "python",
-      "vue"
+      "vue",
+      "sql"
     })
   end,
 }

@@ -9,4 +9,5 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.go" },
 }
