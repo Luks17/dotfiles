@@ -8,7 +8,8 @@ return {
         "tailwindcss",
         "astro",
         "phpactor",
-        "pyright"
+        "pyright",
+        "sqls"
       })
     end,
   },
