@@ -8,7 +8,7 @@ return {
         {
           event = "User",
           pattern = "AstroBufsUpdated",
-          desc = "Define tab width as 4 when a php, python, make or rust file is opened, otherwise set it as 2",
+          desc = "Define tab width as 4, when file is lua set it as 2",
           group = "autodefinetabwidth",
 
           callback = function()

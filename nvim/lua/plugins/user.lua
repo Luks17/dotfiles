@@ -29,12 +29,6 @@ return {
     end,
   },
   {
-    "vuki656/package-info.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
-    event = "BufRead package.json",
-  },
-  {
     "folke/drop.nvim",
     event = "VeryLazy",
     config = function()

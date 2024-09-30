@@ -6,14 +6,9 @@ return {
       "lua",
       "astro",
       "bash",
-      "tsx",
-      "typescript",
-      "javascript",
-      "jsdoc",
       "php",
       "markdown",
       "python",
-      "vue",
       "sql"
     })
   end,

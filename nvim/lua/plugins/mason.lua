@@ -5,9 +5,7 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
-        "ts_ls",
         "tailwindcss",
-        "volar",
         "astro",
         "phpactor",
         "pyright"
@@ -18,7 +16,6 @@ return {
     "jay-babu/mason-null-ls.nvim",
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "biome",
         "black"
       })
     end,
