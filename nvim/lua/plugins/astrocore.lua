@@ -21,6 +21,10 @@ return {
 				      expandtab = true;
             end
 
+            if filetype == 'php' then
+              expandtab = true;
+            end
+
             vim.bo.tabstop = tabwidth
             vim.bo.shiftwidth = tabwidth
             vim.bo.softtabstop = tabwidth
