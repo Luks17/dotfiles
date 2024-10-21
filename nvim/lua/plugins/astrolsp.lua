@@ -3,6 +3,11 @@ return {
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
+    formatting = {
+      disabled = {
+        "volar"
+      }
+    },
     ---@diagnostic disable: missing-fields
     config = {
       tailwindcss = {
