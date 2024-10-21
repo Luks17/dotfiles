@@ -16,7 +16,7 @@ return {
             local tabwidth = 4
             local expandtab = false;
 
-            if filetype == "lua" then
+            if filetype == "lua" or filetype == "yaml" then
 				      tabwidth = 2;
 				      expandtab = true;
             end
