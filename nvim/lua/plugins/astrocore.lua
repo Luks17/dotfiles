@@ -8,7 +8,7 @@ return {
         {
           event = "User",
           pattern = "AstroBufsUpdated",
-          desc = "Define tab width as 4, when file is lua set it as 2",
+          desc = "Define tab width and expandtab",
           group = "autodefinetabwidth",
 
           callback = function()
@@ -21,7 +21,7 @@ return {
 				      expandtab = true;
             end
 
-            if filetype == 'php' then
+            if filetype == 'php' or filetype == 'typescriptreact' or filetype == 'vue' or filetype == 'typescript' or filetype == 'javascript' then
               expandtab = true;
             end
 

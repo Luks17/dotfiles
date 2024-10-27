@@ -10,4 +10,5 @@ return {
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
+  { import = "astrocommunity.completion.codeium-vim" },
 }
