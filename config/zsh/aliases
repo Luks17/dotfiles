@@ -1,3 +1,4 @@
+alias ssh-init="eval '$(ssh-agent -s)'"
 alias ssh-start-github="eval '$(ssh-agent -s)'; ssh-add ~/.ssh/github"
 
 alias vim="nvim"
