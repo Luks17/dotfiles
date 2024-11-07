@@ -4,6 +4,7 @@ return {
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.media.image-nvim" },
+  { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.rust" },
