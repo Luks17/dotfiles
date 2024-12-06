@@ -7,7 +7,6 @@ return {
         "lua_ls",
         "tailwindcss",
         "astro",
-        "phpactor",
         "pyright",
         "sqls"
       })

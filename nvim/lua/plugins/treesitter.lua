@@ -6,7 +6,6 @@ return {
       "lua",
       "astro",
       "bash",
-      "php",
       "markdown",
       "python",
       "sql"
