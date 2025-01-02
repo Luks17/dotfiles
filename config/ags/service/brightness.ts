@@ -34,8 +34,8 @@ class Brightness extends Service {
     }
 
     set screen(percent) {
-        if (percent < 0)
-            percent = 0
+        if (percent < 0.01)
+            percent = 0.01
 
         if (percent > 1)
             percent = 1
