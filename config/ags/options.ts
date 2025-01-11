@@ -167,7 +167,7 @@ const options = mkOptions(OPTIONS, {
             max: opt(6),
             favorites: opt([
                 [
-                    "one.ablaze.floorp",
+                    "io.github.zen_browser.zen",
                     "kitty",
                     "org.gnome.Nautilus",
                 ],
