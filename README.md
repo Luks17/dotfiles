@@ -25,13 +25,13 @@ hyprland xdg-desktop-portal-hyprland agsv1 swaylock-effects libnotify swww swayi
 #### Terminal
 
 ```bash
-zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerlevel10k fzf zoxide bat kitty fd
+zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerlevel10k neovim clipse tmux tmux-plugin-manager fzf zoxide bat kitty fd
 ```
 
 #### Utilities
 
 ```bash
-neovim clipse matugen imagemagick esbuild dart-sass pamixer grimblast-git gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
+matugen imagemagick esbuild dart-sass pamixer grimblast-git gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
 ```
 
 #### Optional (but nice to have)

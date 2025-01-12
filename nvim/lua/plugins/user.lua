@@ -106,12 +106,6 @@ return {
     },
   },
   {
-    "akinsho/toggleterm.nvim",
-    opts = {
-      direction = "float",
-    },
-  },
-  {
     "nanotee/sqls.nvim",
     lazy = true,
     dependencies = {
