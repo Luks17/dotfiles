@@ -33,9 +33,6 @@ return {
         }
       }
     },
-    diagnostics = {
-      virtual_text = false
-    },
     mappings = {
       -- first key is the mode
       n = {

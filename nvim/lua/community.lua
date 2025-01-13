@@ -1,7 +1,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
+  { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.media.image-nvim" },
   { import = "astrocommunity.search.nvim-spectre" },
