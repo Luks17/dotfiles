@@ -8,7 +8,7 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
   },
   {
     "projekt0n/github-nvim-theme",

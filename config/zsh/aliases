@@ -3,6 +3,6 @@ alias ssh-start-github="eval '$(ssh-agent -s)'; ssh-add ~/.ssh/github"
 
 alias vim="nvim"
 alias startw="Hyprland"
-alias zen="io.github.zen_browser.zen"
+alias zen="app.zen_browser.zen"
 alias ls="ls --color"
 alias fzfp="fzf --preview 'bat --style=numbers --color=always {}'"
