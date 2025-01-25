@@ -5,7 +5,7 @@ return {
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.media.image-nvim" },
   { import = "astrocommunity.search.nvim-spectre" },
-  { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.completion.supermaven-nvim" },
   { import = "astrocommunity.test.vim-test" },
   { import = "astrocommunity.pack.laravel" },
   { import = "astrocommunity.pack.cpp" },

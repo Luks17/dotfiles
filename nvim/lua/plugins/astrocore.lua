@@ -38,10 +38,6 @@ return {
       n = {
         -- second key is the lefthand side of the map
 
-        -- Navigate buffers
-        L = { function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
-        H = { function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
-
         -- Toggle Virtual Blame mapping, overriding Single Line Blame
         ["<Leader>gB"] = { "<cmd>BlameToggle virtual<cr>", desc = "Toggle Virtual Blame" },
       },
