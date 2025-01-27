@@ -23,17 +23,17 @@ const options = mkOptions(OPTIONS, {
     theme: {
         dark: {
             primary: {
-                bg: opt("#bd92f8"),
-                fg: opt("#141414"),
+                bg: opt("#ea9a97"),
+                fg: opt("#232136"),
             },
             error: {
-                bg: opt("#e55f86"),
-                fg: opt("#141414"),
+                bg: opt("#eb6f92"),
+                fg: opt("#232136"),
             },
-            bg: opt("#171717"),
-            fg: opt("#eeeeee"),
-            widget: opt("#eeeeee"),
-            border: opt("#eeeeee"),
+            bg: opt("#232136"),
+            fg: opt("#e0def4"),
+            widget: opt("#908caa"),
+            border: opt("#f4ede8"),
         },
         light: {
             primary: {
@@ -243,7 +243,7 @@ const options = mkOptions(OPTIONS, {
 
     hyprland: {
         gaps: opt(2.4),
-        inactiveBorder: opt("#45475a"),
+        inactiveBorder: opt("#44415a"),
         gapsWhenOnly: opt(true),
     },
 })
