@@ -46,6 +46,8 @@ matugen imagemagick esbuild dart-sass pamixer grimblast-git gammastep btop pfetc
 flatpak flatseal nwg-look firewalld rnote kdenlive qbittorrent accountsservice gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus inotify-tools
 ```
 
+[Rosé Pine GTK Theme](https://www.gnome-look.org/p/1810530/)
+
 ## Credits
 
 [Aylur](https://github.com/Aylur/dotfiles) for it's amazing dotfiles and for making ags
