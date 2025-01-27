@@ -6,14 +6,8 @@ return {
     event = "VeryLazy",
     main = "rainbow-delimiters.setup",
   },
-  {
-    "folke/tokyonight.nvim",
-    lazy = true,
-  },
-  {
-    "projekt0n/github-nvim-theme",
-    lazy = true
-  },
+  { "folke/tokyonight.nvim", lazy = true },
+  { "rose-pine/neovim", name = "rose-pine", lazy = true, opts = {} },
   {
     "hrsh7th/nvim-cmp",
     optional = true,

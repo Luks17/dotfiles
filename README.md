@@ -19,7 +19,13 @@ python rustup
 #### Desktop
 
 ```bash
-hyprland xdg-desktop-portal-hyprland agsv1 swaylock-effects libnotify swww swayidle zen-browser ttf-ubuntu-mono-nerd
+hyprland xdg-desktop-portal-hyprland agsv1 swaylock-effects libnotify swww swayidle zen-browser
+```
+
+#### Fonts
+
+```bash
+ttf-fira-code-nerd ttf-jetbrains-mono-nerd
 ```
 
 #### Terminal
