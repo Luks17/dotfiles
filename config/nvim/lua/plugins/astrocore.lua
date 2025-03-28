@@ -22,6 +22,15 @@ return {
 
         -- Toggle Virtual Blame mapping, overriding Single Line Blame
         ["<Leader>gB"] = { "<cmd>BlameToggle virtual<cr>", desc = "Toggle Virtual Blame" },
+
+        ---@diagnostic disable: missing-parameter
+        ["s"] = { function() require("hop").hint_words() end, desc = "Hop hint words" },
+        ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop hint lines" },
+      },
+      v = {
+        ---@diagnostic disable: missing-fields
+        ["s"] = { function() require("hop").hint_words { extend_visual = true } end, desc = "Hop hint words" },
+        ["<S-s>"] = { function() require("hop").hint_lines { extend_visual = true } end, desc = "Hop hint lines" },
       },
     },
 

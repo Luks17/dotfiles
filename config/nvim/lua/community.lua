@@ -6,10 +6,6 @@
 return {
   "AstroNvim/astrocommunity",
 
-  { import = "astrocommunity.completion.supermaven-nvim" },
-
-  { import = "astrocommunity.motion.hop-nvim" },
-
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.html-css" },
