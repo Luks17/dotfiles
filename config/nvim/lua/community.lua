@@ -17,8 +17,6 @@ return {
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.sql" },
 
-  { import = "astrocommunity.recipes.disable-tabline" },
-
   { import = "astrocommunity.search.nvim-spectre" },
 
   { import = "astrocommunity.test.vim-test" },
