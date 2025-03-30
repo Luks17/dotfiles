@@ -3,6 +3,8 @@ alias systeminfo="inxi -SPARM -GCDN -v1 -xGCRS"
 alias ssh-init="eval '$(ssh-agent -s)'"
 alias ssh-start-github="eval '$(ssh-agent -s)'; ssh-add ~/.ssh/github"
 
+alias eza="eza --octal-permissions --icons"
+
 alias vim="nvim"
 alias startw="Hyprland"
 alias zen="app.zen_browser.zen"
