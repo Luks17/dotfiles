@@ -1,7 +1,7 @@
-import { opt, mkOptions } from "lib/option"
-import { distro } from "lib/variables"
-import { icon } from "lib/utils"
-import icons from "lib/icons"
+import { opt, mkOptions } from "lib/option";
+import { distro } from "lib/variables";
+import { icon } from "lib/utils";
+import icons from "lib/icons";
 
 const swaylock = `swaylock \
     -i /home/${Utils.USER}/.config/hypr/wallpapers/pixel.jpg \
@@ -23,16 +23,16 @@ const options = mkOptions(OPTIONS, {
     theme: {
         dark: {
             primary: {
-                bg: opt("#ea9a97"),
+                bg: opt("#E46876"),
                 fg: opt("#232136"),
             },
             error: {
-                bg: opt("#eb6f92"),
+                bg: opt("#E82424"),
                 fg: opt("#232136"),
             },
             bg: opt("#232136"),
             fg: opt("#e0def4"),
-            widget: opt("#908caa"),
+            widget: opt("#938AA9"),
             border: opt("#f4ede8"),
         },
         light: {
@@ -84,9 +84,7 @@ const options = mkOptions(OPTIONS, {
                 "expander",
                 "messages",
             ]),
-            center: opt<Array<import("widget/bar/Bar").BarWidget>>([
-                "date",
-            ]),
+            center: opt<Array<import("widget/bar/Bar").BarWidget>>(["date"]),
             end: opt<Array<import("widget/bar/Bar").BarWidget>>([
                 "media",
                 "expander",
@@ -134,10 +132,7 @@ const options = mkOptions(OPTIONS, {
             action: opt(() => App.toggleWindow("datemenu")),
         },
         systray: {
-            ignore: opt([
-                "KDE Connect Indicator",
-                "spotify-client",
-            ]),
+            ignore: opt(["KDE Connect Indicator", "spotify-client"]),
         },
         media: {
             monochrome: opt(true),
@@ -165,13 +160,7 @@ const options = mkOptions(OPTIONS, {
         apps: {
             iconSize: opt(62),
             max: opt(6),
-            favorites: opt([
-                [
-                    "app.zen_browser.zen",
-                    "kitty",
-                    "org.gnome.Nautilus",
-                ],
-            ]),
+            favorites: opt([["app.zen_browser.zen", "kitty", "org.gnome.Nautilus"]]),
         },
     },
 
@@ -211,10 +200,12 @@ const options = mkOptions(OPTIONS, {
             interval: opt(60_000),
             unit: opt<"metric" | "imperial" | "standard">("metric"),
             key: opt<string>(
-                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.key || "",
+                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.key ||
+                "",
             ),
             cities: opt<Array<number>>(
-                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.cities || [],
+                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")
+                    ?.cities || [],
             ),
         },
     },
@@ -246,7 +237,7 @@ const options = mkOptions(OPTIONS, {
         inactiveBorder: opt("#44415a"),
         gapsWhenOnly: opt(true),
     },
-})
+});
 
-globalThis["options"] = options
-export default options
+globalThis["options"] = options;
+export default options;
