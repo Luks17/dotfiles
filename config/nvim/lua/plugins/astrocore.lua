@@ -23,6 +23,9 @@ return {
         -- Toggle Virtual Blame mapping, overriding Single Line Blame
         ["<Leader>gB"] = { "<cmd>BlameToggle virtual<cr>", desc = "Toggle Virtual Blame" },
 
+        -- Show NeoTree on the right side
+        ["<Leader>e"] = { "<cmd>Neotree filesystem toggle right<cr>", desc = "Toggle File Explorer" },
+
         ---@diagnostic disable: missing-parameter
         ["s"] = { function() require("hop").hint_words() end, desc = "Hop hint words" },
         ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop hint lines" },
