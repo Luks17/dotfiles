@@ -11,6 +11,7 @@ swayidle -C $scripts/swayidle &
 gammastep -O 5500 &
 
 # initial keyboard layout
+echo "English" > $scripts/store/current_kblayout
 notify-send "Keyboard Layout" English &
 
 # init wallpaper
@@ -22,5 +23,5 @@ clipse -listen
 # polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# ags
-agsv1 &
+# hyprpanel
+hyprpanel &

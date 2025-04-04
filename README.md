@@ -19,7 +19,7 @@ python rustup
 #### Desktop
 
 ```bash
-hyprland xdg-desktop-portal-hyprland agsv1 swaylock-effects libnotify swww swayidle zen-browser
+hyprland xdg-desktop-portal-hyprland hyprpanel walker swaylock-effects libnotify swww swayidle zen-browser
 ```
 
 #### Fonts
@@ -37,7 +37,7 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerl
 #### Utilities
 
 ```bash
-matugen imagemagick esbuild dart-sass pamixer grimblast-git gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
+matugen imagemagick esbuild dart-sass pamixer hyprshot gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
 ```
 
 #### Optional (but nice to have)
@@ -47,7 +47,3 @@ flatpak flatseal nwg-look firewalld rnote kdenlive qbittorrent accountsservice g
 ```
 
 [Rosé Pine GTK Theme](https://www.gnome-look.org/p/1810530/)
-
-## Credits
-
-[Aylur](https://github.com/Aylur/dotfiles) for it's amazing dotfiles and for making ags
