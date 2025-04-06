@@ -25,3 +25,6 @@ clipse -listen
 
 # hyprpanel
 hyprpanel &
+
+# walker service
+walker --gapplication-service &
