@@ -5,7 +5,7 @@ config=$HOME/.config/hypr
 scripts=$config/scripts
 
 # idle manager
-swayidle -C $scripts/swayidle &
+hypridle &
 
 # gammastep
 gammastep -O 5500 &
