@@ -7,8 +7,9 @@ scripts=$config/scripts
 # idle manager
 hypridle &
 
-# gammastep
-gammastep -O 5500 &
+# blue light filter
+hyprsunset &
+hyprctl hyprsunset temperature 5500
 
 # initial keyboard layout
 echo "English" > $scripts/store/current_kblayout

@@ -37,7 +37,7 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerl
 #### Utilities
 
 ```bash
-matugen imagemagick esbuild dart-sass pamixer hyprshot gammastep btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
+matugen imagemagick esbuild dart-sass pamixer hyprshot hyprsunset btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
 ```
 
 #### Optional (but nice to have)
