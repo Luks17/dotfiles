@@ -31,7 +31,7 @@ ttf-fira-code-nerd ttf-jetbrains-mono-nerd
 #### Terminal
 
 ```bash
-zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerlevel10k neovim clipse tmux tmux-plugin-manager fzf zoxide bat kitty fd eza
+zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerlevel10k neovim tmux tmux-plugin-manager fzf zoxide bat kitty fd eza
 ```
 
 #### Utilities

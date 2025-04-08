@@ -40,7 +40,7 @@ on_query_change = ""
 [list]
 dynamic_sub = true
 keyboard_scroll_style = "emacs"
-max_entries = 50
+max_entries = 100
 show_initial_entries = true
 single_click = true
 visibility_threshold = 20
@@ -131,7 +131,7 @@ name = "clipboard"
 avoid_line_breaks = true
 placeholder = "Clipboard"
 image_height = 300
-max_entries = 10
+max_entries = 100
 switcher_only = true
 
 [builtins.commands]
@@ -248,3 +248,39 @@ icon = "accessories-dictionary"
 placeholder = "Translation"
 switcher_only = true
 provider = "googlefree"
+
+[[plugins]]
+name = "wallpaper"
+placeholder = "Wallpapers"
+switcher_only = false
+refresh = true
+src = "node ~/.config/walker/scripts/wallpaper.mjs"
+parser = "kv"
+
+[[plugins]]
+name = "power"
+placeholder = "Power"
+switcher_only = true
+keep_sort = true
+recalculate_score = true
+show_icon_when_single = true
+
+[[plugins.entries]]
+label = "Shutdown"
+exec = "systemctl poweroff"
+icon = "system-shutdown"
+
+[[plugins.entries]]
+label = "Reboot"
+exec = "systemctl reboot"
+icon = "system-reboot"
+
+[[plugins.entries]]
+label = "Suspend"
+exec = "systemctl suspend"
+icon = "system-suspend"
+
+[[plugins.entries]]
+label = "Lock"
+exec = "playerctl --all-players pause & hyprlock"
+icon = "system-lock-screen"

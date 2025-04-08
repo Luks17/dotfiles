@@ -383,5 +383,6 @@
   "bar.customModules.hyprsunset.temperature": "5500k",
   "menus.power.sleep": "systemctl sleep",
   "bar.customModules.weather.unit": "metric",
-  "menus.clock.weather.key": "/home/luks/.config/hyprpanel/confidential/weather_key.json"
+  "menus.clock.weather.key": "/home/luks/.config/hyprpanel/confidential/weather_key.json",
+  "wallpaper.image": "/home/luks/.config/hypr/wallpapers/pixel-sky.jpg"
 }
