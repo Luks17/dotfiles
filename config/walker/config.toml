@@ -2,7 +2,7 @@ app_launch_prefix = ""
 terminal_title_flag = ""
 locale = ""
 close_when_open = false
-theme = "default"
+theme = "custom"
 monitor = ""
 hotreload_theme = false
 as_window = false
@@ -256,6 +256,7 @@ switcher_only = false
 refresh = true
 src = "node ~/.config/walker/scripts/wallpaper.mjs"
 parser = "kv"
+theme = "custom_wall"
 
 [[plugins]]
 name = "power"
