@@ -27,11 +27,6 @@ return {
         ---@diagnostic disable: missing-parameter
         ["s"] = { function() require("hop").hint_words() end, desc = "Hop hint words" },
         ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop hint lines" },
-
-        gd = function() require("snacks.picker").lsp_definitions() end,
-        gri = function() require("snacks.picker").lsp_implementations() end,
-        gy = function() require("snacks.picker").lsp_type_definitions() end,
-        gr = function() require("snacks.picker").lsp_references() end,
       },
       v = {
         ---@diagnostic disable: missing-fields
