@@ -384,7 +384,7 @@
   "menus.power.sleep": "systemctl sleep",
   "bar.customModules.weather.unit": "metric",
   "menus.clock.weather.key": "/home/luks/.config/hyprpanel/confidential/weather_key.json",
-  "wallpaper.image": "/home/luks/.config/hypr/wallpapers/pixel-sky.jpg",
+  "wallpaper.image": "/home/luks/.config/hypr/wallpapers/train.jpg",
   "bar.workspaces.show_numbered": true,
   "bar.workspaces.numbered_active_indicator": "highlight",
   "theme.bar.buttons.workspaces.numbered_active_highlight_padding": "0.5em",
