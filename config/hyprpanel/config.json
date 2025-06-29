@@ -390,5 +390,8 @@
   "theme.bar.buttons.workspaces.numbered_active_highlight_padding": "0.5em",
   "theme.bar.buttons.workspaces.numbered_active_highlight_border": "0.2em",
   "theme.bar.buttons.workspaces.numbered_inactive_padding": "0.5em",
-  "theme.bar.buttons.workspaces.pill.width": "4em"
+  "theme.bar.buttons.workspaces.pill.width": "4em",
+  "bar.customModules.storage.paths": [
+    "/"
+  ]
 }

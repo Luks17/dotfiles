@@ -15,7 +15,7 @@ echo "English" > $scripts/store/current_kblayout
 notify-send "Keyboard Layout" English &
 
 # init wallpaper
-swww init
+swww daemon &
 
 # polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -24,4 +24,4 @@ swww init
 hyprpanel &
 
 # walker service
-walker --gapplication-service &
+GSK_RENDERER=cairo walker --gapplication-service &

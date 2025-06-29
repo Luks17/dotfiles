@@ -48,20 +48,19 @@ return {
             local tabwidth = 4
             local expandtab = false
 
-            if filetype == "lua" or filetype == "yaml" then
-              tabwidth = 2
-              expandtab = true
-            end
-
             if
-              filetype == "php"
+              filetype == "lua"
+              or filetype == "yaml"
               or filetype == "typescriptreact"
               or filetype == "vue"
               or filetype == "typescript"
               or filetype == "javascript"
             then
+              tabwidth = 2
               expandtab = true
             end
+
+            if filetype == "php" then expandtab = true end
 
             vim.bo.tabstop = tabwidth
             vim.bo.shiftwidth = tabwidth
