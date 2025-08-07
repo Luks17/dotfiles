@@ -23,15 +23,6 @@ return {
 
         -- Show NeoTree on the right side
         ["<Leader>e"] = { "<cmd>Neotree filesystem toggle right<cr>", desc = "Toggle File Explorer" },
-
-        ---@diagnostic disable: missing-parameter
-        ["s"] = { function() require("hop").hint_words() end, desc = "Hop hint words" },
-        ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop hint lines" },
-      },
-      v = {
-        ---@diagnostic disable: missing-fields
-        ["s"] = { function() require("hop").hint_words { extend_visual = true } end, desc = "Hop hint words" },
-        ["<S-s>"] = { function() require("hop").hint_lines { extend_visual = true } end, desc = "Hop hint lines" },
       },
     },
 
