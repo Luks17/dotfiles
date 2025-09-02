@@ -46,6 +46,7 @@ return {
               or filetype == "vue"
               or filetype == "typescript"
               or filetype == "javascript"
+              or filetype == "elixir"
             then
               tabwidth = 2
               expandtab = true
