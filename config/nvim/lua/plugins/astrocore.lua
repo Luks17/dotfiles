@@ -18,9 +18,6 @@ return {
     mappings = {
       -- first key is the mode
       n = {
-        -- Toggle Virtual Blame mapping, overriding Single Line Blame
-        ["<Leader>gB"] = { "<cmd>BlameToggle virtual<cr>", desc = "Toggle Virtual Blame" },
-
         -- Show NeoTree on the right side
         ["<Leader>e"] = { "<cmd>Neotree filesystem toggle right<cr>", desc = "Toggle File Explorer" },
       },

@@ -5,6 +5,8 @@ return {
     ensure_installed = {
       "bash",
       "markdown",
+      "sql",
+      "dockerfile",
     },
   },
 }
