@@ -19,7 +19,7 @@ python rustup
 #### Desktop
 
 ```bash
-hyprland xdg-desktop-portal-hyprland hyprpanel walker libnotify swww zen-browser hypridle hyprlock
+hyprland xdg-desktop-portal-hyprland hyprpanel vicinae libnotify swww zen-browser hypridle hyprlock
 ```
 
 #### Fonts

@@ -23,5 +23,5 @@ swww daemon &
 # hyprpanel
 hyprpanel &
 
-# walker service
-GSK_RENDERER=cairo walker --gapplication-service &
+# vicinae
+vicinae server &

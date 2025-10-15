@@ -1,5 +1,7 @@
 alias systeminfo="inxi -SPARM -GCDN -v1 -xGCRS"
 
+alias start-docker="systemctl start docker.service"
+
 alias ssh-init="eval '$(ssh-agent -s)'"
 alias ssh-start-github="eval '$(ssh-agent -s)'; ssh-add ~/.ssh/github"
 
