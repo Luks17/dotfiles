@@ -44,6 +44,7 @@ return {
               or filetype == "typescript"
               or filetype == "javascript"
               or filetype == "elixir"
+              or filetype == "sql"
             then
               tabwidth = 2
               expandtab = true
