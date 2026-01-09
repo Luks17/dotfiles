@@ -1,0 +1,13 @@
+return {
+  "ibhagwan/fzf-lua",
+  dependencies = { "nvim-mini/mini.icons" },
+  opts = {},
+  config = function()
+      local fzf = require('fzf-lua')
+      MapSet('n', '<leader>ef', fzf.files, 'Find files')
+      MapSet('n', '<leader>eg', fzf.live_grep, 'Live grep')
+      MapSet('n', '<leader>er', fzf.oldfiles, 'Recent files')
+      MapSet('n', '<leader>eu', fzf.undotree, 'Undo tree')
+      MapSet('n', '<leader>bl', fzf.buffers, 'List buffers')
+  end,
+}

@@ -1,9 +1,13 @@
 return {
+    -- ┌─────────────────────────┐
+    -- │         General         │
+    -- └─────────────────────────┘
     {
         "nvim-mini/mini.files",
         version = false,
         config = function()
-            require("mini.files").setup({
+            local mini_files = require("mini.files")
+            mini_files.setup({
                 mappings = {
                     go_in = "<CR>",
                     go_in_plus = "L",
@@ -11,6 +15,7 @@ return {
                     go_out_plus = "H",
                 },
             })
+            MapSet('n', '<leader>ee', mini_files.open, "Open file explorer")
         end,
     },
     {
@@ -25,10 +30,10 @@ return {
         event = "VeryLazy",
         config = function()
             local leader_group_clues = {
-                -- { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
-                { mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit' },
-                -- { mode = 'n', keys = '<Leader>f', desc = '+Find' },
-                -- { mode = 'n', keys = '<Leader>g', desc = '+Git' },
+                { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
+                { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
+                { mode = 'n', keys = '<Leader>g', desc = '+Git' },
+                { mode = 'n', keys = '<Leader>gb', desc = '+Blame' },
                 -- { mode = 'n', keys = '<Leader>l', desc = '+Language' },
                 -- { mode = 'n', keys = '<Leader>m', desc = '+Map' },
                 -- { mode = 'n', keys = '<Leader>o', desc = '+Other' },
@@ -39,17 +44,17 @@ return {
                 -- { mode = 'x', keys = '<Leader>l', desc = '+Language' },
             }
 
-            local MiniClue = require("mini.clue")
-            MiniClue.setup({
+            local mini_clue = require("mini.clue")
+            mini_clue.setup({
                 clues = {
                     leader_group_clues,
-                    MiniClue.gen_clues.builtin_completion(),
-                    MiniClue.gen_clues.g(),
-                    MiniClue.gen_clues.marks(),
-                    MiniClue.gen_clues.registers(),
-                    MiniClue.gen_clues.square_brackets(),
-                    MiniClue.gen_clues.windows({ submode_resize = true }),
-                    MiniClue.gen_clues.z(),
+                    mini_clue.gen_clues.builtin_completion(),
+                    mini_clue.gen_clues.g(),
+                    mini_clue.gen_clues.marks(),
+                    mini_clue.gen_clues.registers(),
+                    mini_clue.gen_clues.square_brackets(),
+                    mini_clue.gen_clues.windows({ submode_resize = true }),
+                    mini_clue.gen_clues.z(),
                 },
                 triggers = {
                     { mode = { "n", "x" }, keys = "<Leader>" },
@@ -88,21 +93,34 @@ return {
         config = function() require("mini.diff").setup() end,
     },
     {
-        'nvim-mini/mini-git',
+        'nvim-mini/mini.bufremove',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.git").setup() end,
+        event = 'VeryLazy',
+        config = function()
+            local mini_bufremove = require('mini.bufremove')
+            mini_bufremove.setup()
+
+            MapSet('n', '<leader>bc', mini_bufremove.delete, 'Close current buffer')
+        end,
     },
-    {
-        "nvim-mini/mini.sessions",
-        version = false,
-        config = function() require("mini.sessions").setup() end,
-    },
+    -- ┌─────────────────────────┐
+    -- │         Editing         │
+    -- └─────────────────────────┘
     {
         "nvim-mini/mini.ai",
         version = false,
         event = "VeryLazy",
-        config = function() require("mini.ai").setup() end,
+        dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
+        config = function()
+            local mini_ai = require("mini.ai")
+            mini_ai.setup({
+                custom_textobjects = {
+                    F = mini_ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
+                },
+                search_method = 'cover_or_next',
+                n_lines = 200,
+            })
+        end,
     },
     {
         "nvim-mini/mini.surround",
@@ -132,7 +150,11 @@ return {
         "nvim-mini/mini.trailspace",
         version = false,
         event = "VeryLazy",
-        config = function() require("mini.trailspace").setup() end,
+        config = function()
+            local mini_trailspace = require('mini.trailspace')
+            mini_trailspace.setup()
+            MapSet('n', '<leader>t', mini_trailspace.trim, "Trim all trailspace on file")
+        end,
     },
     {
         "nvim-mini/mini.jump",
@@ -140,6 +162,23 @@ return {
         event = "VeryLazy",
         config = function() require("mini.jump").setup() end,
     },
+    {
+        "nvim-mini/mini.splitjoin",
+        version = false,
+        event = "VeryLazy",
+        config = function()
+            local mini_splitjoin = require("mini.splitjoin")
+            mini_splitjoin.setup({
+                mappings = { toggle = "" }, -- Disable default bindings
+            })
+
+            MapSet({'n', 'x'}, 'sj', mini_splitjoin.join, "Join arguments")
+            MapSet({ 'n', 'x' }, 'sk', mini_splitjoin.split, "Split arguments")
+        end,
+    },
+    -- ┌─────────────────────────┐
+    -- │            UI           │
+    -- └─────────────────────────┘
     {
         "nvim-mini/mini.starter",
         version = false,
@@ -175,14 +214,26 @@ return {
         version = false,
         event = "VeryLazy",
         config = function()
-            local MiniHipatterns = require("mini.hipatterns")
-            MiniHipatterns.setup({
+            local mini_hipatterns = require("mini.hipatterns")
+            mini_hipatterns.setup({
                 highlighters = {
                     fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
                     hack  = { pattern = "%f[%w]()HACK()%f[%W]",  group = "MiniHipatternsHack"  },
                     todo  = { pattern = "%f[%w]()TODO()%f[%W]",  group = "MiniHipatternsTodo"  },
                     note  = { pattern = "%f[%w]()NOTE()%f[%W]",  group = "MiniHipatternsNote"  },
-                    hex_color = MiniHipatterns.gen_highlighter.hex_color(),
+                    hex_color = mini_hipatterns.gen_highlighter.hex_color(),
+                },
+            })
+        end,
+    },
+    {
+        'nvim-mini/mini.cmdline',
+        version = false,
+        event = 'VeryLazy',
+        config = function()
+            require('mini.cmdline').setup({
+                autocomplete = {
+                    delay = 2000,
                 },
             })
         end,
