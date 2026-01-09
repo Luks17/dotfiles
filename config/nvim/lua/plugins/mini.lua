@@ -3,31 +3,32 @@ return {
     -- │         General         │
     -- └─────────────────────────┘
     {
-        "nvim-mini/mini.files",
+        'nvim-mini/mini.files',
         version = false,
+        event = 'VeryLazy',
         config = function()
-            local mini_files = require("mini.files")
+            local mini_files = require('mini.files')
             mini_files.setup({
                 mappings = {
-                    go_in = "<CR>",
-                    go_in_plus = "L",
-                    go_out = "<BS>",
-                    go_out_plus = "H",
+                    go_in = '<CR>',
+                    go_in_plus = 'L',
+                    go_out = '<BS>',
+                    go_out_plus = 'H',
                 },
             })
-            MapSet('n', '<leader>ee', mini_files.open, "Open file explorer")
+            MapSet('n', '<leader>ee', mini_files.open, 'Open file explorer')
         end,
     },
     {
-        "nvim-mini/mini.fuzzy",
+        'nvim-mini/mini.fuzzy',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.fuzzy").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.fuzzy').setup() end,
     },
     {
-        "nvim-mini/mini.clue",
+        'nvim-mini/mini.clue',
         version = false,
-        event = "VeryLazy",
+        event = 'VeryLazy',
         config = function()
             local leader_group_clues = {
                 { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
@@ -44,7 +45,7 @@ return {
                 -- { mode = 'x', keys = '<Leader>l', desc = '+Language' },
             }
 
-            local mini_clue = require("mini.clue")
+            local mini_clue = require('mini.clue')
             mini_clue.setup({
                 clues = {
                     leader_group_clues,
@@ -57,40 +58,45 @@ return {
                     mini_clue.gen_clues.z(),
                 },
                 triggers = {
-                    { mode = { "n", "x" }, keys = "<Leader>" },
+                    { mode = { 'n', 'x' }, keys = '<Leader>' },
                     -- { mode = 'n', keys = '\\' }, -- mini.basics
-                    { mode = { "n", "x" }, keys = "[" },
-                    { mode = { "n", "x" }, keys = "]" },
-                    { mode = "i", keys = "<C-x>" },
-                    { mode = { "n", "x" }, keys = "g" },
-                    { mode = { "n", "x" }, keys = "'" },
-                    { mode = { "n", "x" }, keys = "`" },
-                    { mode = { "n", "x" }, keys = '"' },
-                    { mode = { "i", "c" }, keys = "<C-r>" },
-                    { mode = "n", keys = "<C-w>" },
-                    { mode = { "n", "x" }, keys = "s" },
-                    { mode = { "n", "x" }, keys = "z" },
+                    { mode = { 'n', 'x' }, keys = '[' },
+                    { mode = { 'n', 'x' }, keys = ']' },
+                    { mode = 'i', keys = '<C-x>' },
+                    { mode = { 'n', 'x' }, keys = 'g' },
+                    { mode = { 'n', 'x' }, keys = "'" },
+                    { mode = { 'n', 'x' }, keys = '`' },
+                    { mode = { 'n', 'x' }, keys = '"' },
+                    { mode = { 'i', 'c' }, keys = '<C-r>' },
+                    { mode = 'n', keys = '<C-w>' },
+                    { mode = { 'n', 'x' }, keys = 's' },
+                    { mode = { 'n', 'x' }, keys = 'z' },
                 },
                 window = {
-                    config = { width = 70, anchor = "SE", row = "auto", col = "auto" },
+                    config = {
+                        width = 70,
+                        anchor = 'SE',
+                        row = 'auto',
+                        col = 'auto',
+                    },
                     delay = 500,
-                    scroll_up = "<C-k>",
-                    scroll_down = "<C-j>",
+                    scroll_up = '<C-k>',
+                    scroll_down = '<C-j>',
                 },
             })
         end,
     },
     {
-        "nvim-mini/mini.notify",
+        'nvim-mini/mini.notify',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.notify").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.notify').setup() end,
     },
     {
-        "nvim-mini/mini.diff",
+        'nvim-mini/mini.diff',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.diff").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.diff').setup() end,
     },
     {
         'nvim-mini/mini.bufremove',
@@ -107,15 +113,21 @@ return {
     -- │         Editing         │
     -- └─────────────────────────┘
     {
-        "nvim-mini/mini.ai",
+        'nvim-mini/mini.ai',
         version = false,
-        event = "VeryLazy",
-        dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
+        event = 'VeryLazy',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            branch = 'main',
+        },
         config = function()
-            local mini_ai = require("mini.ai")
+            local mini_ai = require('mini.ai')
             mini_ai.setup({
                 custom_textobjects = {
-                    F = mini_ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
+                    F = mini_ai.gen_spec.treesitter({
+                        a = '@function.outer',
+                        i = '@function.inner',
+                    }),
                 },
                 search_method = 'cover_or_next',
                 n_lines = 200,
@@ -123,104 +135,121 @@ return {
         end,
     },
     {
-        "nvim-mini/mini.surround",
+        'nvim-mini/mini.surround',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.surround").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.surround').setup() end,
     },
     {
-        "nvim-mini/mini.comment",
+        'nvim-mini/mini.comment',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.comment").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.comment').setup() end,
     },
     {
-        "nvim-mini/mini.pairs",
+        'nvim-mini/mini.pairs',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.pairs").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.pairs').setup() end,
     },
     {
-        "nvim-mini/mini.bracketed",
+        'nvim-mini/mini.bracketed',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.bracketed").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.bracketed').setup() end,
     },
     {
-        "nvim-mini/mini.trailspace",
+        'nvim-mini/mini.trailspace',
         version = false,
-        event = "VeryLazy",
+        event = 'VeryLazy',
         config = function()
             local mini_trailspace = require('mini.trailspace')
             mini_trailspace.setup()
-            MapSet('n', '<leader>t', mini_trailspace.trim, "Trim all trailspace on file")
+            MapSet(
+                'n',
+                '<leader>t',
+                mini_trailspace.trim,
+                'Trim all trailspace on file'
+            )
         end,
     },
     {
-        "nvim-mini/mini.jump",
+        'nvim-mini/mini.jump',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.jump").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.jump').setup() end,
     },
     {
-        "nvim-mini/mini.splitjoin",
+        'nvim-mini/mini.splitjoin',
         version = false,
-        event = "VeryLazy",
+        event = 'VeryLazy',
         config = function()
-            local mini_splitjoin = require("mini.splitjoin")
+            local mini_splitjoin = require('mini.splitjoin')
             mini_splitjoin.setup({
-                mappings = { toggle = "" }, -- Disable default bindings
+                mappings = { toggle = '' }, -- Disable default bindings
             })
 
-            MapSet({'n', 'x'}, 'sj', mini_splitjoin.join, "Join arguments")
-            MapSet({ 'n', 'x' }, 'sk', mini_splitjoin.split, "Split arguments")
+            MapSet({ 'n', 'x' }, 'sj', mini_splitjoin.join, 'Join arguments')
+            MapSet({ 'n', 'x' }, 'sk', mini_splitjoin.split, 'Split arguments')
         end,
     },
     -- ┌─────────────────────────┐
     -- │            UI           │
     -- └─────────────────────────┘
     {
-        "nvim-mini/mini.starter",
+        'nvim-mini/mini.starter',
         version = false,
         lazy = false,
-        config = function() require("mini.starter").setup() end,
+        config = function() require('mini.starter').setup() end,
     },
     {
-        "nvim-mini/mini.tabline",
+        'nvim-mini/mini.tabline',
         version = false,
         lazy = false,
-        config = function() require("mini.tabline").setup() end,
+        config = function() require('mini.tabline').setup() end,
     },
     {
-        "nvim-mini/mini.statusline",
+        'nvim-mini/mini.statusline',
         version = false,
         lazy = false,
-        config = function() require("mini.statusline").setup() end,
+        config = function() require('mini.statusline').setup() end,
     },
     {
-        "nvim-mini/mini.icons",
+        'nvim-mini/mini.icons',
         version = false,
         lazy = false,
-        config = function() require("mini.icons").setup() end,
+        config = function() require('mini.icons').setup() end,
     },
     {
-        "nvim-mini/mini.cursorword",
+        'nvim-mini/mini.cursorword',
         version = false,
-        event = "VeryLazy",
-        config = function() require("mini.cursorword").setup() end,
+        event = 'VeryLazy',
+        config = function() require('mini.cursorword').setup() end,
     },
     {
-        "nvim-mini/mini.hipatterns",
+        'nvim-mini/mini.hipatterns',
         version = false,
-        event = "VeryLazy",
+        event = 'VeryLazy',
         config = function()
-            local mini_hipatterns = require("mini.hipatterns")
+            local mini_hipatterns = require('mini.hipatterns')
             mini_hipatterns.setup({
                 highlighters = {
-                    fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-                    hack  = { pattern = "%f[%w]()HACK()%f[%W]",  group = "MiniHipatternsHack"  },
-                    todo  = { pattern = "%f[%w]()TODO()%f[%W]",  group = "MiniHipatternsTodo"  },
-                    note  = { pattern = "%f[%w]()NOTE()%f[%W]",  group = "MiniHipatternsNote"  },
+                    fixme = {
+                        pattern = '%f[%w]()FIXME()%f[%W]',
+                        group = 'MiniHipatternsFixme',
+                    },
+                    hack = {
+                        pattern = '%f[%w]()HACK()%f[%W]',
+                        group = 'MiniHipatternsHack',
+                    },
+                    todo = {
+                        pattern = '%f[%w]()TODO()%f[%W]',
+                        group = 'MiniHipatternsTodo',
+                    },
+                    note = {
+                        pattern = '%f[%w]()NOTE()%f[%W]',
+                        group = 'MiniHipatternsNote',
+                    },
                     hex_color = mini_hipatterns.gen_highlighter.hex_color(),
                 },
             })

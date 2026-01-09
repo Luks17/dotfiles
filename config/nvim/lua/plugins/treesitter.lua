@@ -49,9 +49,7 @@ return {
 
             vim.api.nvim_create_autocmd('FileType', {
                 pattern = parsers,
-                callback = function()
-                    vim.treesitter.start()
-                end,
+                callback = function() vim.treesitter.start() end,
             })
         end,
     },
@@ -60,9 +58,7 @@ return {
         branch = 'main',
         version = false,
         event = 'VeryLazy',
-        dependencies = { "nvim-treesitter/nvim-treesitter", branch = "main" },
-        init = function()
-            vim.g.no_plugin_maps = true
-        end,
-    }
+        dependencies = { 'nvim-treesitter/nvim-treesitter', branch = 'main' },
+        init = function() vim.g.no_plugin_maps = true end,
+    },
 }

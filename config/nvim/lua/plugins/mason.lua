@@ -1,0 +1,35 @@
+return {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+        {
+            'mason-org/mason.nvim',
+            opts = {},
+        },
+        {
+            'mason-org/mason-lspconfig.nvim',
+            opts = {},
+        },
+    },
+    config = function()
+        require('mason-tool-installer').setup({
+            ensure_installed = {
+                -- lua
+                'lua_ls',
+                'stylua',
+
+                -- golang
+                'gopls',
+                'golangci-lint-langserver',
+                'gofumpt',
+
+                -- python
+                'pyright',
+                'isort',
+                'black',
+            },
+        })
+
+        vim.api.nvim_command('MasonToolsInstall')
+    end,
+}
