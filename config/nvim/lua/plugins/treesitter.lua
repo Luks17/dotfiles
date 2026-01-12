@@ -24,6 +24,7 @@ return {
                 'html',
                 'css',
                 'scss',
+                'jsdoc',
 
                 -- Langs
                 'lua',

@@ -27,6 +27,19 @@ return {
                 'pyright',
                 'isort',
                 'black',
+
+                -- html/css
+                'html-lsp',
+                'css-lsp',
+                'emmet-ls',
+
+                -- typescript/javascript
+                'vtsls',
+                'eslint',
+                'prettierd',
+
+                -- vue
+                'vue_ls',
             },
         })
 
