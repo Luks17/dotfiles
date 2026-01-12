@@ -5,6 +5,8 @@ return {
     event = 'VeryLazy',
     config = function()
         local fzf = require('fzf-lua')
+        fzf.register_ui_select()
+
         MapSet('n', '<leader>ef', fzf.files, 'Find files')
         MapSet('n', '<leader>eg', fzf.live_grep, 'Live grep')
         MapSet('n', '<leader>er', fzf.oldfiles, 'Recent files')

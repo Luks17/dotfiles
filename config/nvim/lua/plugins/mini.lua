@@ -31,15 +31,17 @@ return {
         event = 'VeryLazy',
         config = function()
             local leader_group_clues = {
+                { mode = 'n', keys = '<Leader>a', desc = '+AI' },
                 { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
                 { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
                 { mode = 'n', keys = '<Leader>g', desc = '+Git' },
                 { mode = 'n', keys = '<Leader>gb', desc = '+Blame' },
                 { mode = 'n', keys = '<Leader>d', desc = '+Debug' },
-                { mode = 'n', keys = '<Leader>x', desc = '+Quickfix' },
                 { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
                 { mode = 'n', keys = '<Leader>t', desc = '+Testing' },
-                -- { mode = 'n', keys = '<Leader>o', desc = '+Other' },
+                { mode = 'n', keys = '<Leader>tc', desc = '+Coverage' },
+                { mode = 'n', keys = '<Leader>o', desc = '+Other' },
+                { mode = 'n', keys = '<Leader>ox', desc = '+Quickfix' },
                 -- { mode = 'n', keys = '<Leader>s', desc = '+Session' },
                 -- { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
                 -- { mode = 'n', keys = '<Leader>v', desc = '+Visits' },
@@ -162,12 +164,7 @@ return {
         config = function()
             local mini_trailspace = require('mini.trailspace')
             mini_trailspace.setup()
-            MapSet(
-                'n',
-                '<leader>t',
-                mini_trailspace.trim,
-                'Trim all trailspace on file'
-            )
+            MapSet('n', '<leader>ot', mini_trailspace.trim, 'Trim all trailspace on file')
         end,
     },
     {

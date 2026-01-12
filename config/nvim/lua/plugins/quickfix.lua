@@ -33,15 +33,10 @@ return {
             },
         })
 
+        MapSet('n', '<leader>oxq', function() quicker.toggle({ focus = true }) end, 'Toggle quickfix')
         MapSet(
             'n',
-            '<leader>xq',
-            function() quicker.toggle({ focus = true }) end,
-            'Toggle quickfix'
-        )
-        MapSet(
-            'n',
-            '<leader>xl',
+            '<leader>oxl',
             function() quicker.toggle({ focus = true, loclist = true }) end,
             'Toggle location list'
         )
