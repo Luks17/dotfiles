@@ -1,6 +1,6 @@
 return {
     'monkoose/neocodeium',
-    event = 'BufFilePre',
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
         local neocodeium = require('neocodeium')
         neocodeium.setup({

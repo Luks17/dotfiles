@@ -1,7 +1,7 @@
 return {
     {
         'nvim-neotest/neotest',
-        event = 'BufFilePre',
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'nvim-neotest/nvim-nio',
             'nvim-lua/plenary.nvim',
@@ -34,7 +34,7 @@ return {
     },
     {
         'andythigpen/nvim-coverage',
-        event = 'BufFilePre',
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = 'nvim-lua/plenary.nvim',
         config = function()
             local coverage = require('coverage')

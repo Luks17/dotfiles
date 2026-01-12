@@ -117,7 +117,7 @@ return {
     {
         'nvim-mini/mini.ai',
         version = false,
-        event = 'BufFilePre',
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
         config = function()
             local mini_ai = require('mini.ai')

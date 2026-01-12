@@ -2,7 +2,7 @@ return {
     'saghen/blink.cmp',
     dependencies = { 'rafamadriz/friendly-snippets' },
     version = '1.*',
-    event = 'BufFilePre',
+    event = { 'BufReadPre', 'BufNewFile' },
     opts = {
         keymap = {
             preset = 'default',

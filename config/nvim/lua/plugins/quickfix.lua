@@ -1,7 +1,7 @@
 -- Makes quickfix not suck
 return {
     'stevearc/quicker.nvim',
-    event = 'BufFilePre',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
         {
             'kevinhwang91/nvim-bqf',
