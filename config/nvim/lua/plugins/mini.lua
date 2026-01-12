@@ -36,14 +36,13 @@ return {
                 { mode = 'n', keys = '<Leader>g', desc = '+Git' },
                 { mode = 'n', keys = '<Leader>gb', desc = '+Blame' },
                 { mode = 'n', keys = '<Leader>d', desc = '+Debug' },
-                -- { mode = 'n', keys = '<Leader>l', desc = '+Language' },
-                -- { mode = 'n', keys = '<Leader>m', desc = '+Map' },
+                { mode = 'n', keys = '<Leader>x', desc = '+Quickfix' },
+                { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
+                { mode = 'n', keys = '<Leader>t', desc = '+Testing' },
                 -- { mode = 'n', keys = '<Leader>o', desc = '+Other' },
                 -- { mode = 'n', keys = '<Leader>s', desc = '+Session' },
                 -- { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
                 -- { mode = 'n', keys = '<Leader>v', desc = '+Visits' },
-                -- { mode = 'x', keys = '<Leader>g', desc = '+Git' },
-                -- { mode = 'x', keys = '<Leader>l', desc = '+Language' },
             }
 
             local mini_clue = require('mini.clue')
@@ -116,11 +115,8 @@ return {
     {
         'nvim-mini/mini.ai',
         version = false,
-        event = 'VeryLazy',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-textobjects',
-            branch = 'main',
-        },
+        event = 'BufFilePre',
+        dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
         config = function()
             local mini_ai = require('mini.ai')
             mini_ai.setup({

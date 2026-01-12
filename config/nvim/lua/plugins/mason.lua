@@ -22,6 +22,7 @@ return {
                 'gopls',
                 'golangci-lint-langserver',
                 'gofumpt',
+                'gotestsum',
 
                 -- python
                 'pyright',

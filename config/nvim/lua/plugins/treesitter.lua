@@ -58,8 +58,14 @@ return {
         'nvim-treesitter/nvim-treesitter-textobjects',
         branch = 'main',
         version = false,
-        event = 'VeryLazy',
-        dependencies = { 'nvim-treesitter/nvim-treesitter', branch = 'main' },
+        event = 'BufFilePre',
+        dependencies = 'nvim-treesitter/nvim-treesitter',
         init = function() vim.g.no_plugin_maps = true end,
+    },
+    {
+        'windwp/nvim-ts-autotag',
+        event = 'BufFilePre',
+        dependencies = 'nvim-treesitter/nvim-treesitter',
+        config = function() require('nvim-ts-autotag').setup() end,
     },
 }
