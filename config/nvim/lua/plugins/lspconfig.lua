@@ -42,6 +42,22 @@ local vtsls_config = {
     },
 }
 
+local go_pls_config = {
+    settings = {
+        gopls = {
+            codelenses = {
+                generate = true,
+                regenerate_cgo = true,
+                test = false,
+                tidy = true,
+                upgrade_dependency = true,
+                vendor = true,
+            },
+            completeUnimported = true,
+        },
+    },
+}
+
 return {
     'neovim/nvim-lspconfig',
     lazy = false,
@@ -49,14 +65,11 @@ return {
         local lsp_configs = {
             lua_ls = lua_config,
             vtsls = vtsls_config,
+            gopls = go_pls_config,
         }
 
-        local enable = {}
         for server_name, config in pairs(lsp_configs) do
             vim.lsp.config(server_name, config)
-            table.insert(enable, server_name)
         end
-
-        vim.lsp.enable(enable)
     end,
 }

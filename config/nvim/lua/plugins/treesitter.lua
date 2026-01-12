@@ -20,6 +20,8 @@ return {
                 'json',
                 'json5',
                 'toml',
+                'gomod',
+                'gosum',
                 'markdown',
                 'html',
                 'css',
