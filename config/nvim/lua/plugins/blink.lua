@@ -4,8 +4,15 @@ return {
     version = '1.*',
     event = 'VeryLazy',
     opts = {
-        keymap = { preset = 'default' },
-        completion = { documentation = { auto_show = false } },
+        keymap = {
+            preset = 'default',
+            ['<CR>'] = { 'accept', 'fallback' },
+            ['<C><leader>'] = { 'show' },
+        },
+        appearance = {
+            nerd_font_variant = 'mono',
+        },
+        completion = { documentation = { auto_show = true } },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
