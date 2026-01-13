@@ -164,7 +164,7 @@ return {
         config = function()
             local mini_trailspace = require('mini.trailspace')
             mini_trailspace.setup()
-            MapSet('n', '<leader>ot', mini_trailspace.trim, 'Trim all trailspace on file')
+            MapSet('n', '<leader>oc', mini_trailspace.trim, 'Trim all trailspace on file')
         end,
     },
     {
@@ -245,18 +245,6 @@ return {
                         group = 'MiniHipatternsNote',
                     },
                     hex_color = mini_hipatterns.gen_highlighter.hex_color(),
-                },
-            })
-        end,
-    },
-    {
-        'nvim-mini/mini.cmdline',
-        version = false,
-        event = 'VeryLazy',
-        config = function()
-            require('mini.cmdline').setup({
-                autocomplete = {
-                    delay = 2000,
                 },
             })
         end,

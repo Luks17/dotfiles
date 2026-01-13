@@ -4,14 +4,6 @@ _G.MapSet = function(mode, lhs, rhs, desc) vim.keymap.set(mode, lhs, rhs, { sile
 MapSet('v', 'J', ":m '>+1<CR>gv=gv", 'Moves lines down in visual selection')
 MapSet('v', 'K', ":m '<-2<CR>gv=gv", 'Moves lines up in visual selection')
 
--- Scroll centered
-MapSet('n', '<C-d>', '<C-d>zz', 'Move down in buffer with cursor centered')
-MapSet('n', '<C-u>', '<C-u>zz', 'Move up in buffer with cursor centered')
-
--- Next/previous search result centered
-MapSet('n', 'n', 'nzzzv', 'Next result with cursor centered')
-MapSet('n', 'N', 'Nzzzv', 'Previous result with cursor centered')
-
 -- Change line indentation without needing to re-select
 MapSet('v', '<', '<gv', 'Indent to the left')
 MapSet('v', '>', '>gv', 'Indent to the right')
@@ -21,6 +13,10 @@ MapSet({ 'n', 'v' }, '_', '"_', 'Shortcout to blackhole register')
 
 -- Clear highlights
 MapSet('n', '<Esc>', ':noh<CR>', 'Clear search highlights')
+
+-- Terminal
+MapSet('t', '<Esc>', '<C-\\><C-n>', 'Exit terminal mode')
+MapSet('n', '<leader>ot', require('config.terminal').toggle_terminal, 'Toggle floating terminal')
 
 -- LSP
 MapSet('n', '<leader>li', '<cmd>:LspInfo<CR>', 'LSP Info')
