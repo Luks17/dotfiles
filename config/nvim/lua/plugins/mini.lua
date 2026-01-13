@@ -104,11 +104,27 @@ return {
         'nvim-mini/mini.bufremove',
         version = false,
         event = 'VeryLazy',
+        dependencies = 'nvim-mini/mini.starter',
         config = function()
             local mini_bufremove = require('mini.bufremove')
+
             mini_bufremove.setup()
 
-            MapSet('n', '<leader>bc', mini_bufremove.delete, 'Close current buffer')
+            local mini_starter = require('mini.starter')
+
+            local open_dashboard_if_last_buffer = function()
+                local buf_nr = vim.api.nvim_get_current_buf()
+                local is_empty = vim.api.nvim_buf_get_name(buf_nr) == '' and vim.bo.filetype == ''
+                if not is_empty then return end
+
+                mini_starter.open()
+                vim.schedule(function() vim.api.nvim_buf_delete(buf_nr, { force = true }) end) -- remove stray buffer
+            end
+
+            MapSet('n', '<leader>bc', function()
+                mini_bufremove.delete()
+                open_dashboard_if_last_buffer()
+            end, 'Close current buffer')
         end,
     },
     -- ┌─────────────────────────┐
