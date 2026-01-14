@@ -42,9 +42,7 @@ return {
                 { mode = 'n', keys = '<Leader>tc', desc = '+Coverage' },
                 { mode = 'n', keys = '<Leader>o', desc = '+Other' },
                 { mode = 'n', keys = '<Leader>ox', desc = '+Quickfix' },
-                -- { mode = 'n', keys = '<Leader>s', desc = '+Session' },
-                -- { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
-                -- { mode = 'n', keys = '<Leader>v', desc = '+Visits' },
+                { mode = 'n', keys = '<Leader>p', desc = '+Package' },
             }
 
             local mini_clue = require('mini.clue')
@@ -92,7 +90,12 @@ return {
         'nvim-mini/mini.notify',
         version = false,
         event = 'VeryLazy',
-        config = function() require('mini.notify').setup() end,
+        config = function()
+            local mini_notify = require('mini.notify')
+            mini_notify.setup()
+
+            MapSet('n', '<leader>on', mini_notify.show_history, 'Show notifications history')
+        end,
     },
     {
         'nvim-mini/mini.diff',

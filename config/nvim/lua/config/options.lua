@@ -4,7 +4,7 @@ vim.opt.mousescroll = 'ver:2,hor:1' -- Customize mouse scroll
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.undofile = true -- Persist undo
-vim.opt.switchbuf = 'usetab' -- Use already opened buffers when switching
+vim.o.switchbuf = 'useopen,uselast'
 vim.opt.backspace = { 'start', 'eol', 'indent' } -- Override default backspace behavior in insert mode
 vim.opt.clipboard:append('unnamedplus') -- Allow shared clipboard with system
 vim.opt.wrap = true -- Line wrap

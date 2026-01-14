@@ -22,8 +22,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local lazy = require('lazy')
+
 -- Setup lazy.nvim
-require('lazy').setup({
+lazy.setup({
     { import = 'plugins' },
 }, {
     checker = {
@@ -34,3 +36,21 @@ require('lazy').setup({
         notify = false,
     },
 })
+
+MapSet('n', '<leader>ps', lazy.show, 'Show installed packages')
+MapSet('n', '<leader>pu', lazy.update, 'Update all installed packages')
+MapSet('n', '<leader>pp', lazy.profile, 'Profile startup time')
+MapSet('n', '<leader>pl', lazy.log, 'Show recent updates')
+MapSet('n', '<leader>pc', lazy.check, 'Check for package updates and show the changelog')
+MapSet('n', '<leader>px', lazy.clean, 'Clean packages not in use')
+MapSet('n', '<leader>pr', function()
+    local input = vim.fn.input('Packages to reload (comma-separated): ')
+    if input == '' then return end
+
+    local packages = vim.split(input, '[,%s]+', { trimempty = true })
+    for i, pkg in ipairs(packages) do
+        packages[i] = vim.trim(pkg)
+    end
+
+    require('lazy').reload({ plugins = packages })
+end, 'Reload packages')
