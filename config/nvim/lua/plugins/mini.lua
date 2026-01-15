@@ -32,6 +32,7 @@ return {
         config = function()
             local leader_group_clues = {
                 { mode = 'n', keys = '<Leader>a', desc = '+AI' },
+                { mode = 'n', keys = '<Leader>ao', desc = '+OpenCode' },
                 { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
                 { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
                 { mode = 'n', keys = '<Leader>g', desc = '+Git' },

@@ -1,8 +1,13 @@
 #!/bin/bash
 
-STORE=~/.config/hypr/scripts/store
+STORE=.store
+mkdir -p $STORE
+
 LAYOUT_FILE=$STORE/current_kblayout
+touch $LAYOUT_FILE
+
 CURRENT_LAYOUT=$(cat $LAYOUT_FILE)
+[[ $CURRENT_LAYOUT = "" ]] && CURRENT_LAYOUT="English"
 
 lang_0=English
 lang_1=Português

@@ -8,6 +8,8 @@ vim.o.switchbuf = 'useopen,uselast'
 vim.opt.backspace = { 'start', 'eol', 'indent' } -- Override default backspace behavior in insert mode
 vim.opt.clipboard:append('unnamedplus') -- Allow shared clipboard with system
 vim.opt.wrap = true -- Line wrap
+vim.opt.autoread = true -- When a file has been changed outside of vim, automatically reload it
+vim.opt.swapfile = false
 
 -- Indentation
 vim.opt.tabstop = 4

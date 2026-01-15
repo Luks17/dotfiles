@@ -38,9 +38,11 @@ return {
                 'vtsls',
                 'eslint',
                 'prettierd',
-
-                -- vue
                 'vue_ls',
+                'tailwindcss',
+
+                -- json
+                'json-lsp',
             },
         })
 

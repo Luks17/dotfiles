@@ -4,19 +4,19 @@ return {
     config = function()
         local conform = require('conform')
 
+        local js_related_options = { 'prettierd', 'prettier', stop_after_first = true }
+
         conform.setup({
             formatters_by_ft = {
                 lua = { 'stylua' },
                 go = { 'golangci-lint', 'gofumpt', stop_after_first = true },
                 python = { 'isort', 'black' },
                 rust = { 'rustfmt' },
-                javascript = { 'prettierd', 'prettier', stop_after_first = true },
-                typescript = { 'prettierd', 'prettier', stop_after_first = true },
-                typescriptreact = {
-                    'prettierd',
-                    'prettier',
-                    stop_after_first = true,
-                },
+                javascript = js_related_options,
+                typescript = js_related_options,
+                typescriptreact = js_related_options,
+                json = js_related_options,
+                json5 = js_related_options,
             },
             format_on_save = {
                 timeout_ms = 500,

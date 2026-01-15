@@ -58,6 +58,17 @@ local go_pls_config = {
     },
 }
 
+local json_ls_config = {
+    settings = {
+        json = {
+            format = {
+                enable = true,
+            },
+        },
+        validate = { enable = true },
+    },
+}
+
 return {
     'neovim/nvim-lspconfig',
     lazy = false,
@@ -66,6 +77,7 @@ return {
             lua_ls = lua_config,
             vtsls = vtsls_config,
             gopls = go_pls_config,
+            jsonls = json_ls_config,
         }
 
         for server_name, config in pairs(lsp_configs) do

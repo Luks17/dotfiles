@@ -1,4 +1,11 @@
-_G.MapSet = function(mode, lhs, rhs, desc) vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc }) end
+---@param mode string|string[]
+---@param lhs string
+---@param rhs string|function
+---@param desc? string
+---@param other_opts? vim.keymap.set.Opts
+_G.MapSet = function(mode, lhs, rhs, desc, other_opts)
+    vim.keymap.set(mode, lhs, rhs, vim.tbl_extend('force', { silent = true, desc = desc }, other_opts or {}))
+end
 
 -- Move blocks in virtual mode using J and K
 MapSet('v', 'J', ":m '>+1<CR>gv=gv", 'Moves lines down in visual selection')
