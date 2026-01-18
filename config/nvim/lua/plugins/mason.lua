@@ -36,10 +36,14 @@ return {
 
                 -- typescript/javascript
                 'vtsls',
+                'js-debug-adapter',
                 'eslint',
                 'prettierd',
                 'vue_ls',
                 'tailwindcss',
+
+                -- php
+                'phpactor',
 
                 -- json
                 'json-lsp',

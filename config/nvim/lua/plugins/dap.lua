@@ -1,3 +1,38 @@
+local mason_pkgs = vim.fn.stdpath('data') .. '/mason/packages/'
+
+local setup_go = function(dap)
+    require('dap-go').setup()
+    dap.configurations.go = {}
+end
+
+local setup_js = function(dap)
+    for _, adapter_type in ipairs({ 'node', 'chrome', 'msedge' }) do
+        local pwa_type = 'pwa-' .. adapter_type
+
+        dap.adapters[pwa_type] = {
+            type = 'server',
+            host = 'localhost',
+            port = '${port}',
+            executable = {
+                command = 'node',
+                args = {
+                    mason_pkgs .. 'js-debug-adapter/js-debug/src/dapDebugServer.js',
+                    '${port}',
+                },
+            },
+        }
+
+        -- Maps non pwa .vscode/launch.json adapter types to ther pwa equivalent
+        -- e.g.: chrome -> pwa-chrome
+        dap.adapters[adapter_type] = function(callback, config)
+            local pwa_adapter = dap.adapters[pwa_type]
+            config.type = pwa_type
+
+            callback(pwa_adapter)
+        end
+    end
+end
+
 return {
     'mfussenegger/nvim-dap',
     event = 'VeryLazy',
@@ -12,9 +47,11 @@ return {
         },
     },
     config = function()
-        require('dap-go').setup()
-
         local dap = require('dap')
+
+        setup_go(dap)
+        setup_js(dap)
+
         local widgets = require('dap.ui.widgets')
 
         MapSet('n', '<leader>ds', dap.continue, 'Start/continue debugger')
@@ -37,11 +74,6 @@ return {
 
         local dap_view = require('dap-view')
         MapSet('n', '<leader>dv', dap_view.toggle, 'Toggle dap view')
-        MapSet(
-            'n',
-            '<leader>dw',
-            dap_view.add_expr,
-            'Watch expression under the cursor'
-        )
+        MapSet('n', '<leader>dw', dap_view.add_expr, 'Watch expression under the cursor')
     end,
 }

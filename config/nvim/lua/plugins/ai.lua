@@ -23,7 +23,7 @@ return {
     },
     {
         'NickvanDyke/opencode.nvim',
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = 'VeryLazy',
         dependencies = {
             'ibhagwan/fzf-lua',
         },
@@ -32,16 +32,16 @@ return {
                 provider = {
                     enabled = 'tmux',
                     tmux = {
-                        options = '-h',
+                        options = '-h -p 33',
                     },
                 },
             }
 
             local opencode = require('opencode')
-            local prefix = '<leader>ao'
 
+            MapSet({ 'n', 'x' }, '<leader>aos', function() opencode.start() end, 'Start')
             MapSet({ 'n', 'x' }, '<leader>aoa', function() opencode.ask('@this: ', { submit = true }) end, 'Ask')
-            MapSet({ 'n', 'x' }, '<leader>aos', function() opencode.select() end, 'Execute action')
+            MapSet({ 'n', 'x' }, '<leader>aoe', function() opencode.select() end, 'Execute action')
             MapSet(
                 { 'n', 'x' },
                 '<leader>aor',

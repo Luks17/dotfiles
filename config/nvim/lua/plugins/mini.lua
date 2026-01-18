@@ -16,7 +16,18 @@ return {
                     go_out_plus = 'H',
                 },
             })
-            MapSet('n', '<leader>ee', mini_files.open, 'Open file explorer')
+
+            MapSet('n', '<leader>ee', function()
+                local is_file = vim.bo.buftype == ''
+                local buf_name = vim.api.nvim_buf_get_name(0)
+
+                if not is_file then
+                    mini_files.open()
+                else
+                    mini_files.open(buf_name, false)
+                end
+                vim.schedule(function() mini_files.reveal_cwd() end)
+            end, 'Open file explorer')
         end,
     },
     {
@@ -31,8 +42,8 @@ return {
         event = 'VeryLazy',
         config = function()
             local leader_group_clues = {
-                { mode = 'n', keys = '<Leader>a', desc = '+AI' },
-                { mode = 'n', keys = '<Leader>ao', desc = '+OpenCode' },
+                { mode = { 'n', 'x' }, keys = '<Leader>a', desc = '+AI' },
+                { mode = { 'n', 'x' }, keys = '<Leader>ao', desc = '+OpenCode' },
                 { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
                 { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
                 { mode = 'n', keys = '<Leader>g', desc = '+Git' },

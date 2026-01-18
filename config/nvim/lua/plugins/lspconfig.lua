@@ -15,6 +15,22 @@ local lua_config = {
     },
 }
 
+local go_pls_config = {
+    settings = {
+        gopls = {
+            codelenses = {
+                generate = true,
+                regenerate_cgo = true,
+                test = false,
+                tidy = true,
+                upgrade_dependency = true,
+                vendor = true,
+            },
+            completeUnimported = true,
+        },
+    },
+}
+
 local vue_language_server_path = vim.fn.stdpath('data')
     .. '/mason/packages/vue-language-server/node_modules/@vue/language-server'
 
@@ -39,22 +55,6 @@ local vtsls_config = {
         'javascriptreact',
         'typescriptreact',
         'vue',
-    },
-}
-
-local go_pls_config = {
-    settings = {
-        gopls = {
-            codelenses = {
-                generate = true,
-                regenerate_cgo = true,
-                test = false,
-                tidy = true,
-                upgrade_dependency = true,
-                vendor = true,
-            },
-            completeUnimported = true,
-        },
     },
 }
 
