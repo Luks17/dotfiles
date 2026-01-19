@@ -2,7 +2,7 @@ return {
     'saghen/blink.cmp',
     dependencies = { 'rafamadriz/friendly-snippets' },
     version = '1.*',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'VeryLazy' },
     opts = {
         keymap = {
             preset = 'default',
@@ -17,6 +17,13 @@ return {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
         fuzzy = { implementation = 'prefer_rust_with_warning' },
+        cmdline = {
+            completion = {
+                menu = {
+                    auto_show = function() return vim.fn.getcmdtype() == ':' end,
+                },
+            },
+        },
     },
     opts_extend = { 'sources.default' },
 }

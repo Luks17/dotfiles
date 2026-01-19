@@ -38,6 +38,7 @@ return {
                 'javascript',
                 'typescript',
                 'tsx',
+                'jsx',
                 'vue',
                 'sql',
             }
