@@ -46,6 +46,16 @@ bindkey "^[[Z" reverse-menu-complete
 eval "$(zoxide init --cmd cd zsh)"
 
 
+### AUTO-START SSH-AGENT (only one at a time)
+touch "$XDG_RUNTIME_DIR/ssh-agent.env"
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [ ! -f "$SSH_AUTH_SOCK" ]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+
+
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
