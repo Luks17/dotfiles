@@ -2,7 +2,7 @@
 
 Personal dotfiles for Arch Linux.
 
-Includes Hyprland, AstroNvim and zsh configs.
+Includes Hyprland, neovim and zsh configs.
 
 ### Requirements
 
