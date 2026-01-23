@@ -26,6 +26,9 @@ local function create_floating_window(opts)
     return { buf = buf, win = win }
 end
 
+local function merge_tables(...) return vim.tbl_deep_extend('force', ...) end
+
 return {
     create_floating_window = create_floating_window,
+    merge_tables = merge_tables,
 }

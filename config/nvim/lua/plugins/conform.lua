@@ -9,7 +9,7 @@ return {
         conform.setup({
             formatters_by_ft = {
                 lua = { 'stylua' },
-                go = { 'golangci-lint', 'gofumpt', stop_after_first = true },
+                go = { 'golangci-lint' },
                 python = { 'isort', 'black' },
                 rust = { 'rustfmt' },
                 javascript = js_related_options,

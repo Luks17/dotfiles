@@ -38,5 +38,5 @@ vim.opt.splitbelow = true -- Horizontal splits will be below
 vim.opt.splitright = true -- Vertical splits will be to the right
 vim.opt.splitkeep = 'screen' -- Reduce scroll during window split
 vim.opt.showmode = false -- Don't show mode in command line
-vim.opt.winborder = 'rounded' -- Use border in floating windows
+vim.opt.winborder = 'single' -- Use border in floating windows
 vim.opt.hlsearch = true -- Highlight searched text

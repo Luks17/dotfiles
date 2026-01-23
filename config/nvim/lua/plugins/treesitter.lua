@@ -23,11 +23,13 @@ return {
                 'gomod',
                 'gosum',
                 'markdown',
-                'html',
                 'css',
                 'scss',
                 'jsdoc',
-                'gotmpl',
+
+                -- templating
+                'html',
+                'helm',
 
                 -- Langs
                 'lua',

@@ -1,3 +1,6 @@
+-- Show diagnostics in virtual text if cursor not in line
+-- Show diagnostics in virtual lines if cursor in line
+
 vim.diagnostic.config({
     virtual_text = true,
     virtual_lines = { current_line = true },
@@ -10,9 +13,7 @@ local og_virt_line
 vim.api.nvim_create_autocmd({ 'CursorMoved', 'DiagnosticChanged' }, {
     group = vim.api.nvim_create_augroup('diagnostic_only_virtlines', {}),
     callback = function()
-        if og_virt_line == nil then
-            og_virt_line = vim.diagnostic.config().virtual_lines
-        end
+        if og_virt_line == nil then og_virt_line = vim.diagnostic.config().virtual_lines end
 
         -- ignore if virtual_lines.current_line is disabled
         if not (og_virt_line and og_virt_line.current_line) then
@@ -23,9 +24,7 @@ vim.api.nvim_create_autocmd({ 'CursorMoved', 'DiagnosticChanged' }, {
             return
         end
 
-        if og_virt_text == nil then
-            og_virt_text = vim.diagnostic.config().virtual_text
-        end
+        if og_virt_text == nil then og_virt_text = vim.diagnostic.config().virtual_text end
 
         local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
 

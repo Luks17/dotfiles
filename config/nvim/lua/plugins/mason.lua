@@ -21,7 +21,6 @@ return {
                 -- golang
                 'gopls',
                 'golangci-lint-langserver',
-                'gofumpt',
                 'gotestsum',
 
                 -- python
@@ -51,6 +50,9 @@ return {
 
                 -- json
                 'json-lsp',
+
+                -- helm
+                'helm-ls',
             },
         })
 
