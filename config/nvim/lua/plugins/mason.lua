@@ -29,6 +29,9 @@ return {
                 'isort',
                 'black',
 
+                -- sql
+                'sqlfluff',
+
                 -- html/css
                 'html-lsp',
                 'css-lsp',
@@ -44,6 +47,7 @@ return {
 
                 -- php
                 'phpactor',
+                'pint',
 
                 -- json
                 'json-lsp',

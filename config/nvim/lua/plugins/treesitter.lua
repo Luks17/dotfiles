@@ -27,6 +27,7 @@ return {
                 'css',
                 'scss',
                 'jsdoc',
+                'gotmpl',
 
                 -- Langs
                 'lua',
