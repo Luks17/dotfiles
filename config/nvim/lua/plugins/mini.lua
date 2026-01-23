@@ -228,18 +228,6 @@ return {
         config = function() require('mini.starter').setup() end,
     },
     {
-        'nvim-mini/mini.tabline',
-        version = false,
-        lazy = false,
-        config = function() require('mini.tabline').setup() end,
-    },
-    {
-        'nvim-mini/mini.statusline',
-        version = false,
-        lazy = false,
-        config = function() require('mini.statusline').setup() end,
-    },
-    {
         'nvim-mini/mini.icons',
         version = false,
         lazy = false,
