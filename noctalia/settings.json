@@ -393,7 +393,7 @@
     "size": 1,
     "onlySameOutput": true,
     "monitors": [],
-    "pinnedApps": ["app.zen_browser.zen", "kitty", "nemo"],
+    "pinnedApps": ["app.zen_browser.zen", "kitty", "org.gnome.Nautilus"],
     "colorizeIcons": false,
     "pinnedStatic": false,
     "inactiveIndicators": false,
@@ -536,6 +536,10 @@
       {
         "enabled": true,
         "id": "qt"
+      },
+      {
+        "enabled": true,
+        "id": "niri"
       }
     ],
     "enableUserTheming": false

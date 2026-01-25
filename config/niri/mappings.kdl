@@ -1,0 +1,52 @@
+binds {
+    // application commands
+    Super+Return { spawn "kitty" "--single-instance"; }
+    Super+F { spawn "app.zen_browser.zen"; }
+    Super+A { spawn "nautilus"; }
+    Super+R { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Super+Escape { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Super+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+
+    // f-keys bindings
+    Super+F1 { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    Super+F2 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    Super+F3 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    Super+F9 { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    Super+F11 { fullscreen-window; }
+
+    // print screen
+    Super+Shift+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+    Super+Print { screenshot; }
+
+    // workspace commands
+    Super+1 { focus-workspace 1; }
+    Super+2 { focus-workspace 2; }
+    Super+3 { focus-workspace 3; }
+    Super+4 { focus-workspace 4; }
+    Super+5 { focus-workspace 5; }
+    Super+6 { focus-workspace 6; }
+    Super+7 { focus-workspace 7; }
+    Super+8 { focus-workspace 8; }
+    Super+9 { focus-workspace 9; }
+
+    Alt+1 { move-column-to-workspace 1; }
+    Alt+2 { move-column-to-workspace 2; }
+    Alt+3 { move-column-to-workspace 3; }
+    Alt+4 { move-column-to-workspace 4; }
+    Alt+5 { move-column-to-workspace 5; }
+    Alt+6 { move-column-to-workspace 6; }
+    Alt+7 { move-column-to-workspace 7; }
+    Alt+8 { move-column-to-workspace 8; }
+    Alt+9 { move-column-to-workspace 9; }
+
+    Super+M { maximize-column; }
+    Super+C { close-window; }
+    Super+S { center-column; }
+    Super+O { toggle-overview; }
+
+    Super+Right { focus-column-right; }
+    Super+Left { focus-column-left; }
+    Super+Shift+Right { move-column-right; }
+    Super+Shift+Left { move-column-left; }
+}

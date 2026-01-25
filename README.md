@@ -2,7 +2,7 @@
 
 Personal dotfiles for Arch Linux.
 
-Includes Hyprland, neovim and zsh configs.
+Includes Niri, NeoVim and Zsh configs.
 
 ### Requirements
 
@@ -19,7 +19,7 @@ python rustup
 #### Desktop
 
 ```bash
-hyprland xdg-desktop-portal-hyprland xdg-user-dirs noctalia-shell libnotify zen-browser hypridle
+niri xdg-desktop-portal-gnome xdg-user-dirs noctalia-shell libnotify zen-browser swayidle
 ```
 
 #### Fonts
@@ -43,13 +43,13 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerl
 #### Utilities
 
 ```bash
-matugen imagemagick hyprshot wlsunset btop pfetch-rs cava polkit-gnome pavucontrol imv brightnessctl nm-connection-editor upower
+matugen imagemagick wlsunset btop pfetch-rs cava polkit-gnome pavucontrol imv brightnessctl nm-connection-editor upower xwayland-satellite
 ```
 
 #### Optional (but nice to have)
 
 ```bash
-flatpak flatseal nwg-look firewalld kdenlive qbittorrent gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nemo
+flatpak flatseal nwg-look firewalld kdenlive qbittorrent gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus
 ```
 
 [Rosé Pine GTK Theme](https://www.gnome-look.org/p/1810530/)
