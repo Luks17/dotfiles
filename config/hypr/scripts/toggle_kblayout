@@ -22,4 +22,4 @@ echo "$CURRENT_LAYOUT" > $LAYOUT_FILE
 
 hyprctl switchxkblayout at-translated-set-2-keyboard next
 
-notify-send "Keyboard Layout" "$CURRENT_LAYOUT"
+# notify-send "Keyboard Layout" "$CURRENT_LAYOUT"

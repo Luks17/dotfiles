@@ -7,21 +7,12 @@ scripts=$config/scripts
 # idle manager
 hypridle &
 
-# blue light filter
-hyprsunset -t 5500 &
-
 # initial keyboard layout
 echo "English" > $scripts/store/current_kblayout
 notify-send "Keyboard Layout" English &
 
-# init wallpaper
-swww daemon &
-
 # polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# hyprpanel
-hyprpanel &
-
-# vicinae
-vicinae server &
+# noctalia shell
+qs -c noctalia-shell

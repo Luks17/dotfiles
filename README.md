@@ -19,13 +19,19 @@ python rustup
 #### Desktop
 
 ```bash
-hyprland xdg-desktop-portal-hyprland hyprpanel vicinae libnotify swww zen-browser hypridle hyprlock
+hyprland xdg-desktop-portal-hyprland xdg-user-dirs noctalia-shell libnotify zen-browser hypridle
 ```
 
 #### Fonts
 
 ```bash
-ttf-fira-code-nerd ttf-jetbrains-mono-nerd
+ttf-fira-code-nerd ttf-jetbrains-mono-nerd ttf-iosevka-nerd
+```
+
+#### Icons
+
+```bash
+papirus-icon-theme
 ```
 
 #### Terminal
@@ -37,13 +43,13 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerl
 #### Utilities
 
 ```bash
-matugen imagemagick esbuild dart-sass pamixer hyprshot hyprsunset btop pfetch-rs cava polkit-gnome pavucontrol imv gnome-bluetooth-3.0 blueman brightnessctl nm-connection-editor
+matugen imagemagick hyprshot wlsunset btop pfetch-rs cava polkit-gnome pavucontrol imv brightnessctl nm-connection-editor upower
 ```
 
 #### Optional (but nice to have)
 
 ```bash
-flatpak flatseal nwg-look firewalld rnote kdenlive qbittorrent accountsservice gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus inotify-tools
+flatpak flatseal nwg-look firewalld kdenlive qbittorrent gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nemo
 ```
 
 [Rosé Pine GTK Theme](https://www.gnome-look.org/p/1810530/)
