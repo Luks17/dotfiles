@@ -15,9 +15,9 @@ binds {
     Super+F11 { fullscreen-window; }
 
     // print screen
-    Super+Shift+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
-    Super+Print { screenshot; }
+    Print { screenshot; }
+    Super+Print { screenshot-window; }
+    Alt+Print { screenshot-screen; }
 
     // workspace commands
     Super+1 { focus-workspace 1; }
@@ -47,6 +47,10 @@ binds {
 
     Super+Right { focus-column-right; }
     Super+Left { focus-column-left; }
+    Super+Up { focus-workspace-up; }
+    Super+Down { focus-workspace-down; }
     Super+Shift+Right { move-column-right; }
     Super+Shift+Left { move-column-left; }
+    Super+Shift+Up { move-column-to-workspace-up; }
+    Super+Shift+Down { move-column-to-workspace-down; }
 }

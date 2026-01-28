@@ -45,6 +45,7 @@ return {
                 { mode = { 'n', 'x' }, keys = '<Leader>a', desc = '+AI' },
                 { mode = { 'n', 'x' }, keys = '<Leader>ao', desc = '+OpenCode' },
                 { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
+                { mode = 'n', keys = '<Leader>bs', desc = '+Scratch' },
                 { mode = 'n', keys = '<Leader>e', desc = '+Explore' },
                 { mode = 'n', keys = '<Leader>g', desc = '+Git' },
                 { mode = 'n', keys = '<Leader>gb', desc = '+Blame' },
