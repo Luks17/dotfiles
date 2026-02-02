@@ -25,13 +25,13 @@ niri xdg-desktop-portal-gnome xdg-user-dirs noctalia-shell libnotify zen-browser
 #### Fonts
 
 ```bash
-ttf-fira-code-nerd ttf-jetbrains-mono-nerd ttf-iosevka-nerd
+ttf-jetbrains-mono-nerd ttf-iosevka-nerd
 ```
 
-#### Icons
+#### Themes
 
 ```bash
-papirus-icon-theme
+adw-gtk-theme papirus-icon-theme
 ```
 
 #### Terminal

@@ -19,6 +19,10 @@ binds {
     Super+Print { screenshot-window; }
     Alt+Print { screenshot-screen; }
 
+    // record screen
+    Super+G { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "toggle"; }
+    Super+Shift+G { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin" "openSettings" "screen-recorder"; }
+
     // workspace commands
     Super+1 { focus-workspace 1; }
     Super+2 { focus-workspace 2; }

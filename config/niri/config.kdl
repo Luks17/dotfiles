@@ -15,7 +15,6 @@ input {
         }
         repeat-delay 300
         repeat-rate 35
-        numlock
     }
 
     touchpad {
@@ -41,12 +40,6 @@ window-rule {
 
     geometry-corner-radius 5
     clip-to-geometry true
-}
-
-// Set the overview wallpaper on the backdrop.
-layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
 }
 
 debug {
