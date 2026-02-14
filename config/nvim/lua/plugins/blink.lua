@@ -18,11 +18,7 @@ return {
         },
         fuzzy = { implementation = 'prefer_rust_with_warning' },
         cmdline = {
-            completion = {
-                menu = {
-                    auto_show = function() return vim.fn.getcmdtype() == ':' end,
-                },
-            },
+            enabled = true,
         },
     },
     opts_extend = { 'sources.default' },

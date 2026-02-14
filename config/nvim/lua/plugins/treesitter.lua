@@ -74,4 +74,14 @@ return {
         dependencies = 'nvim-treesitter/nvim-treesitter',
         config = function() require('nvim-ts-autotag').setup() end,
     },
+    {
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        event = { 'BufReadPre', 'BufNewFile' },
+        dependencies = 'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require('ts_context_commentstring').setup({
+                emnable_autocmd = false,
+            })
+        end,
+    },
 }
