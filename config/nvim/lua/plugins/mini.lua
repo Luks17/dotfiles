@@ -186,12 +186,6 @@ return {
         end,
     },
     {
-        'nvim-mini/mini.pairs',
-        version = false,
-        event = 'VeryLazy',
-        config = function() require('mini.pairs').setup() end,
-    },
-    {
         'nvim-mini/mini.bracketed',
         version = false,
         event = 'VeryLazy',
