@@ -4,7 +4,7 @@ return {
         branch = 'main',
         version = false,
         build = ':TSUpdate',
-        event = 'VeryLazy',
+        event = { 'BufReadPre', 'BufNewFile' },
         config = function()
             local TS = require('nvim-treesitter')
             local parsers = {
@@ -59,29 +59,25 @@ return {
                 callback = function() vim.treesitter.start() end,
             })
         end,
-    },
-    {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        branch = 'main',
-        version = false,
-        event = { 'BufReadPre', 'BufNewFile' },
-        dependencies = 'nvim-treesitter/nvim-treesitter',
-        init = function() vim.g.no_plugin_maps = true end,
-    },
-    {
-        'windwp/nvim-ts-autotag',
-        event = { 'BufReadPre', 'BufNewFile' },
-        dependencies = 'nvim-treesitter/nvim-treesitter',
-        config = function() require('nvim-ts-autotag').setup() end,
-    },
-    {
-        'JoosepAlviste/nvim-ts-context-commentstring',
-        event = { 'BufReadPre', 'BufNewFile' },
-        dependencies = 'nvim-treesitter/nvim-treesitter',
-        config = function()
-            require('ts_context_commentstring').setup({
-                emnable_autocmd = false,
-            })
-        end,
+        dependencies = {
+            {
+                'nvim-treesitter/nvim-treesitter-textobjects',
+                branch = 'main',
+                version = false,
+                init = function() vim.g.no_plugin_maps = true end,
+            },
+            {
+                'windwp/nvim-ts-autotag',
+                config = function() require('nvim-ts-autotag').setup() end,
+            },
+            {
+                'JoosepAlviste/nvim-ts-context-commentstring',
+                config = function()
+                    require('ts_context_commentstring').setup({
+                        emnable_autocmd = false,
+                    })
+                end,
+            },
+        },
     },
 }
