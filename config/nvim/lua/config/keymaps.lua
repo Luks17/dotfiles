@@ -3,7 +3,7 @@
 ---@param rhs string|function
 ---@param desc? string
 ---@param other_opts? vim.keymap.set.Opts
-_G.MapSet = function(mode, lhs, rhs, desc, other_opts)
+MapSet = function(mode, lhs, rhs, desc, other_opts)
     vim.keymap.set(mode, lhs, rhs, vim.tbl_extend('force', { silent = true, desc = desc }, other_opts or {}))
 end
 

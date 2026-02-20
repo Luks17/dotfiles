@@ -26,7 +26,6 @@ return {
                 lib.component.tabline_conditional_padding(),
                 lib.component.tabline_buffers({ close_button = false, padding = { right = 2 } }),
                 lib.component.fill({ hl = { bg = 'tabline_bg' } }),
-                lib.component.tabline_tabpages(),
             },
             statusline = {
                 hl = { fg = 'fg', bg = 'bg' },

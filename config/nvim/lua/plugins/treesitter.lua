@@ -13,6 +13,8 @@ return {
                 'make',
                 'gitcommit',
                 'gitignore',
+                'latex',
+                'bibtex',
 
                 -- Specs
                 'dockerfile',

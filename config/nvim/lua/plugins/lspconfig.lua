@@ -78,6 +78,14 @@ local json_ls_config = {
     },
 }
 
+local ltex_ls_plus_config = {
+    settings = {
+        ltex = {
+            checkFrequency = 'save',
+        },
+    },
+}
+
 return {
     'neovim/nvim-lspconfig',
     lazy = false,
@@ -87,6 +95,7 @@ return {
             vtsls = vtsls_config,
             gopls = go_pls_config,
             jsonls = json_ls_config,
+            ltex_plus = ltex_ls_plus_config,
         }
 
         for server_name, config in pairs(lsp_configs) do

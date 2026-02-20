@@ -8,7 +8,22 @@ return {
         },
         {
             'mason-org/mason-lspconfig.nvim',
-            opts = {},
+            config = function()
+                local do_not_autostart = {
+                    'harper_ls',
+                }
+
+                require('mason-lspconfig').setup({
+                    automatic_enable = {
+                        exclude = do_not_autostart,
+                    },
+                })
+
+                MapSet('n', '<leader>os', function()
+                    local is_enabled = #(vim.lsp.get_clients({ name = 'harper_ls' })) == 1
+                    vim.lsp.enable('harper_ls', not is_enabled)
+                end, 'Toggle spelling')
+            end,
         },
     },
     config = function()
@@ -53,6 +68,10 @@ return {
 
                 -- helm
                 'helm-ls',
+
+                -- grammar
+                'ltex-ls-plus', -- remove when harper starts supporting tex and pt-BR
+                'harper_ls',
             },
         })
 

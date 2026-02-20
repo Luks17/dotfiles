@@ -43,13 +43,33 @@ zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerl
 #### Utilities
 
 ```bash
-matugen imagemagick wlsunset btop pfetch-rs cava polkit-gnome pavucontrol imv brightnessctl nm-connection-editor upower xwayland-satellite
+matugen nwg-look imagemagick wlsunset btop pfetch-rs cava polkit-gnome pavucontrol imv brightnessctl nm-connection-editor upower xwayland-satellite
 ```
 
 #### Optional (but nice to have)
 
+##### Flatpak
 ```bash
-flatpak flatseal nwg-look firewalld kdenlive qbittorrent gnome-disk-utility libreoffice bottles obsidian kooha mpv krita nautilus
+flatpak flatseal
 ```
 
-[Rosé Pine GTK Theme](https://www.gnome-look.org/p/1810530/)
+##### Writing
+
+```bash
+obsidian libreoffice
+
+# latex stuff
+texlive-basic zathura-pdf-poppler texlive-binextra texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended texlive-bibtexextra texlive-mathscience texlive-langenglish-2025.2-3  texlive-langportuguese-2025.2-3
+```
+
+##### Media
+
+```bash
+kdenlive mpv gpu-screen-recorder krita
+```
+
+##### Others
+
+```bash
+firewalld qbittorrent gnome-disk-utility bottles nautilus
+```
