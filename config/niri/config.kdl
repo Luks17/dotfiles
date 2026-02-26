@@ -1,5 +1,9 @@
 prefer-no-csd
 
+environment {
+    QT_QPA_PLATFORMTHEME "gtk3"
+}
+
 hotkey-overlay {
     skip-at-startup
 }
@@ -20,6 +24,10 @@ input {
     touchpad {
         tap
     }
+}
+
+cursor {
+    hide-after-inactive-ms 5000
 }
 
 layout {
@@ -47,5 +55,6 @@ debug {
   honor-xdg-activation-with-invalid-serial
 }
 
-include  "./mappings.kdl"
+include "./autostart.kdl"
+include "./mappings.kdl"
 include "./noctalia.kdl"

@@ -23,6 +23,7 @@ return {
     },
     {
         'NickvanDyke/opencode.nvim',
+        commit = '6d00f3094af83748f94224647f62a215bca6a920',
         event = 'VeryLazy',
         dependencies = {
             'ibhagwan/fzf-lua',
