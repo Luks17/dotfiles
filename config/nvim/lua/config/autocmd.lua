@@ -22,13 +22,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local bufnr = args.buf
 
         vim.schedule(function()
-            if vim.api.nvim_buf_is_valid(bufnr) then vim.lsp.codelens.refresh({ bufnr = bufnr }) end
+            if vim.api.nvim_buf_is_valid(bufnr) then vim.lsp.codelens.enable(true, { bufnr = bufnr }) end
         end)
 
         vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost' }, {
             group = codelenses_group,
             buffer = bufnr,
-            callback = function() vim.lsp.codelens.refresh({ bufnr = bufnr }) end,
+            callback = function() vim.lsp.codelens.enable(true, { bufnr = bufnr }) end,
         })
     end,
 })
