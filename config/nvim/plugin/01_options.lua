@@ -1,4 +1,7 @@
 -- General
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
+vim.g.no_plugin_maps = true
 vim.opt.mouse = 'a' -- Enable mouse
 vim.opt.mousescroll = 'ver:2,hor:1' -- Customize mouse scroll
 vim.opt.number = true

@@ -1,4 +1,4 @@
-local merge_tables = require('config.util').merge_tables
+local merge_tables = require('util').merge_tables
 
 local helm = {
     extension = {

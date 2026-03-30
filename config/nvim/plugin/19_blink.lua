@@ -1,9 +1,15 @@
-return {
-    'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' },
-    version = '1.*',
-    event = { 'VeryLazy' },
-    opts = {
+Setup.later(function()
+    vim.pack.add({
+        {
+            src = 'https://github.com/saghen/blink.cmp',
+            version = vim.version.range('v1.*'),
+        },
+
+        -- deps
+        'https://github.com/rafamadriz/friendly-snippets',
+    })
+
+    require('blink.cmp').setup({
         keymap = {
             preset = 'default',
             ['<CR>'] = { 'accept', 'fallback' },
@@ -20,6 +26,5 @@ return {
         cmdline = {
             enabled = true,
         },
-    },
-    opts_extend = { 'sources.default' },
-}
+    })
+end)

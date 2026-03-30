@@ -86,20 +86,20 @@ local ltex_ls_plus_config = {
     },
 }
 
-return {
-    'neovim/nvim-lspconfig',
-    lazy = false,
-    config = function()
-        local lsp_configs = {
-            lua_ls = lua_config,
-            vtsls = vtsls_config,
-            gopls = go_pls_config,
-            jsonls = json_ls_config,
-            ltex_plus = ltex_ls_plus_config,
-        }
+Setup.now_if_args(function()
+    vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
 
-        for server_name, config in pairs(lsp_configs) do
-            vim.lsp.config(server_name, config)
-        end
-    end,
-}
+    local lsp_configs = {
+        lua_ls = lua_config,
+        vtsls = vtsls_config,
+        gopls = go_pls_config,
+        jsonls = json_ls_config,
+        ltex_plus = ltex_ls_plus_config,
+    }
+
+    for server_name, config in pairs(lsp_configs) do
+        vim.lsp.config(server_name, config)
+    end
+
+    vim.lsp.codelens.enable()
+end)

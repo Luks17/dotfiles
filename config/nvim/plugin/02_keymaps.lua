@@ -21,10 +21,6 @@ MapSet({ 'n', 'v' }, '_', '"_', 'Shortcout to blackhole register')
 -- Clear highlights
 MapSet('n', '<Esc>', ':noh<CR>', 'Clear search highlights')
 
--- Terminal
-MapSet('t', '<Esc>', '<C-\\><C-n>', 'Exit terminal mode')
-MapSet('n', '<leader>ot', require('config.terminal').toggle_terminal, 'Toggle floating terminal')
-
 -- LSP
 MapSet('n', '<leader>li', '<cmd>:LspInfo<CR>', 'LSP Info')
 MapSet('n', '<leader>la', vim.lsp.buf.code_action, 'Code actions')
@@ -32,3 +28,7 @@ MapSet('n', '<leader>lA', vim.lsp.codelens.run, 'Code lens actions')
 MapSet('n', '<leader>ll', vim.diagnostic.open_float, 'Get line diagnostics')
 MapSet('n', '<leader>lr', vim.lsp.buf.rename, 'Rename symbol')
 MapSet('n', '<leader>lb', vim.diagnostic.setloclist, 'List buffer diagnostics')
+MapSet('n', '<leader>lt', function() vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled()) end, 'Toggle codelens')
+
+-- Shortcuts for vim.pack
+MapSet('n', '<leader>pu', vim.pack.update, 'Update all installed plugins')
