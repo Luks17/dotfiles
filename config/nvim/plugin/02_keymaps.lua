@@ -32,3 +32,4 @@ MapSet('n', '<leader>lt', function() vim.lsp.codelens.enable(not vim.lsp.codelen
 
 -- Shortcuts for vim.pack
 MapSet('n', '<leader>pu', vim.pack.update, 'Update all installed plugins')
+MapSet('n', '<leader>pl', function() vim.pack.update(nil, { offline = true }) end, 'List installed plugins')

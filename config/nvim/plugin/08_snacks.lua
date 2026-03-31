@@ -2,6 +2,8 @@ local setup_bigfile = function(snacks) return {} end
 
 local setup_image = function(snacks) return {} end
 
+local setup_input = function(snacks) return {} end
+
 local setup_picker = function(snacks)
     MapSet('n', '<leader>ef', snacks.picker.files, 'Find files')
     MapSet('n', '<leader>eg', snacks.picker.grep, 'Live grep')
@@ -41,6 +43,7 @@ Setup.now_if_args(function()
     snacks.setup({
         bigfile = setup_bigfile(snacks),
         image = setup_image(snacks),
+        input = setup_input(snacks),
         picker = setup_picker(snacks),
         scratch = setup_scratch(snacks),
         terminal = setup_terminal(snacks),
