@@ -30,6 +30,23 @@ MapSet('n', '<leader>lr', vim.lsp.buf.rename, 'Rename symbol')
 MapSet('n', '<leader>lb', vim.diagnostic.setloclist, 'List buffer diagnostics')
 MapSet('n', '<leader>lt', function() vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled()) end, 'Toggle codelens')
 
+-- Incremental selection
+MapSet({ 'n', 'x' }, '<enter>', function()
+    if vim.treesitter.get_parser(nil, nil, { error = false }) then
+        require('vim.treesitter._select').select_parent(vim.v.count1)
+    else
+        vim.lsp.buf.selection_range(vim.v.count1)
+    end
+end, 'Select parent treesitter node or outer incremental lsp selections')
+
+MapSet({ 'n', 'x', 'o' }, '<backspace>', function()
+    if vim.treesitter.get_parser(nil, nil, { error = false }) then
+        require('vim.treesitter._select').select_child(vim.v.count1)
+    else
+        vim.lsp.buf.selection_range(-vim.v.count1)
+    end
+end, 'Select child treesitter node or inner incremental lsp selections')
+
 -- Shortcuts for vim.pack
 MapSet('n', '<leader>pu', vim.pack.update, 'Update all installed plugins')
 MapSet('n', '<leader>pl', function() vim.pack.update(nil, { offline = true }) end, 'List installed plugins')
