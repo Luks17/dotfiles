@@ -22,11 +22,10 @@ MapSet({ 'n', 'v' }, '_', '"_', 'Shortcout to blackhole register')
 MapSet('n', '<Esc>', ':noh<CR>', 'Clear search highlights')
 
 -- LSP
-MapSet('n', '<leader>li', '<cmd>:LspInfo<CR>', 'LSP Info')
+MapSet('n', '<leader>li', vim.diagnostic.open_float, 'LSP Info')
 MapSet('n', '<leader>la', vim.lsp.buf.code_action, 'Code actions')
 MapSet('n', '<leader>lA', vim.lsp.codelens.run, 'Code lens actions')
 MapSet('n', '<leader>ll', vim.diagnostic.open_float, 'Get line diagnostics')
-MapSet('n', '<leader>lr', vim.lsp.buf.rename, 'Rename symbol')
 MapSet('n', '<leader>lb', vim.diagnostic.setloclist, 'List buffer diagnostics')
 MapSet('n', '<leader>lt', function() vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled()) end, 'Toggle codelens')
 
