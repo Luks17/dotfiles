@@ -1,7 +1,7 @@
 Setup.later(function()
     vim.pack.add({
         'https://github.com/mason-org/mason.nvim',
-        'https://github.com/mason-org/mason-lspconfig.nvim'
+        'https://github.com/mason-org/mason-lspconfig.nvim',
     })
 
     require('mason').setup()
@@ -30,6 +30,9 @@ Setup.later(function()
             -- lua
             'lua_ls',
             'stylua',
+
+            -- c/c++
+            'clangd',
 
             -- golang
             'gopls',

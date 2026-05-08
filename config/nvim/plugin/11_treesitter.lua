@@ -26,6 +26,8 @@ local parsers = {
 
     -- Langs
     'lua',
+    'c',
+    'cpp',
     'bash',
     'go',
     'rust',
@@ -39,7 +41,7 @@ local parsers = {
     'sql',
 }
 
-Setup.later(function()
+Setup.now_if_args(function()
     vim.pack.add({
         'https://github.com/nvim-treesitter/nvim-treesitter',
         'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',

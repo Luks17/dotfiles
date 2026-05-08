@@ -14,7 +14,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "gitsigns.nvim": {
-      "rev": "6d808f99bd63303646794406e270bd553ad7792e",
+      "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "heirline-components.nvim": {
@@ -26,7 +26,7 @@
       "src": "https://github.com/rebelot/heirline.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "0c2823e0418f3d9230ff8b201c976e84de1cb401",
+      "rev": "51feb0ada33d18f3c5c71ffb46005dbf8b33bef4",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
@@ -34,11 +34,11 @@
       "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
-      "rev": "cb8445f8ce85d957416c106b780efd51c6298f89",
+      "rev": "e54f5bf5f12c560da31c17eee5b3e1bd369f3ff9",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "be81509b7160aa02264a59789164a2e1c4a6750a",
+      "rev": "199b3344d4c0dab13e45483834ce11bb7744fa3a",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neocodeium": {
@@ -46,7 +46,7 @@
       "src": "https://github.com/monkoose/neocodeium"
     },
     "neotest": {
-      "rev": "fd0b7986dd0ae04e38ec7dc0c78a432e3820839c",
+      "rev": "ad991822b7076b1d940b33a9d6d0d30416d5df81",
       "src": "https://github.com/nvim-neotest/neotest"
     },
     "neotest-golang": {
@@ -58,11 +58,11 @@
       "src": "https://github.com/marilari88/neotest-vitest"
     },
     "neovim": {
-      "rev": "9504524e5ed0e326534698f637f9d038ba4cd0ee",
+      "rev": "6a961effd67f6130d36df6d1c05c48c739796dd2",
       "src": "https://github.com/rose-pine/neovim"
     },
     "nvim-autopairs": {
-      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
+      "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-bqf": {
@@ -79,7 +79,7 @@
       "version": "'b4a44a5e022e34bb9eca3c27527aef3dda9a1cfa'"
     },
     "nvim-dap-view": {
-      "rev": "01ad4537bac9a0843e72c9615fa7fcaa69b119eb",
+      "rev": "988c0cfa8740fcf6c0528ddf11e2651d2d0ae792",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-lint": {
@@ -87,7 +87,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "bf5abe69c1874531f359a822d0cff4d73e26113f",
+      "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -111,7 +111,7 @@
       "src": "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
     },
     "opencode.nvim": {
-      "rev": "0e3ae21c6c4c8def63e3503b238870f1251288e4",
+      "rev": "df9ff88fe4d22a30712bb88e2e614c6a3ec4cc07",
       "src": "https://github.com/NickvanDyke/opencode.nvim"
     },
     "package-info.nvim": {
@@ -127,7 +127,7 @@
       "src": "https://github.com/stevearc/quicker.nvim"
     },
     "smart-splits.nvim": {
-      "rev": "033a1ff747652dfa27bfbe90e0844b5cb59a741f",
+      "rev": "80be31a3d2e37d32bd37794da72a4f69fce7a85f",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "snacks.nvim": {
@@ -135,7 +135,7 @@
       "src": "https://github.com/folke/snacks.nvim"
     },
     "vimtex": {
-      "rev": "0f42a5130432d4af2e6fd21fb93a76915ff1f090",
+      "rev": "97e11bd4f56d46a87f8593d6ccb27820e19c4ab0",
       "src": "https://github.com/lervag/vimtex"
     }
   }
