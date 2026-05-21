@@ -86,7 +86,7 @@ local ltex_ls_plus_config = {
     },
 }
 
-Setup.now_if_args(function()
+Setup.now(function()
     vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
 
     local lsp_configs = {

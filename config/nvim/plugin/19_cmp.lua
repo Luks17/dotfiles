@@ -5,7 +5,6 @@ Setup.later(function()
             version = vim.version.range('v1.*'),
         },
 
-        -- deps
         'https://github.com/rafamadriz/friendly-snippets',
     })
 
@@ -20,6 +19,15 @@ Setup.later(function()
         },
         completion = {
             documentation = { auto_show = true },
+            menu = {
+                draw = {
+                    columns = {
+                        { 'kind_icon', gap = 1 },
+                        { 'label', 'label_description', gap = 1 },
+                        { 'kind' },
+                    },
+                },
+            },
         },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
@@ -27,6 +35,16 @@ Setup.later(function()
         fuzzy = { implementation = 'prefer_rust_with_warning' },
         cmdline = {
             enabled = true,
+            completion = {
+                menu = {
+                    draw = {
+                        columns = {
+                            { 'kind_icon', gap = 1 },
+                            { 'label', 'label_description', gap = 1 },
+                        },
+                    },
+                },
+            },
         },
     })
 end)

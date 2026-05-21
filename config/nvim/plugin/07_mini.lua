@@ -5,7 +5,6 @@ Setup.now = function(f) misc.safely('now', f) end
 Setup.later = function(f) misc.safely('later', f) end
 Setup.now_if_args = vim.fn.argc(-1) > 0 and Setup.now or Setup.later
 Setup.on_event = function(ev, f) misc.safely('event:' .. ev, f) end
-Setup.on_filetype = function(ft, f) misc.safely('filetype:' .. ft, f) end
 
 -- Advanced text object manipulation
 Setup.later(function()

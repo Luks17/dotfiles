@@ -4,7 +4,6 @@ Setup.later(function()
         'https://github.com/marilari88/neotest-vitest',
         'https://github.com/fredrikaverpil/neotest-golang',
 
-        -- deps
         'https://github.com/nvim-neotest/nvim-nio',
         'https://github.com/nvim-lua/plenary.nvim',
     })

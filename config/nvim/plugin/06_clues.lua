@@ -9,7 +9,6 @@ Config.clues = {
     { mode = 'n', keys = '<Leader>d', desc = '+Debug' },
     { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
     { mode = 'n', keys = '<Leader>t', desc = '+Testing' },
-    { mode = 'n', keys = '<Leader>tc', desc = '+Coverage' },
     { mode = 'n', keys = '<Leader>o', desc = '+Other' },
     { mode = 'n', keys = '<Leader>ox', desc = '+Quickfix' },
     { mode = 'n', keys = '<Leader>p', desc = '+Package' },
