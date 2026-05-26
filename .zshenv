@@ -16,3 +16,6 @@ export VISUAL="nvim"
 
 # STARSHIP
 export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
+
+# USE BAT AS MAN PAGER
+export MANPAGER="bat -l man -p"

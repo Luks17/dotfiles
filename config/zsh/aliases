@@ -2,11 +2,9 @@ alias vim="nvim"
 
 alias systeminfo="inxi -SPARM -GCDN -v1 -xGCRS"
 
-alias eza="eza --octal-permissions --icons"
+alias ls="eza"
 
 alias zen="app.zen_browser.zen"
-
-alias ls="ls --color"
 
 alias fzfp="fzf --preview 'bat --style=numbers --color=always {}'"
 
