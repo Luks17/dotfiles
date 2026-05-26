@@ -5,19 +5,6 @@ if [[ "$(tty)" == "/dev/tty1" ]]; then
 fi
 
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
-# historic search with prefix
-bindkey '^k' history-search-backward
-bindkey '^j' history-search-forward
-
-
 ### OPTIONS
 setopt SHARE_HISTORY      # history is shared between zsh sessions
 setopt HIST_SAVE_NO_DUPS  # saves no duplicate commands to history
@@ -30,19 +17,16 @@ setopt CORRECT            # spelling correction
 source $ZDOTDIR/aliases
 
 
-### PLUGINS
+### AUTO-SUGGESTIONS
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 
 ### COMPLETION
 autoload -Uz compinit; compinit
 zstyle ':completion:*' menu select
-# SHIFT+TAB for going back on the menu list
-bindkey "^[[Z" reverse-menu-complete
 
 
-## zoxide init and cd alias
+## STARTUP ZOXIDE AND CD ALIAS
 eval "$(zoxide init --cmd cd zsh)"
 
 
@@ -56,8 +40,24 @@ if [ ! -f "$SSH_AUTH_SOCK" ]; then
 fi
 
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+### ENABLE SMART HISTORY SEARCH
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+
+### MAPPINGS
+
+# zsh history search
+bindkey "^k" up-line-or-beginning-search
+bindkey "^j" down-line-or-beginning-search
+
+# SHIFT+TAB for going back on the menu list
+bindkey "^[[Z" reverse-menu-complete
+
+
+### STARTUP STARSHIP
+eval "$(starship init zsh)"
 
 
 ### SYNTHAX HIGHTLIGHTING PLUGIN - Has to be in the last line

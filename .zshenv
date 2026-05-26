@@ -1,4 +1,3 @@
-
 # XDG
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -15,3 +14,5 @@ export SAVEHIST=10000
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# STARSHIP
+export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"

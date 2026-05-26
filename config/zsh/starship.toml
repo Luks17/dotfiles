@@ -1,0 +1,72 @@
+[character]
+success_symbol = "[➜](bold green)"
+
+[os.symbols]
+Arch = " "
+NixOS = " "
+Macos = " "
+
+[git_branch]
+symbol = " "
+
+[git_status]
+format = "[[($conflicted )](red)[($stashed )($ahead_behind )](purple)((*$worktree_modified$worktree_deleted$untracked)($staged) )]($style)"
+style = "yellow"
+conflicted = "!!"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+staged = "+"
+stashed = "'${count}"
+worktree_modified= "​"
+worktree_deleted = "​"
+untracked = "​"
+
+[docker_context]
+symbol = " "
+
+[kubernetes]
+symbol = "󱃾 "
+
+[package]
+disabled = true
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[nodejs]
+symbol = " "
+disabled = false
+
+[python]
+symbol = " "
+
+[php]
+disabled = false
+symbol = " "
+
+[lua]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[java]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[dotnet]
+symbol = " "

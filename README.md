@@ -37,7 +37,7 @@ adw-gtk-theme papirus-icon-theme
 #### Terminal
 
 ```bash
-zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-theme-powerlevel10k neovim tmux tmux-plugin-manager fzf zoxide bat kitty fd eza
+zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions starship neovim tmux tmux-plugin-manager fzf zoxide bat kitty fd eza
 ```
 
 #### Utilities
