@@ -9,3 +9,5 @@ alias zen="app.zen_browser.zen"
 alias fzfp="fzf --preview 'bat --style=numbers --color=always {}'"
 
 alias init-nvm="source /usr/share/nvm/init-nvm.sh"
+
+alias sconn="sesh connect"
