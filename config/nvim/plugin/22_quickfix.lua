@@ -4,6 +4,10 @@ Setup.later(function()
         'https://github.com/stevearc/quicker.nvim',
     })
 
+    AddClues({
+        { mode = 'n', keys = '<Leader>ox', desc = '+Quickfix' },
+    })
+
     require('bqf').setup()
     local quicker = require('quicker')
 

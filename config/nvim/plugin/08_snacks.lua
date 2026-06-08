@@ -18,6 +18,10 @@ local setup_picker = function(snacks)
 end
 
 local setup_scratch = function(snacks)
+    AddClues({
+        { mode = 'n', keys = '<Leader>bs', desc = '+Scratch' },
+    })
+
     MapSet('n', '<leader>bso', snacks.scratch.open, 'Open scratch buffer')
     MapSet('n', '<leader>bss', snacks.scratch.select, 'Select scratch buffer')
 

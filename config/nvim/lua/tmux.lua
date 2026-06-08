@@ -96,7 +96,7 @@ local function tmux_kill_pane(pane_id)
 end
 
 return {
-    tmux_split = tmux_split,
-    tmux_kill_pane = tmux_kill_pane,
+    split = tmux_split,
+    kill_pane = tmux_kill_pane,
     is_tmux_available = is_tmux_available,
 }

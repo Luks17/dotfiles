@@ -1,21 +1,15 @@
-local tmux_state = {
-    pane_id = nil,
-}
-
 local opencode_cmd = 'opencode --port'
-
-local fallback_terminal_opts = {
-    win = {
-        position = 'right',
-        enter = false,
-        on_win = function(win) require('opencode.terminal').setup(win.win) end,
-    },
-}
+local fallback_term_opts = { win = { position = 'right', enter = false } }
 
 Setup.later(function()
     vim.pack.add({
         'https://github.com/monkoose/neocodeium',
         'https://github.com/NickvanDyke/opencode.nvim',
+    })
+
+    AddClues({
+        { mode = { 'n', 'x' }, keys = '<Leader>a', desc = '+AI' },
+        { mode = { 'n', 'x' }, keys = '<Leader>ao', desc = '+OpenCode' },
     })
 
     local neocodeium = require('neocodeium')
@@ -27,8 +21,8 @@ Setup.later(function()
 
     MapSet('i', '<A-a>', neocodeium.accept, 'Accept entire suggestion')
     MapSet('i', '<A-l>', neocodeium.accept_line, 'Accept line suggestion')
-    MapSet('i', '<A-w>', neocodeium.accept_word, 'Accept word suggestion')
-    MapSet('i', '<A-e>', neocodeium.cycle_or_complete, 'Cycle suggestion')
+    MapSet('i', '<A-e>', neocodeium.accept_word, 'Accept word suggestion')
+    MapSet('i', '<A-r>', neocodeium.cycle_or_complete, 'Cycle suggestion')
     MapSet('i', '<A-x>', neocodeium.clear, 'Clear suggestion')
 
     MapSet('n', '<leader>as', cmds.enable, 'Start AI assistant')
@@ -37,42 +31,19 @@ Setup.later(function()
 
     local opencode = require('opencode')
     local tmux = require('tmux')
-    local fallback_terminal = require('snacks.terminal')
+    local fallback_term = require('snacks.terminal')
 
-    local open_tmux = function() tmux_state.pane_id = tmux.tmux_split({ cmd = opencode_cmd, focus = false }) end
-
-    local stop_tmux = function()
-        if tmux_state.pane_id ~= nil then
-            tmux.tmux_kill_pane(tmux_state.pane_id)
-            tmux_state.pane_id = nil
+    local start = function()
+        if tmux.is_tmux_available() then
+            tmux.split({ cmd = opencode_cmd, focus = true })
+        else
+            fallback_term.open(opencode_cmd, fallback_term_opts)
         end
     end
 
     vim.g.opencode_opts = {
         server = {
-            start = function()
-                if tmux.is_tmux_available() == false then
-                    fallback_terminal.open(opencode_cmd, fallback_terminal_opts)
-                    return
-                end
-                open_tmux()
-            end,
-            stop = function()
-                if tmux.is_tmux_available() == false then
-                    fallback_terminal.get(opencode_cmd, fallback_terminal_opts):close()
-                    return
-                end
-                stop_tmux()
-            end,
-            toggle = function()
-                if tmux.is_tmux_available() == false then return end
-
-                if tmux_state.pane_id ~= nil then
-                    stop_tmux()
-                else
-                    open_tmux()
-                end
-            end,
+            start = start,
         },
     }
 

@@ -9,9 +9,14 @@ end
 Setup.later(function()
     vim.pack.add({ 'https://github.com/lewis6991/gitsigns.nvim' })
 
+    AddClues({
+        { mode = 'n', keys = '<Leader>g', desc = '+Git' },
+        { mode = 'n', keys = '<Leader>gb', desc = '+Blame' },
+    })
+
     local gs = require('gitsigns')
     gs.setup({
-        on_attach = function(bufnr)
+        on_attach = function()
             MapSet({ 'n', 'v' }, '<leader>gs', function() gs_multi_mode(gs.stage_hunk) end, 'Stage/Unstage hunk')
             MapSet({ 'n', 'v' }, '<leader>gr', function() gs_multi_mode(gs.reset_hunk) end, 'Reset hunk')
 

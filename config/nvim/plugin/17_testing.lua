@@ -8,6 +8,10 @@ Setup.later(function()
         'https://github.com/nvim-lua/plenary.nvim',
     })
 
+    AddClues({
+        { mode = 'n', keys = '<Leader>t', desc = '+Testing' },
+    })
+
     local neotest = require('neotest')
     neotest.setup({
         adapters = {

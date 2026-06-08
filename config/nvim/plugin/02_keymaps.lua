@@ -21,6 +21,9 @@ MapSet({ 'n', 'v' }, '_', '"_', 'Shortcout to blackhole register')
 -- Clear highlights
 MapSet('n', '<Esc>', ':noh<CR>', 'Clear search highlights')
 
+-- Yank entire buffer without moving cursor
+MapSet('n', '<leader>by', ':%y+<CR>', 'Yank entire buffer')
+
 -- LSP
 MapSet('n', '<leader>li', vim.diagnostic.open_float, 'LSP Info')
 MapSet('n', '<leader>la', vim.lsp.buf.code_action, 'Code actions')

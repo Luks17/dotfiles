@@ -43,6 +43,10 @@ Setup.later(function()
         },
     })
 
+    AddClues({
+        { mode = 'n', keys = '<Leader>d', desc = '+Debug' },
+    })
+
     local dap = require('dap')
     local dap_view = require('dap-view')
     dap_view.setup()
