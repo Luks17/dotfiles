@@ -1,4 +1,4 @@
-local merge_tables = require('util').merge_tables
+local util = require('util')
 
 local helm = {
     extension = {
@@ -21,4 +21,4 @@ local dotenv = {
     },
 }
 
-vim.filetype.add(merge_tables(helm, dotenv))
+vim.filetype.add(util.merge_tables(helm, dotenv))

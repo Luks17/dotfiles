@@ -47,7 +47,7 @@ Setup.later(function()
         },
     }
 
-    MapSet({ 'n', 'x' }, '<leader>aos', function() opencode.start() end, 'Start')
+    MapSet({ 'n', 'x' }, '<leader>aos', start, 'Start')
     MapSet({ 'n', 'x' }, '<leader>aoe', function() opencode.select() end, 'Execute action')
     MapSet({ 'n', 'x' }, '<leader>aob', function() opencode.prompt('@buffer ') end, 'Add buffer to opencode')
     MapSet({ 'n', 'x' }, '<leader>aoB', function() opencode.prompt('@buffers ') end, 'Add all open buffers to opencode')
