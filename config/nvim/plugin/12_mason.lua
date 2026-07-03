@@ -39,6 +39,9 @@ Setup.later(function()
             'golangci-lint-langserver',
             'gotestsum',
 
+            -- rust
+            'rust-analyzer',
+
             -- python
             'pyright',
             'isort',
@@ -61,7 +64,7 @@ Setup.later(function()
             'tailwindcss',
 
             -- php
-            'phpactor',
+            'phpantom_lsp',
             'pint',
 
             -- json

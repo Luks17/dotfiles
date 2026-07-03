@@ -51,4 +51,4 @@ end, 'Select child treesitter node or inner incremental lsp selections')
 
 -- Shortcuts for vim.pack
 MapSet('n', '<leader>pu', vim.pack.update, 'Update all installed plugins')
-MapSet('n', '<leader>pl', function() vim.pack.update(nil, { offline = true }) end, 'List installed plugins')
+MapSet('n', '<leader>pl', function() vim.pack.update(nil, { offline = true }) end, 'List and manage installed plugins')

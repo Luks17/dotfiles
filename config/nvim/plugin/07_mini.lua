@@ -173,7 +173,12 @@ end)
 Setup.later(function() require('mini.jump').setup() end)
 
 -- Notification provider
-Setup.now(function() require('mini.notify').setup() end)
+Setup.now(function()
+    local mini_notify = require('mini.notify')
+    mini_notify.setup()
+
+    MapSet('n', '<leader>on', mini_notify.show_history, 'Show notification history')
+end)
 
 -- Start screen
 Setup.now(

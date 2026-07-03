@@ -1,4 +1,4 @@
-local tmux_args = { 'tmux', 'split-window', '-P', '-F', "'#{pane_id}'" }
+local tmux_args = { 'tmux', 'split-window', '-P', '-F', '#{pane_id}' }
 
 ---Check if tmux is available.
 ---
@@ -8,6 +8,29 @@ local is_tmux_available = function()
     if vim.fn.executable('tmux') ~= 1 then return false end
 
     return true
+end
+
+---Check if tmux pane exists.
+---
+---@param pane_id string
+---@return boolean
+local function tmux_pane_exists(pane_id)
+    if not pane_id or pane_id == '' then return false end
+
+    vim.fn.system({ 'tmux', 'display-message', '-p', '-t', pane_id, '#{pane_id}' })
+    return vim.v.shell_error == 0
+end
+
+---Send a command to a tmux pane.
+---
+---@param pane_id string
+---@param cmd string
+---@return boolean
+local tmux_pane_cmd = function(pane_id, cmd)
+    if not tmux_pane_exists(pane_id) then return false end
+
+    vim.fn.system({ 'tmux', 'send-keys', '-t', pane_id, cmd, 'Enter' })
+    return vim.v.shell_error == 0
 end
 
 ---Create a tmux pane from Neovim.
@@ -25,6 +48,7 @@ end
 ---  Note: tmux interprets size relative to the split direction.
 ---@param opts.focus? boolean Should automatically focus the new pane. If omitted, defaults to `true`.
 ---@param opts.cwd? string Working directory for the new tmux pane. If omitted, uses `vim.fn.getcwd()`.
+---@param opts.persist? boolean Keep pane after process exits. If omitted, defaults to `false`.
 ---@param opts.cmd? string Command to run in the new pane. If omitted, the pane starts the default shell.
 ---@return string|nil pane_id New tmux pane id (e.g. `"%12"`), or `nil` on failure.
 local function tmux_split(opts)
@@ -74,6 +98,7 @@ local function tmux_split(opts)
     if pane_id == '' then return nil end
 
     vim.fn.system(string.format('tmux set-option -t %s -p allow-passthrough off', pane_id))
+    if opts.persist then vim.fn.system(string.format('tmux set-option -t %s -p remain-on-exit on', pane_id)) end
 
     return pane_id
 end
@@ -97,6 +122,8 @@ end
 
 return {
     split = tmux_split,
+    pane_exists = tmux_pane_exists,
+    pane_cmd = tmux_pane_cmd,
     kill_pane = tmux_kill_pane,
     is_tmux_available = is_tmux_available,
 }

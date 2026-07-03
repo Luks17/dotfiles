@@ -1,5 +1,4 @@
 local opencode_cmd = 'opencode --port'
-local fallback_term_opts = { win = { position = 'right', enter = false } }
 
 Setup.later(function()
     vim.pack.add({
@@ -37,7 +36,7 @@ Setup.later(function()
         if tmux.is_tmux_available() then
             tmux.split({ cmd = opencode_cmd, focus = true })
         else
-            fallback_term.open(opencode_cmd, fallback_term_opts)
+            fallback_term.open(opencode_cmd, { win = { position = 'right', enter = false } })
         end
     end
 
