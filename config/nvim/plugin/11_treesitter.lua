@@ -46,14 +46,10 @@ Setup.now_if_args(function()
         'https://github.com/nvim-treesitter/nvim-treesitter',
         'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
         'https://github.com/windwp/nvim-ts-autotag',
-        'https://github.com/JoosepAlviste/nvim-ts-context-commentstring',
     })
 
     local treesitter = require('nvim-treesitter')
     require('nvim-ts-autotag').setup()
-    require('ts_context_commentstring').setup({
-        enable_autocmd = false,
-    })
 
     for _, parser in ipairs(parsers) do
         treesitter.install(parser)

@@ -1,83 +1,20 @@
 Setup.later(function()
     vim.pack.add({
         'https://github.com/mason-org/mason.nvim',
-        'https://github.com/mason-org/mason-lspconfig.nvim',
     })
 
     require('mason').setup()
+    local registry = require('mason-registry')
+    local tools = require('tools')
 
-    local do_not_autostart = {
-        'harper_ls',
-    }
-
-    require('mason-lspconfig').setup({
-        automatic_enable = {
-            exclude = do_not_autostart,
-        },
-    })
-
-    MapSet('n', '<leader>os', function()
-        local is_enabled = #(vim.lsp.get_clients({ name = 'harper_ls' })) == 1
-        vim.lsp.enable('harper_ls', not is_enabled)
-    end, 'Toggle spelling')
-end)
-
-Setup.later(function()
-    vim.pack.add({ 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim' })
-
-    require('mason-tool-installer').setup({
-        ensure_installed = {
-            -- lua
-            'lua_ls',
-            'stylua',
-
-            -- c/c++
-            'clangd',
-
-            -- golang
-            'gopls',
-            'golangci-lint-langserver',
-            'gotestsum',
-
-            -- rust
-            'rust-analyzer',
-
-            -- python
-            'pyright',
-            'isort',
-            'black',
-
-            -- sql
-            'sqlfluff',
-
-            -- html/css
-            'html-lsp',
-            'css-lsp',
-            'emmet-ls',
-
-            -- typescript/javascript
-            'vtsls',
-            'js-debug-adapter',
-            'eslint',
-            'prettierd',
-            'vue_ls',
-            'tailwindcss',
-
-            -- php
-            'phpantom_lsp',
-            'pint',
-
-            -- json
-            'json-lsp',
-
-            -- helm
-            'helm-ls',
-
-            -- grammar
-            'ltex-ls-plus', -- remove when harper starts supporting tex and pt-BR
-            'harper_ls',
-        },
-    })
-
-    vim.api.nvim_command('MasonToolsInstall')
+    registry.refresh(function()
+        for _, tool in ipairs(tools.ensure_installed) do
+            local p = registry.get_package(tool.package)
+            local is_globally_installed = vim.fn.executable(tool.package) == 1
+            if not is_globally_installed and not p:is_installed() then
+                vim.notify('Mason: ' .. tool.package .. ' will be installed...', vim.log.levels.INFO)
+                p:install()
+            end
+        end
+    end)
 end)

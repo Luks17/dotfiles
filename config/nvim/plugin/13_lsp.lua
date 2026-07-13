@@ -1,105 +1,19 @@
-local lua_config = {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' },
-            },
-            workspace = {
-                library = {
-                    vim.fn.expand('$VIMRUNTIME/lua'),
-                    vim.fn.expand('$XDG_CONFIG_HOME') .. '/nvim/lua',
-                },
-            },
-            hint = { enable = true },
-        },
-    },
-}
+local function auto_enable()
+    local tools = require('tools')
+    local auto_enable_list = {}
 
-local go_pls_config = {
-    settings = {
-        gopls = {
-            codelenses = {
-                generate = true,
-                regenerate_cgo = true,
-                test = false,
-                tidy = true,
-                upgrade_dependency = true,
-                vendor = true,
-            },
-            hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-            },
-            completeUnimported = true,
-        },
-    },
-}
+    for _, tool in ipairs(tools.ensure_installed) do
+        if tool.kind == 'lsp' then table.insert(auto_enable_list, tool.executable) end
+    end
 
-local vue_language_server_path = vim.fn.stdpath('data')
-    .. '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+    return auto_enable_list
+end
 
-local vtsls_config = {
-    settings = {
-        vtsls = {
-            tsserver = {
-                globalPlugins = {
-                    {
-                        name = '@vue/typescript-plugin',
-                        location = vue_language_server_path,
-                        languages = { 'vue' },
-                        configNamespace = 'typescript',
-                    },
-                },
-            },
-        },
-    },
-    filetypes = {
-        'typescript',
-        'javascript',
-        'javascriptreact',
-        'typescriptreact',
-        'vue',
-    },
-}
-
-local json_ls_config = {
-    settings = {
-        json = {
-            format = {
-                enable = true,
-            },
-        },
-        validate = { enable = true },
-    },
-}
-
-local ltex_ls_plus_config = {
-    settings = {
-        ltex = {
-            checkFrequency = 'save',
-        },
-    },
-}
-
-Setup.now(function()
+Setup.later(function()
     vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
 
-    local lsp_configs = {
-        lua_ls = lua_config,
-        vtsls = vtsls_config,
-        gopls = go_pls_config,
-        jsonls = json_ls_config,
-        ltex_plus = ltex_ls_plus_config,
-    }
-
-    for server_name, config in pairs(lsp_configs) do
-        vim.lsp.config(server_name, config)
-    end
+    local lsp_executables = auto_enable()
+    vim.lsp.enable(lsp_executables)
 
     vim.lsp.codelens.enable()
 end)

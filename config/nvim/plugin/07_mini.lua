@@ -88,15 +88,7 @@ Setup.later(function()
 end)
 
 -- Comment support
-Setup.later(function()
-    require('mini.comment').setup({
-        options = {
-            custom_commentstring = function()
-                return require('ts_context_commentstring').calculate_commentstring() or vim.bo.commentstring
-            end,
-        },
-    })
-end)
+Setup.later(function() require('mini.comment').setup() end)
 
 -- Cursor hightlight at current word
 Setup.later(function() require('mini.cursorword').setup() end)
