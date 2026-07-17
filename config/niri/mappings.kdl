@@ -6,7 +6,8 @@ binds {
     Super+R { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Super+Escape { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     Super+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-    Super+P{ spawn-sh "niri msg pick-color | grep 'Hex' | sed 's/Hex: //' | wl-copy --trim-newline "; }
+    Super+P { spawn-sh "niri msg pick-color | grep 'Hex' | sed 's/Hex: //' | wl-copy --trim-newline "; }
+    Super+Z { spawn-sh "woomer"; }
 
     // f-keys bindings
     Super+F1 { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
