@@ -167,7 +167,11 @@ Setup.later(function() require('mini.jump').setup() end)
 -- Notification provider
 Setup.now(function()
     local mini_notify = require('mini.notify')
-    mini_notify.setup()
+    mini_notify.setup({
+        lsp_progress = {
+            enable = false,
+        },
+    })
 
     MapSet('n', '<leader>on', mini_notify.show_history, 'Show notification history')
 end)
