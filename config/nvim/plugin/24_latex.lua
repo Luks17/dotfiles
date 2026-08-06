@@ -1,5 +1,6 @@
-Setup.now_if_args(function()
-    vim.pack.add({ 'https://github.com/lervag/vimtex' })
+Setup.now(function() vim.pack.add({ 'https://github.com/lervag/vimtex' }) end)
+
+Setup.on_ft('tex', function()
     vim.g.vimtex_view_method = 'zathura'
     vim.g.vimtex_compiler_method = 'latexmk'
 

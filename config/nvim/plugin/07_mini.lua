@@ -165,43 +165,74 @@ end)
 -- Jump to next/previous single character
 Setup.later(function() require('mini.jump').setup() end)
 
--- Notification provider
+-- Start screen
 Setup.now(function()
-    local mini_notify = require('mini.notify')
-    mini_notify.setup({
-        lsp_progress = {
-            enable = false,
-        },
+    local mini_starter = require('mini.starter')
+    mini_starter.setup({
+        header = table.concat({
+            '           .       .  ',
+            '  .               .*. ',
+            '        |\\___/|       ',
+            '   .    )     (       ',
+            '       =\\     /=      ',
+            '         )===(       .',
+            '        /     \\       ',
+            ' *     |      |        ',
+            '       /       \\   .  ',
+            '       \\       /      ',
+            '_/\\_/\\_/\\__  _/_/\\/\\_/',
+            '|  |  |  |( (  |  |  |',
+            '|  |  |  | ) ) |  |  |',
+            '|  |  |  |(_(  |  |  |',
+            '|  |  |  |  |  |  |  |',
+        }, '\n'),
+        footer = '',
     })
-
-    MapSet('n', '<leader>on', mini_notify.show_history, 'Show notification history')
 end)
 
--- Start screen
-Setup.now(
-    function()
-        require('mini.starter').setup({
-            header = table.concat({
-                '           .       .  ',
-                '  .               .*. ',
-                '        |\\___/|       ',
-                '   .    )     (       ',
-                '       =\\     /=      ',
-                '         )===(       .',
-                '        /     \\       ',
-                ' *     |      |        ',
-                '       /       \\   .  ',
-                '       \\       /      ',
-                '_/\\_/\\_/\\__  _/_/\\/\\_/',
-                '|  |  |  |( (  |  |  |',
-                '|  |  |  | ) ) |  |  |',
-                '|  |  |  |(_(  |  |  |',
-                '|  |  |  |  |  |  |  |',
-            }, '\n'),
-            footer = '',
+-- Statusline
+Setup.now(function()
+    vim.opt.laststatus = 3
+
+    local mini_statusline = require('mini.statusline')
+
+    local function section_lsp()
+        local attached = {}
+        for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+            table.insert(attached, client.name)
+        end
+
+        return table.concat(attached, ', ') .. ' '
+    end
+
+    local function content()
+        local mode, mode_hl = mini_statusline.section_mode({ trunc_width = 120 })
+        local git = mini_statusline.section_git({ trunc_width = 40 })
+        local diagnostics = mini_statusline.section_diagnostics({ trunc_width = 75 })
+        local lsp = section_lsp()
+        local filename = mini_statusline.section_filename({ trunc_width = 200 })
+        local fileinfo = mini_statusline.section_fileinfo({ trunc_width = 200 })
+        local location = mini_statusline.section_location({ trunc_width = 75 })
+
+        return mini_statusline.combine_groups({
+            { hl = mode_hl, strings = { ' ' .. mode } },
+            { hl = 'MiniStatuslineDevinfo', strings = { git, diagnostics } },
+            '%<', -- Mark general truncate point
+            { hl = 'MiniStatuslineFilename', strings = { filename } },
+            '%=', -- End left alignment
+            { hl = 'MiniStatuslineFilename', strings = { lsp, fileinfo } },
+            { hl = 'MiniStatuslineFileinfo', strings = { location } },
+            { hl = mode_hl, strings = { ' ' } },
         })
     end
-)
+
+    mini_statusline.setup({
+        content = {
+            active = content,
+            inactive = content,
+        },
+    })
+end)
 
 -- Surrounding actions
 Setup.later(function() require('mini.surround').setup() end)

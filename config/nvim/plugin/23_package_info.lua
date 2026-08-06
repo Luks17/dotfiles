@@ -1,4 +1,4 @@
-vim.pack.add({ 'https://github.com/vuki656/package-info.nvim' })
+Setup.now(function() vim.pack.add({ 'https://github.com/vuki656/package-info.nvim' }) end)
 
 Setup.on_event('BufReadPost', function()
     local filename = vim.fn.expand('%:t')

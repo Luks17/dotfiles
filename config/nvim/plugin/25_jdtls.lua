@@ -1,8 +1,6 @@
-Setup.on_ft('java', function()
-    vim.pack.add({
-        'https://github.com/mfussenegger/nvim-jdtls',
-    })
+Setup.now(function() vim.pack.add({ 'https://github.com/mfussenegger/nvim-jdtls' }) end)
 
+Setup.on_ft('java', function()
     require('jdtls').setup_dap({ hotcodereplace = 'auto' })
 
     local bundles = {}
