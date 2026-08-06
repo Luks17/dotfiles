@@ -3,7 +3,7 @@ local function auto_enable()
     local auto_enable_list = {}
 
     for _, tool in ipairs(tools.ensure_installed) do
-        if tool.kind == 'lsp' then table.insert(auto_enable_list, tool.executable) end
+        if tool.kind == 'lsp' and tool.auto_enable then table.insert(auto_enable_list, tool.executable) end
     end
 
     return auto_enable_list

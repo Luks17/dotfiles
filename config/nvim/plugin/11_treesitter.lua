@@ -38,6 +38,7 @@ local parsers = {
     'tsx',
     'jsx',
     'vue',
+    'java',
     'sql',
 }
 

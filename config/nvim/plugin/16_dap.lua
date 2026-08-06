@@ -5,6 +5,18 @@ local setup_go = function(dap)
     dap.configurations.go = {}
 end
 
+local setup_java = function(dap)
+    dap.configurations.java = {
+        {
+            type = 'java',
+            request = 'attach',
+            name = 'Attach to remote Java server',
+            hostName = function() return vim.fn.input('Host: ', '127.0.0.1') end,
+            port = function() return tonumber(vim.fn.input('Port: ', '5005')) end,
+        },
+    }
+end
+
 local setup_js = function(dap)
     for _, adapter_type in ipairs({ 'node', 'chrome', 'msedge' }) do
         local pwa_type = 'pwa-' .. adapter_type
@@ -52,6 +64,7 @@ Setup.later(function()
     dap_view.setup()
 
     setup_go(dap)
+    setup_java(dap)
     setup_js(dap)
 
     MapSet('n', '<leader>ds', dap.continue, 'Start/continue debugger')

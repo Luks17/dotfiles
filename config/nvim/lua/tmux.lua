@@ -12,7 +12,7 @@ end
 
 ---Check if tmux pane exists.
 ---
----@param pane_id string
+---@param pane_id string | nil
 ---@return boolean
 local function tmux_pane_exists(pane_id)
     if not pane_id or pane_id == '' then return false end
@@ -23,7 +23,7 @@ end
 
 ---Send a command to a tmux pane.
 ---
----@param pane_id string
+---@param pane_id string | nil
 ---@param cmd string
 ---@return boolean
 local tmux_pane_cmd = function(pane_id, cmd)

@@ -1,12 +1,21 @@
-local function tool(package, executable, kind)
+local function tool(package, executable, opts)
+    opts = opts or {}
+    if opts.auto_enable == nil then opts.auto_enable = true end
+
     return {
         package = package,
         executable = executable or package,
-        kind = kind or 'other',
+        kind = opts.kind or 'other',
+        auto_enable = opts.auto_enable,
     }
 end
 
-local function lsp(package, executable) return tool(package, executable, 'lsp') end
+local function lsp(package, executable, opts)
+    opts = opts or {}
+    opts.kind = 'lsp'
+
+    return tool(package, executable, opts)
+end
 
 local ensure_installed = {
     -- lua
@@ -47,6 +56,11 @@ local ensure_installed = {
     -- php
     lsp('phpantom_lsp'),
     tool('pint'),
+
+    -- java
+    lsp('jdtls', nil, { auto_enable = false }),
+    tool('java-debug-adapter'),
+    tool('java-test'),
 
     -- json
     lsp('json-lsp', 'jsonls'),

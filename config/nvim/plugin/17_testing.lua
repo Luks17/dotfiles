@@ -14,6 +14,8 @@ local function debug_test()
 
     if ft == 'go' then
         require('dap-go').debug_test()
+    elseif ft == 'java' then
+        require('jdtls.dap').test_nearest_method()
     else
         vim.notify('No debug-test adapter configured for ' .. ft, vim.log.levels.WARN)
     end

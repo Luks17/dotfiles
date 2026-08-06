@@ -34,7 +34,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "bcb4b2688b38f5c48ada025abe130d41840e11d5",
+      "rev": "8cef23520832134c05e4524e49f0468623501053",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neocodeium": {
@@ -62,16 +62,20 @@
       "rev": "eda349094a87c6ff5a9c75bbbc88bce45836ae08",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
+    "nvim-jdtls": {
+      "rev": "6e9d953f0b82bccdb834cfde0e893f3119c22592",
+      "src": "https://github.com/mfussenegger/nvim-jdtls"
+    },
     "nvim-lint": {
       "rev": "a219b2c9e5b4765e5c845aba119dad55806fcaf1",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "1c0d8f70dbc8827263eedc3cf7021ceba0f68689",
+      "rev": "43ed3797b266e1ee8d222e491379ad471c9d3146",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "7b6cc8949f9999c5ed91436cbe24aa5f99c42025",
+      "rev": "3d3321b560a63ff92a8692401f303a5123336b86",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
@@ -87,7 +91,7 @@
       "src": "https://github.com/NickvanDyke/opencode.nvim"
     },
     "package-info.nvim": {
-      "rev": "dd024d9c0a2dffea4edc5319f149351f39a82a94",
+      "rev": "1eb438ca04d7ab2f8c1fc64c28cfa12463eacfe7",
       "src": "https://github.com/vuki656/package-info.nvim"
     },
     "quicker.nvim": {
@@ -95,7 +99,7 @@
       "src": "https://github.com/stevearc/quicker.nvim"
     },
     "smart-splits.nvim": {
-      "rev": "89ab35b282783efc1c49deadd72c22afd5eac356",
+      "rev": "8c16dc71bf75221793f3f6d83061fee031790c3c",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "snacks.nvim": {
@@ -107,7 +111,7 @@
       "src": "https://github.com/vim-test/vim-test"
     },
     "vimtex": {
-      "rev": "853eb587873a7061a083655578be56dd8027b834",
+      "rev": "154eca8f68a5ad54eb12308bb378e88bdd0dfb3e",
       "src": "https://github.com/lervag/vimtex"
     }
   }
