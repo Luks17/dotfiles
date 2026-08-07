@@ -26,7 +26,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "8cef23520832134c05e4524e49f0468623501053",
+      "rev": "3e47ec3709716177bf28e2d17e35c7ab39db126e",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neocodeium": {
@@ -51,7 +51,7 @@
       "version": "'b4a44a5e022e34bb9eca3c27527aef3dda9a1cfa'"
     },
     "nvim-dap-view": {
-      "rev": "eda349094a87c6ff5a9c75bbbc88bce45836ae08",
+      "rev": "210b2c0e4acc08aad23fbd5a7989dd0169f716d0",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-jdtls": {
@@ -103,7 +103,7 @@
       "src": "https://github.com/vim-test/vim-test"
     },
     "vimtex": {
-      "rev": "154eca8f68a5ad54eb12308bb378e88bdd0dfb3e",
+      "rev": "2596fb0178ab72cd5fadd53c1d8e58ce1c1a92df",
       "src": "https://github.com/lervag/vimtex"
     }
   }
