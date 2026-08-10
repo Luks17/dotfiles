@@ -1,7 +1,9 @@
 local setup_notifier = function(snacks)
-    vim.api.nvim_create_autocmd('LspProgress', {
+    Setup.new_autocmd(
+        'LspProgress',
+        {},
         ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
-        callback = function(ev)
+        function(ev)
             local spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
             vim.notify(vim.lsp.status(), vim.log.levels.INFO, {
                 id = 'lsp_progress',
@@ -11,8 +13,8 @@ local setup_notifier = function(snacks)
                         or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
                 end,
             })
-        end,
-    })
+        end
+    )
 
     MapSet('n', '<leader>on', snacks.notifier.show_history, 'Show notification history')
 

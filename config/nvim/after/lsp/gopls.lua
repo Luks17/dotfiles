@@ -2,9 +2,11 @@ return {
     settings = {
         gopls = {
             codelenses = {
+                gc_details = false,
                 generate = true,
                 regenerate_cgo = true,
-                test = false,
+                run_govulncheck = true,
+                test = true,
                 tidy = true,
                 upgrade_dependency = true,
                 vendor = true,
@@ -18,7 +20,11 @@ return {
                 parameterNames = true,
                 rangeVariableTypes = true,
             },
-            completeUnimported = true,
+            analyses = {
+                ST1000 = false,
+            },
+            usePlaceholders = true,
+            staticcheck = true,
         },
     },
 }

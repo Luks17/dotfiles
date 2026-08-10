@@ -27,7 +27,8 @@ local ensure_installed = {
 
     -- golang
     lsp('gopls'),
-    lsp('golangci-lint-langserver', 'golangci_lint_ls'),
+    tool('gofumpt'),
+    tool('goimports'),
 
     -- rust
     lsp('rust-analyzer', 'rust_analyzer'),
@@ -38,7 +39,8 @@ local ensure_installed = {
     tool('black'),
 
     -- sql
-    tool('sqlfluff'),
+    lsp('sqls'),
+    tool('sqruff'),
 
     -- html/css
     lsp('html-lsp', 'html'),
@@ -61,6 +63,9 @@ local ensure_installed = {
     lsp('jdtls', nil, { auto_enable = false }),
     tool('java-debug-adapter'),
     tool('java-test'),
+
+    -- docker
+    tool('hadolint'),
 
     -- json
     lsp('json-lsp', 'jsonls'),
