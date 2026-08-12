@@ -19,7 +19,7 @@ python rustup
 #### Desktop
 
 ```bash
-niri xdg-desktop-portal-gnome xdg-user-dirs noctalia-shell libnotify zen-browser
+niri xdg-desktop-portal-gnome xdg-user-dirs noctalia libnotify zen-browser
 ```
 
 #### Fonts

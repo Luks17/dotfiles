@@ -3,9 +3,10 @@ binds {
     Super+Return { spawn "kitty" "--single-instance"; }
     Super+F { spawn "app.zen_browser.zen"; }
     Super+A { spawn "nautilus"; }
-    Super+R { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Super+Escape { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
-    Super+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+    Super+R { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Super+Escape { spawn "noctalia" "msg" "panel-toggle" "session"; }
+    Super+V { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Super+W { spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
     Super+P { spawn-sh "niri msg pick-color | grep 'Hex' | sed 's/Hex: //' | wl-copy --trim-newline "; }
     Super+Z { spawn-sh "woomer"; }
 
@@ -22,8 +23,7 @@ binds {
     Alt+Print { screenshot-screen; }
 
     // record screen
-    Super+G { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "toggle"; }
-    Super+Shift+G { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin" "openSettings" "screen-recorder"; }
+    Super+G { spawn "noctalia" "msg" "plugin" "noctalia/screen_recorder:service" "all" "toggle"; }
 
     // workspace commands
     Super+1 { focus-workspace 1; }
