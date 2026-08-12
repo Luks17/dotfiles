@@ -32,13 +32,32 @@ width = 900
 cross_axis_padding = 0
 enabled = true
 main_axis_padding = 8
+pinned = [ "app.zen_browser.zen", "kitty", "org.gnome.Nautilus", "steam" ]
 reserve_space = false
 smart_auto_hide = true
 
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-login-box@eDP-1" ]
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -70,6 +89,30 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 376.5
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = true
+        background_color = "surface"
+        background_opacity = 0.8
+        background_padding = 10
+        background_radius = 12
+        center_text = true
+        circle = true
+        clock_style = "digital"
+        color = "on_surface"
+        font_family = ""
+        format = "{:%d:%m}, {:%H:%M}"
+        shadow = true
+        timezone = ""
+
 [nightlight]
 enabled = true
 force = true
@@ -85,6 +128,7 @@ enabled = [ "noctalia/screen_recorder" ]
 [shell]
 avatar_path = "/home/luks/Documents/dotfiles/avatar.jpg"
 clipboard_history_max_entries = 1000
+font_family = "Inter"
 
     [shell.launcher]
     app_grid = true
@@ -95,7 +139,7 @@ clipboard_history_max_entries = 1000
     session_position = "center"
 
     [shell.session]
-    grid = true
+    grid = false
 
 [theme]
 builtin = "Kanagawa"
@@ -105,6 +149,7 @@ builtin = "Kanagawa"
 
 [wallpaper]
 directory = "/home/luks/Pictures/Wallpapers"
+transition_on_startup = true
 
     [wallpaper.default]
     path = "/home/luks/Pictures/Wallpapers/forest.jpg"
