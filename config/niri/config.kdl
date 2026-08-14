@@ -50,6 +50,14 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    draw-border-with-background false
+    opacity 0.9
+    background-effect {
+        blur true
+    }
+}
+
 debug {
   // Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
