@@ -3,18 +3,7 @@ config_version = 12
 [bar.default]
 background_opacity = 0.7
 center = [ "workspaces" ]
-end = [
-    "tray",
-    "privacy",
-    "notifications",
-    "clipboard",
-    "network",
-    "bluetooth",
-    "volume",
-    "brightness",
-    "battery",
-    "control-center"
-]
+end = [ "tray", "privacy", "notifications", "network", "bluetooth", "volume", "brightness", "battery", "control-center" ]
 font_family = "Inter"
 margin_ends = 5
 padding = 20
@@ -175,6 +164,9 @@ glyph = "rocket"
 
 [widget.network]
 show_label = false
+
+[widget.notifications]
+hide_when_no_unread = true
 
 [widget.privacy]
 hide_inactive = true
