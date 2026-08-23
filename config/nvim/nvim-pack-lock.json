@@ -26,7 +26,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "e58ad4b0c9e9376096b9704f98fc00d4c9448870",
+      "rev": "8d86a057fa14681cf7cab74ea7cba894a0abe14f",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neocodeium": {
@@ -34,7 +34,7 @@
       "src": "https://github.com/monkoose/neocodeium"
     },
     "nvim-autopairs": {
-      "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
+      "rev": "430522f95fe4fb7c511ec64f8c1a90cc6a66c05c",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-bqf": {
@@ -59,15 +59,15 @@
       "src": "https://github.com/mfussenegger/nvim-jdtls"
     },
     "nvim-lint": {
-      "rev": "9b99aad869102ac01775187abd8d49017b148612",
+      "rev": "0370fe965697aa8f04252a1562441bdc13723cd1",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "51dbf5359da86721662c87ca10eb73add973737b",
+      "rev": "221c43884319e791519f0d6c94a7f2fbcd653278",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "074aa4422bf029908338e855d0c0f71470a971bb",
+      "rev": "8b98b4470eb326f1c7b50dae79f8c963568e5720",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
@@ -79,11 +79,11 @@
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "opencode.nvim": {
-      "rev": "41622312d5d8fb074699c1d5d96f089286191376",
+      "rev": "2ddeebd3212596b51bf078e6ff52862655b80419",
       "src": "https://github.com/NickvanDyke/opencode.nvim"
     },
     "package-info.nvim": {
-      "rev": "47b093600d311105c03bc3e530327d7f794bc4dc",
+      "rev": "febe21a4de78e4bdc811fb6d4e16a0d008145db0",
       "src": "https://github.com/vuki656/package-info.nvim"
     },
     "quicker.nvim": {
@@ -91,7 +91,7 @@
       "src": "https://github.com/stevearc/quicker.nvim"
     },
     "smart-splits.nvim": {
-      "rev": "289971cfdbc7f7b1c91670a228b239d870130af7",
+      "rev": "5e92431aa7f5e618c2f6825f682df6d94f6e0a02",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "snacks.nvim": {
@@ -103,7 +103,7 @@
       "src": "https://github.com/vim-test/vim-test"
     },
     "vimtex": {
-      "rev": "b652447a39eeb180ea103d6b39efe84e7cf74117",
+      "rev": "c1b96604d9a387cde5a98bec8f6687ae3078b571",
       "src": "https://github.com/lervag/vimtex"
     }
   }
