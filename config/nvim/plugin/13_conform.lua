@@ -17,6 +17,7 @@ Setup.later(function()
             json = js_related_options,
             json5 = js_related_options,
             sql = { 'sqruff', lsp_format = 'never' },
+            java = { 'palantir-java-format' },
         },
         format_on_save = {
             timeout_ms = 500,

@@ -1,5 +1,3 @@
-local opencode_cmd = 'opencode --port'
-
 Setup.later(function()
     vim.pack.add({
         'https://github.com/monkoose/neocodeium',
@@ -29,24 +27,7 @@ Setup.later(function()
     MapSet('n', '<leader>ar', cmds.restart, 'Restart AI assistant')
 
     local opencode = require('opencode')
-    local tmux = require('tmux')
-    local fallback_term = require('snacks.terminal')
 
-    local start = function()
-        if tmux.is_tmux_available() then
-            tmux.split({ cmd = opencode_cmd, focus = true })
-        else
-            fallback_term.open(opencode_cmd, { win = { position = 'right', enter = false } })
-        end
-    end
-
-    vim.g.opencode_opts = {
-        server = {
-            start = start,
-        },
-    }
-
-    MapSet({ 'n', 'x' }, '<leader>aos', start, 'Start')
     MapSet({ 'n', 'x' }, '<leader>aoe', function() opencode.select() end, 'Execute action')
     MapSet({ 'n', 'x' }, '<leader>aob', function() opencode.prompt('@buffer ') end, 'Add buffer to opencode')
     MapSet({ 'n', 'x' }, '<leader>aoB', function() opencode.prompt('@buffers ') end, 'Add all open buffers to opencode')

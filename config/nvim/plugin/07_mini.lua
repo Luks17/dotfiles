@@ -204,7 +204,6 @@ Setup.now(function()
 
         return table.concat(attached, ', ') .. ' '
     end
-
     local function content()
         local mode, mode_hl = mini_statusline.section_mode({ trunc_width = 120 })
         local git = mini_statusline.section_git({ trunc_width = 40 })

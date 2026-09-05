@@ -63,6 +63,7 @@ local ensure_installed = {
     lsp('jdtls', nil, { auto_enable = false }),
     tool('java-debug-adapter'),
     tool('java-test'),
+    tool('palantir-java-format'),
 
     -- docker
     tool('hadolint'),

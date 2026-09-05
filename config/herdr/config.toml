@@ -1,0 +1,66 @@
+onboarding = false
+
+
+[theme]
+name = "kanagawa"
+
+
+[terminal]
+new_cwd = "follow"
+
+
+[update]
+version_check = false
+
+
+[keys]
+prefix = "alt+s"
+
+[[keys.command]]
+key = "prefix+o"
+type = "pane"
+command = '''
+herdr pane zoom --off --current
+herdr pane resize --direction right --amount 0.12 --current
+exec opencode --port
+'''
+description = "open opencode on the right"
+
+[[keys.command]]
+key = "ctrl+left"
+type = "plugin_action"
+command = "smart-splits.nvim.left"
+description = "navigate left (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+down"
+type = "plugin_action"
+command = "smart-splits.nvim.down"
+description = "navigate down (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+up"
+type = "plugin_action"
+command = "smart-splits.nvim.up"
+description = "navigate up (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+right"
+type = "plugin_action"
+command = "smart-splits.nvim.right"
+description = "navigate right (vim/herdr)"
+
+[[keys.command]]
+key = "prefix+shift+t"
+type = "plugin_action"
+command = "fullerzz.sesh.open-picker"
+description = "open Sesh picker"
+
+
+[ui]
+sidebar_width = 18
+prompt_new_tab_name = false
+
+
+[experimental]
+kitty_graphics = true

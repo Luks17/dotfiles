@@ -9,6 +9,15 @@ local function run_on_tmux(cmd)
     tmux.pane_cmd(pane_id, cmd)
 end
 
+local function run_on_herdr(cmd)
+    local herdr = require('herdr')
+
+    if herdr.pane_cmd(pane_id, cmd) then return end
+
+    pane_id = herdr.split({ focus = true })
+    herdr.pane_cmd(pane_id, cmd)
+end
+
 local function debug_test()
     local ft = vim.bo.filetype
 
@@ -26,8 +35,13 @@ Setup.later(function()
         'https://github.com/vim-test/vim-test',
     })
 
-    vim.g['test#custom_strategies'] = { run_on_tmux = run_on_tmux }
-    if require('tmux').is_tmux_available() then
+    vim.g['test#custom_strategies'] = {
+        run_on_herdr = run_on_herdr,
+        run_on_tmux = run_on_tmux,
+    }
+    if require('herdr').is_herdr_available() then
+        vim.g['test#strategy'] = 'run_on_herdr'
+    elseif require('tmux').is_tmux_available() then
         vim.g['test#strategy'] = 'run_on_tmux'
     else
         vim.g['test#strategy'] = 'neovim_sticky'

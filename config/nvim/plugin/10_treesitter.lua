@@ -19,6 +19,7 @@ local parsers = {
     'css',
     'scss',
     'jsdoc',
+    'xml',
 
     -- templating
     'html',
