@@ -4,6 +4,7 @@ Config.clues = {
     { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
     { mode = 'n', keys = '<Leader>o', desc = '+Other' },
     { mode = 'n', keys = '<Leader>p', desc = '+Package' },
+    { mode = { 'n', 'x' }, keys = '<Leader>a', desc = '+AI' },
 }
 
 AddClues = function(clues) vim.list_extend(Config.clues, clues) end

@@ -1,12 +1,10 @@
 Setup.later(function()
     vim.pack.add({
         'https://github.com/monkoose/neocodeium',
-        'https://github.com/NickvanDyke/opencode.nvim',
     })
 
     AddClues({
-        { mode = { 'n', 'x' }, keys = '<Leader>a', desc = '+AI' },
-        { mode = { 'n', 'x' }, keys = '<Leader>ao', desc = '+OpenCode' },
+        { mode = { 'n', 'x' }, keys = '<Leader>ac', desc = '+Codeium' },
     })
 
     local neocodeium = require('neocodeium')
@@ -22,11 +20,7 @@ Setup.later(function()
     MapSet('i', '<A-r>', neocodeium.cycle_or_complete, 'Cycle suggestion')
     MapSet('i', '<A-x>', neocodeium.clear, 'Clear suggestion')
 
-    MapSet('n', '<leader>as', cmds.enable, 'Start AI assistant')
-    MapSet('n', '<leader>aS', function() cmds.disable(true) end, 'Stop AI assistant')
-    MapSet('n', '<leader>ar', cmds.restart, 'Restart AI assistant')
-
-    local opencode = require('opencode')
-
-    MapSet({ 'n', 'x' }, '<leader>aoe', function() opencode.select() end, 'Execute action')
+    MapSet('n', '<leader>acs', cmds.enable, 'Start AI assistant')
+    MapSet('n', '<leader>acS', function() cmds.disable(true) end, 'Stop AI assistant')
+    MapSet('n', '<leader>acr', cmds.restart, 'Restart AI assistant')
 end)

@@ -48,6 +48,27 @@ local function herdr_pane_cmd(pane_id, cmd)
     return ok
 end
 
+---List panes in the current Herdr workspace.
+---@return table[]|nil
+local function herdr_panes()
+    if not is_herdr_available() or not vim.env.HERDR_WORKSPACE_ID then return nil end
+
+    local ok, result = herdr_command({ 'list', '--workspace', vim.env.HERDR_WORKSPACE_ID })
+    if not ok then return nil end
+    return result and result.panes
+end
+
+---Append literal text to a pane's terminal input without pressing Enter.
+---@param pane_id string|nil
+---@param text string
+---@return boolean
+local function herdr_pane_send_text(pane_id, text)
+    if not is_herdr_available() or not herdr_pane_exists(pane_id) then return false end
+
+    local ok = herdr_command({ 'send-text', pane_id, text })
+    return ok
+end
+
 ---Create a Herdr pane from Neovim.
 ---
 ---If not running inside Herdr or if the `herdr` executable is not available,
@@ -113,6 +134,8 @@ return {
     split = herdr_split,
     pane_exists = herdr_pane_exists,
     pane_cmd = herdr_pane_cmd,
+    panes = herdr_panes,
+    pane_send_text = herdr_pane_send_text,
     kill_pane = herdr_kill_pane,
     is_herdr_available = is_herdr_available,
 }
