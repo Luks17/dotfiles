@@ -16,6 +16,7 @@ Setup.later(function()
             typescriptreact = js_related_options,
             json = js_related_options,
             json5 = js_related_options,
+            vue = js_related_options,
             sql = { 'sqruff', lsp_format = 'never' },
             java = { 'palantir-java-format' },
         },

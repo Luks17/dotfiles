@@ -29,27 +29,4 @@ Setup.later(function()
     local opencode = require('opencode')
 
     MapSet({ 'n', 'x' }, '<leader>aoe', function() opencode.select() end, 'Execute action')
-    MapSet({ 'n', 'x' }, '<leader>aob', function() opencode.prompt('@buffer ') end, 'Add buffer to opencode')
-    MapSet({ 'n', 'x' }, '<leader>aoB', function() opencode.prompt('@buffers ') end, 'Add all open buffers to opencode')
-    MapSet(
-        { 'n', 'x' },
-        '<leader>aod',
-        function() opencode.prompt('@diagnostics ') end,
-        'Add current buffer diagnostics to opencode'
-    )
-    MapSet({ 'n', 'x' }, '<leader>aoq', function() opencode.prompt('@quickfix ') end, 'Add quickfix to opencode')
-    MapSet(
-        { 'n', 'x' },
-        '<leader>aor',
-        function() return require('opencode').operator('@this ') end,
-        'Add range to opencode',
-        { expr = true }
-    )
-    MapSet(
-        'n',
-        '<leader>aol',
-        function() return require('opencode').operator('@this ') .. '_' end,
-        'Add line to opencode',
-        { expr = true }
-    )
 end)

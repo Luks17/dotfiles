@@ -22,7 +22,7 @@ type = "pane"
 command = '''
 herdr pane zoom --off --current
 herdr pane resize --direction right --amount 0.12 --current
-exec opencode --port
+exec opencode
 '''
 description = "open opencode on the right"
 

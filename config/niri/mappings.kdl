@@ -8,7 +8,6 @@ binds {
     Super+V { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
     Super+W { spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
     Super+P { spawn-sh "niri msg pick-color | grep 'Hex' | sed 's/Hex: //' | wl-copy --trim-newline "; }
-    Super+Z { spawn-sh "woomer"; }
 
     // f-keys bindings
     Super+F1 { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
