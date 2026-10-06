@@ -6,3 +6,5 @@ herdr-server.log
 herdr.sock
 session.json
 plugins.json
+herdr.sock.agent
+session-snapshots

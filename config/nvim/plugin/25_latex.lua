@@ -1,12 +1,12 @@
-Setup.now(function() vim.pack.add({ 'https://github.com/lervag/vimtex' }) end)
+Setup.now(function()
+    vim.pack.add({ 'https://github.com/lervag/vimtex' })
 
-Setup.on_ft('tex', function()
     vim.g.vimtex_view_method = 'zathura'
     vim.g.vimtex_compiler_method = 'latexmk'
 
     vim.g.tex_flavor = 'latex'
     vim.g.vimtex_mappings_enabled = false
-    vim.g.vimtex_view_use_temp_files = true
+    -- vim.g.vimtex_view_use_temp_files = true
 
     Setup.new_autocmd('FileType', 'tex', function()
         AddClues({

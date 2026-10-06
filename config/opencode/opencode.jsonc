@@ -1,11 +1,25 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "mcp": {
-    "servers": {
-      "chrome-devtools": {
-        "type": "local",
-        "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
-      }
+    "$schema": "https://opencode.ai/config.json",
+    "mcp": {
+        "servers": {
+            "chrome-devtools": {
+                "type": "local",
+                "command": [
+                    "npx",
+                    "-y",
+                    "chrome-devtools-mcp@latest"
+                ]
+            },
+            "linkedin": {
+                "type": "local",
+                "command": [
+                    "uvx",
+                    "mcp-server-linkedin@latest"
+                ],
+                "environment": {
+                    "UV_HTTP_TIMEOUT": "300"
+                }
+            }
+        }
     }
-  }
 }
