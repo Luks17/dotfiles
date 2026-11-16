@@ -26,7 +26,7 @@ Setup.later(function()
         },
         formatters = {
             sqruff = {
-                args = { 'fix', '$FILENAME' },
+                args = { 'fix', '$FILENAME', '--dialect', 'postgres' },
             },
         },
     })

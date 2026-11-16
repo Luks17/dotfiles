@@ -1,5 +1,10 @@
 Setup.later(function()
-    vim.pack.add({ 'https://github.com/mrjones2014/smart-splits.nvim' })
+    vim.pack.add({
+        {
+            src = 'https://github.com/mrjones2014/smart-splits.nvim',
+            version = vim.version.range('v2.*'),
+        },
+    })
 
     local smart_splits = require('smart-splits')
 

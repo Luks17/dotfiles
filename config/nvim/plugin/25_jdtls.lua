@@ -5,7 +5,19 @@ Setup.on_ft('java', function()
 
     local bundles = {}
     bundles = vim.fn.glob('$MASON/share/java-debug-adapter/com.microsoft.java.debug.plugin-*jar', false, true)
-    vim.list_extend(bundles, vim.fn.glob('$MASON/share/java-test/*.jar', false, true))
+    local test_jars = vim.fn.glob('$MASON/share/java-test/*.jar', false, true)
+    for _, jar in ipairs(test_jars) do
+        local name = vim.fs.basename(jar)
+        -- Runner/agent JARs aren't OSGi bundles. JDTLS already provides ASM,
+        -- and Mason exposes the test plugin twice; keep only its unversioned alias.
+        if name ~= 'com.microsoft.java.test.runner-jar-with-dependencies.jar'
+            and name ~= 'jacocoagent.jar'
+            and not name:match('^org%.objectweb%.asm')
+            and not name:match('^com%.microsoft%.java%.test%.plugin%-')
+        then
+            table.insert(bundles, jar)
+        end
+    end
 
     local base_cmd = { vim.fn.exepath('jdtls') }
     local function jvm_arg(arg) table.insert(base_cmd, string.format('--jvm-arg=%s', arg)) end
