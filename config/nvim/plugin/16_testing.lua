@@ -48,7 +48,11 @@ Setup.later(function()
         vim.g['test#neovim_sticky#reopen_window'] = 1
     end
 
-    vim.g['test#go#gotest#options'] = '-v'
+    local gotestsum = vim.fn.stdpath('data') .. '/mason/packages/gotestsum/gotestsum'
+    vim.g['test#go#gotest#executable'] = vim.fn.shellescape(gotestsum) .. ' --format=dots --'
+
+    -- Playwright is checked before Vitest, so keep it from claiming unit tests.
+    vim.g['test#javascript#playwright#file_pattern'] = [[\v(^|/)e2e/.*\.(spec|test)\.(js|jsx|ts|tsx)$]]
 
     AddClues({
         { mode = 'n', keys = '<Leader>t', desc = '+Testing' },
