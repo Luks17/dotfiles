@@ -76,6 +76,9 @@ local ensure_installed = {
 
     -- grammar
     lsp('ltex-ls-plus', 'ltex_plus'),
+
+    -- other
+    -- lsp('deps-lsp'), -- not available through mason yet
 }
 
 return { ensure_installed = ensure_installed }
