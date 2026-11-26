@@ -29,25 +29,25 @@ description = "open opencode on the right"
 [[keys.command]]
 key = "ctrl+left"
 type = "plugin_action"
-command = "smart-splits.nvim.left"
+command = "smart-splits-backend-herdr.left"
 description = "navigate left (vim/herdr)"
 
 [[keys.command]]
 key = "ctrl+down"
 type = "plugin_action"
-command = "smart-splits.nvim.down"
+command = "smart-splits-backend-herdr.down"
 description = "navigate down (vim/herdr)"
 
 [[keys.command]]
 key = "ctrl+up"
 type = "plugin_action"
-command = "smart-splits.nvim.up"
+command = "smart-splits-backend-herdr.up"
 description = "navigate up (vim/herdr)"
 
 [[keys.command]]
 key = "ctrl+right"
 type = "plugin_action"
-command = "smart-splits.nvim.right"
+command = "smart-splits-backend-herdr.right"
 description = "navigate right (vim/herdr)"
 
 [[keys.command]]

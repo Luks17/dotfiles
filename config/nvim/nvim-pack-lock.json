@@ -82,10 +82,14 @@
       "rev": "4a6883cb13fe097a20a046eb55f6dffd239276e3",
       "src": "https://github.com/stevearc/quicker.nvim"
     },
+    "smart-splits-backend-herdr": {
+      "rev": "da1e50ae7bec7a7c2781aaf5a531eff350bdab20",
+      "src": "https://github.com/adriankarlen/smart-splits-backend-herdr"
+    },
     "smart-splits.nvim": {
-      "rev": "ac11b8ed1efe7cca7bb3eae9c588163c926c6894",
+      "rev": "5fd4fe53c2df2009e689f61511e3c474a9eccbaf",
       "src": "https://github.com/mrjones2014/smart-splits.nvim",
-      "version": "2.0.0 - 3.0.0"
+      "version": "3.0.0 - 4.0.0"
     },
     "snacks.nvim": {
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
