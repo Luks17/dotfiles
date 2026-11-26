@@ -50,8 +50,8 @@ local ensure_installed = {
     -- typescript/javascript
     lsp('vtsls'),
     tool('js-debug-adapter'),
-    lsp('eslint-lsp', 'eslint'),
-    tool('prettierd'),
+    lsp('oxlint'),
+    tool('oxfmt'),
     lsp('vue-language-server'),
     lsp('tailwindcss-language-server', 'tailwindcss'),
 

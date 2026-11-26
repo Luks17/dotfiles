@@ -3,7 +3,7 @@ Setup.later(function()
 
     local conform = require('conform')
 
-    local js_related_options = { 'prettierd', 'prettier', stop_after_first = true }
+    local js_related_options = { 'oxfmt' }
 
     conform.setup({
         formatters_by_ft = {
